@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-const HighscoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) => {
+const HighScoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) => {
     // console.log(hsUsernames)
 
     const closeHsModal = () => {
@@ -8,7 +8,7 @@ const HighscoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) 
     }
     return (
         <div className="hsModal" style={{visibility: hsModalVisibility}}>
-            <h2>Highscores</h2>
+            <h2>High Scores</h2>
             <p className="cross" onClick={closeHsModal}>X</p>
             <table>
                 <thead>
@@ -66,4 +66,4 @@ const HighscoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) 
     )
 }
 
-export default HighscoreModal;
+export default HighScoreModal;
