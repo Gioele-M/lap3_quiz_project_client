@@ -1,9 +1,20 @@
 import axios from 'axios';
 
+export const Hello = () => {
+    console.log('Hello');
+};
+
+Hello();
+
 // const loading = (number_of_questions, category_number, difficulty_level) => ({
 //     type: 'LOADING',
 //     payload: { number_of_questions, category_number, difficulty_level },
 // });
+
+const loading = ({ category, type, difficulty }) => ({
+    type: 'LOAD_RESULTS',
+    payload: { category: category, type: type, difficulty: difficulty },
+});
 
 export const fetchResults = () => {
     return async (dispatch) => {
@@ -13,6 +24,7 @@ export const fetchResults = () => {
             );
             let results = data.results;
             console.log(results);
+            // let something = { category: data.category, type: data.type, difficulty: data.difficulty}
             dispatch({
                 type: 'LOAD_RESULTS',
                 payload: results,
@@ -22,8 +34,10 @@ export const fetchResults = () => {
                 type: 'SET_ERROR',
                 payload: err,
             });
+            console.warn(err.message);
         }
     };
 };
 
-console.log('Hello there');
+// fetchResults();
+// console.log(fetchResults());

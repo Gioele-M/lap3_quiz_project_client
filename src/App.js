@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchResults } from './actions';
 
@@ -9,11 +10,24 @@ function App() {
     const fetchQuestions = () => {
         dispatch(fetchResults());
     };
+=======
+import { useDispatch } from 'react-redux';
+
+import { fetchResults } from "../src/actions";
+
+function App() {
+    const dispatch = useDispatch();
+    const searchResult = () => dispatch(fetchResults());
+>>>>>>> main
 
     return (
         <>
             <h1>Quiz game</h1>
+<<<<<<< HEAD
             <button onClick={fetchQuestions}>lol</button>
+=======
+            <button onClick={searchResult}></button>
+>>>>>>> main
         </>
     );
 }
