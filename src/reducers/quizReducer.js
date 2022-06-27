@@ -1,6 +1,6 @@
 const initialState = {
     results: [],
-    loading: false,
+    loading: false
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -10,14 +10,15 @@ const quizReducer = (state = initialState, action) => {
             return {
                 ...state,
                 results: action.payload,
-                error: false,
+                error: false
             };
+            
         case 'SET ERROR':
             return {
                 ...state,
                 error: action.payload,
                 loading: false,
-                results: [],
+                results: []
             };
         default:
             return state;
