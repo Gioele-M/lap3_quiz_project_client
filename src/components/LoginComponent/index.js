@@ -8,13 +8,13 @@ const LoginComponent = ({ props }) => {
 
     let navigate = useNavigate();
 
-    // const handleSignIn = (e) => {
-    //     e.preventDefault();
-    //     setUsername('');
-    //     setPassword('');
-    // };
-
-    const handleSignIn = () => navigate('/home');
+    const handleSignIn = (e) => {
+        //TODO: log the user in and then navigate them to home
+        e.preventDefault();
+        setUsername('');
+        setPassword('');
+        navigate('/home');
+    };
 
     const onUsernameChange = (e) => {
         setUsername(e.target.value);
