@@ -1,14 +1,9 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+
+import { LoginComponent } from '../../components';
 
 const Login = () => {
-    let navigate = useNavigate();
-    return (
-        <>
-            <h1>Login or register</h1>
-            <button onClick={()=>navigate("/home")}>Go to home</button>
-        </>
-    )
-}
+    return <LoginComponent />;
+};
 
 export default Login;
