@@ -10,7 +10,7 @@ describe('Category', () => {
             <Login />
         </Router>
         )
-        const heading = screen.getByRole('heading');
+        const heading = screen.getByRole('heading', { level: 2 });
         expect(heading.textContent).toMatch(/login/i);
     });
 

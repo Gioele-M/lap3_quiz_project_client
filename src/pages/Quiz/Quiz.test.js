@@ -13,5 +13,15 @@ describe('Quiz', () => {
         const heading = screen.getByRole('heading');
         expect(heading.textContent).toMatch(/quiz/i);
     });
-
+    test('it renders', () => {
+        render(
+        <Router >
+           <Quiz /> 
+        </Router>
+        )
+        const heading = screen.getByRole('button', { 
+            name: /Finish quiz/i 
+          });
+        expect(heading).toBeInTheDocument();
+    });
 });

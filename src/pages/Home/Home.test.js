@@ -13,5 +13,16 @@ describe('Category', () => {
         const heading = screen.getByRole('heading', {level: 1});
         expect(heading.textContent).toMatch(/dumbfounded/i);
     });
+    test('it renders', () => {
+        render(
+        <Router >
+           <Home /> 
+        </Router>
+        )
+        const heading = screen.getByRole('heading', { 
+            name: /High Scores/i 
+          });
+        expect(heading).toBeInTheDocument();
+    });
 
 });
