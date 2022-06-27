@@ -1,0 +1,15 @@
+.slider {
+    background-color: aliceblue;
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: relative;
+    /* overflow: hidden; */
+  }
+  .slide {
+    width: 100%;
+    max-width: 800px;
+    height: 350px;
+    position: absolute;
+    transition: all 0.5s;
+  }

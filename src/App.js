@@ -6,6 +6,7 @@ import { Login, Home, NumPlayers, Category, Difficulty, Quiz, Finish } from './p
 import { fetchResults } from "../src/actions";
 
 import './pages/Home/style.css';
+import './pages/NumPlayers/style.css';
 import './components/HighScoreModal/style.css';
 
 function App() {
@@ -25,7 +26,6 @@ function App() {
                 <Route path="difficulty" element={<Difficulty />} />
                 <Route path="quiz" element={<Quiz />} />
                 <Route path="finish" element={<Finish />} />
-                
             </Routes>
             {/* <button onClick={searchResult}></button>
 
