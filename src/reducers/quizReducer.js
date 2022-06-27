@@ -1,24 +1,27 @@
 const initialState = {
     results: [],
-    loading: false
+    loading: false,
 };
 
 const quizReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'LOADING':
+            return { ...state, searchTerms: action.payload, loading: true };
         case 'LOAD_RESULTS':
             console.log('state', state);
             return {
                 ...state,
                 results: action.payload,
-                error: false
+                loading: false,
+                error: false,
             };
-            
+
         case 'SET ERROR':
             return {
                 ...state,
                 error: action.payload,
                 loading: false,
-                results: []
+                results: [],
             };
         default:
             return state;

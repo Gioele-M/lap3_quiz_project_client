@@ -1,45 +1,39 @@
 import axios from 'axios';
 
-export const Hello = () => {
-    console.log('Hello');
-};
+let amount = 20;
+let category = 18;
+let difficulty = 'easy';
 
-Hello();
-
-// const loading = (number_of_questions, category_number, difficulty_level) => ({
-//     type: 'LOADING',
-//     payload: { number_of_questions, category_number, difficulty_level },
-// });
-
-const loading = ({category, type, difficulty}) => ({
-    type: 'LOAD_RESULTS',
-    payload: { category: category, type: type, difficulty: difficulty},
+const loading = ({ category, amount, difficulty }) => ({
+    type: 'LOADING',
+    payload: { category: category, amount: amount, difficulty: difficulty },
 });
 
 export const fetchResults = () => {
-
-
     return async (dispatch) => {
+        dispatch(
+            loading({
+                category: category,
+                amount: amount,
+                difficulty: difficulty,
+            })
+        );
         try {
             const { data } = await axios.get(
-                `https://opentdb.com/api.php?amount=10&category=18&difficulty=easy`
+                `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`
             );
             let results = data.results;
             console.log(results);
-            // let something = { category: data.category, type: data.type, difficulty: data.difficulty}
             dispatch({
                 type: 'LOAD_RESULTS',
-                payload: results
+                payload: results,
             });
         } catch (err) {
             dispatch({
-                type: 'ERROR',
+                type: 'SET_ERROR',
                 payload: err,
             });
-            console.warn(err.message)
+            console.warn(err.message);
         }
     };
 };
-
-// fetchResults();
-// console.log(fetchResults());

@@ -1,15 +1,21 @@
 import React from 'react';
+
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Login, Home, NumPlayers, Category, Difficulty, Quiz, Finish } from './pages'
 import { fetchResults } from "../src/actions";
 
+
+
 function App() {
     const dispatch = useDispatch();
+    const loading = useSelector((state) => state.loading);
+    console.log(loading);
     const searchResult = () => dispatch(fetchResults());
 
     return (
         <>
+
             <Routes>
                 <Route index element={<Login />} />
                 <Route path="home" element={<Home />} />
@@ -21,6 +27,16 @@ function App() {
                 
             </Routes>
             <button onClick={searchResult}></button>
+
+            {loading ? (
+                <h2>Loading...</h2>
+            ) : (
+                <>
+                    <h1>Quiz game</h1>
+                    <button onClick={searchResult}>Search results</button>
+                </>
+            )}
+
         </>
         
     );
