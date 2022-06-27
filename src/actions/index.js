@@ -1,15 +1,9 @@
 import axios from 'axios';
 
-export const Hello = () => {
-    console.log('Hello');
-};
-
-Hello();
-
-const loading = (number_of_questions, category_number, difficulty_level) => ({
-    type: 'LOADING',
-    payload: { number_of_questions, category_number, difficulty_level },
-});
+// const loading = (number_of_questions, category_number, difficulty_level) => ({
+//     type: 'LOADING',
+//     payload: { number_of_questions, category_number, difficulty_level },
+// });
 
 export const fetchResults = () => {
     return async (dispatch) => {
@@ -25,12 +19,11 @@ export const fetchResults = () => {
             });
         } catch (err) {
             dispatch({
-                type: 'ERROR',
+                type: 'SET_ERROR',
                 payload: err,
             });
         }
     };
 };
 
-fetchResults();
-console.log(fetchResults);
+console.log('Hello there');

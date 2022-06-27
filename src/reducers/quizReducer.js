@@ -12,7 +12,7 @@ const quizReducer = (state = initialState, action) => {
                 results: action.payload,
                 error: false,
             };
-        case 'SET ERROR':
+        case 'SET_ERROR':
             return {
                 ...state,
                 error: action.payload,
