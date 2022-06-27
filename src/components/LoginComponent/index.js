@@ -13,9 +13,8 @@ const LoginComponent = ({ props }) => {
     //     setUsername('');
     //     setPassword('');
     // };
-    const handleSignIn = () => navigate('/home');
 
-    // const validateUserInfo = () = {}
+    const handleSignIn = () => navigate('/home');
 
     const onUsernameChange = (e) => {
         setUsername(e.target.value);
@@ -51,7 +50,7 @@ const LoginComponent = ({ props }) => {
                     onChange={onPasswordChange}
                 />
                 <button onClick={handleSignIn}>Sign in</button>
-                <button onClick={() => navigate('/create-account')}>
+                <button onClick={() => navigate('/register')}>
                     Create an account
                 </button>
             </form>

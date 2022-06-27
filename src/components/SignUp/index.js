@@ -35,9 +35,6 @@ const SignUp = () => {
     return (
         <>
             <h1>Fun quiz game - test you knowledge</h1>
-            {/* <button onClick={() => navigate('/home')}>
-                        Go to home
-                    </button> */}
             <form aria-label="login" onSubmit={handleSignUp}>
                 <h2>Create Account</h2>
                 <label htmlFor="username"></label>
@@ -81,10 +78,9 @@ const SignUp = () => {
                     onChange={onConfirmPasswordChange}
                 />
                 <button>Sign up</button>
-                <p onClick={() => setHasAccount(true)}>
+                <button onClick={() => navigate('/')}>
                     Already have an account? Login
-                    {console.log(hasAccount)}
-                </p>
+                </button>
             </form>
         </>
     );

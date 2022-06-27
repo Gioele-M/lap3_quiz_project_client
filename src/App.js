@@ -10,6 +10,7 @@ import {
     Difficulty,
     Quiz,
     Finish,
+    Register,
 } from './pages';
 import { fetchResults } from '../src/actions';
 
@@ -32,6 +33,7 @@ function App() {
                 <Route path="difficulty" element={<Difficulty />} />
                 <Route path="quiz" element={<Quiz />} />
                 <Route path="finish" element={<Finish />} />
+                <Route path="register" element={<Register />} />
             </Routes>
             {/* <button onClick={searchResult}></button>
 
