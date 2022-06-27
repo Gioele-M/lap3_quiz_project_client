@@ -1,0 +1,14 @@
+.highScores {
+    background-color: rgb(122, 165, 175);
+    width: 200px;
+}
+
+.localGame {
+    background-color: green;
+    width: 200px;
+}
+
+.onlineGame {
+    background-color: rgb(196, 156, 125);
+    width: 200px;
+}

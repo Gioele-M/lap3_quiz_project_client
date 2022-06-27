@@ -13,6 +13,9 @@ import {
 } from './pages';
 import { fetchResults } from '../src/actions';
 
+import './pages/Home/style.css';
+import './components/HighScoreModal/style.css';
+
 function App() {
     const dispatch = useDispatch();
     const loading = useSelector((state) => state.loading);
@@ -30,7 +33,7 @@ function App() {
                 <Route path="quiz" element={<Quiz />} />
                 <Route path="finish" element={<Finish />} />
             </Routes>
-            <button aria-label="search" onClick={searchResult}></button>
+            {/* <button onClick={searchResult}></button>
 
             {/* {loading ? (
                 <h2>Loading...</h2>

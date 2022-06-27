@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const LoginComponent = ({ props }) => {
+    const [hasAccount, setHasAccount] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -27,9 +28,6 @@ const LoginComponent = ({ props }) => {
     return (
         <>
             <h1>Fun quiz game - test your knowledge</h1>
-            {/* <button onClick={() => navigate('/home')}>
-                        Go to home
-                    </button> */}
             <form aria-label="login" onSubmit={handleSignIn}>
                 <h2>Login</h2>
                 <label htmlFor="username"></label>
@@ -53,7 +51,9 @@ const LoginComponent = ({ props }) => {
                     onChange={onPasswordChange}
                 />
                 <button onClick={handleSignIn}>Sign in</button>
-                <p onClick={() => setHasAccount(false)}>Create an account</p>
+                <button onClick={() => navigate('/create-account')}>
+                    Create an account
+                </button>
             </form>
         </>
     );
