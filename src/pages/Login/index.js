@@ -1,14 +1,20 @@
-import React from 'react'
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+
+import { LoginComponent } from '../../components';
+import { SignUp } from '../../components/';
 
 const Login = () => {
-    let navigate = useNavigate();
+    const [hasAccount, setHasAccount] = useState(false);
+
     return (
         <>
-            <h1>Login or register</h1>
-            <button onClick={()=>navigate("/home")}>Go to home</button>
+            {hasAccount ? (
+                <LoginComponent props={hasAccount} />
+            ) : (
+                <SignUp props={hasAccount} />
+            )}
         </>
-    )
-}
+    );
+};
 
 export default Login;

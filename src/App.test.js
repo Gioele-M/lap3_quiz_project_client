@@ -3,6 +3,6 @@ import App from './App';
 
 test('renders header', () => {
     render(<App />);
-    const header = screen.getByText(/Quiz game/i);
-    expect(header).toBeInTheDocument();
+    const button = screen.getByLabelText('search');
+    expect(button).toBeInTheDocument();
 });
