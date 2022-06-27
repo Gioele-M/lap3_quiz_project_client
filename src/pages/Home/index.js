@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import { HighscoreModal } from '../../components'
+import { HighScoreModal } from '../../components'
 
 
 const Home = () => {
@@ -24,10 +24,10 @@ const Home = () => {
     
     return (
         <>
-            <div className="highscores" onClick={openHsModal}>
-                <h2>Highscores</h2>
+            <div className="highScores" onClick={openHsModal}>
+                <h2>High Scores</h2>
             </div>
-            <HighscoreModal hsModalVisibility={hsModalVisibility} hsUsernames={hsUsernames} setHsModalVisibility={setHsModalVisibility}/>
+            <HighScoreModal hsModalVisibility={hsModalVisibility} hsUsernames={hsUsernames} setHsModalVisibility={setHsModalVisibility}/>
             <h1>Dumbfounded</h1>
             <div className="localGame" onClick={()=>navigate("/numplayers")}>
                 <h2>Local game</h2>

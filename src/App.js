@@ -6,7 +6,7 @@ import { Login, Home, NumPlayers, Category, Difficulty, Quiz, Finish } from './p
 import { fetchResults } from "../src/actions";
 
 import './pages/Home/style.css';
-import './components/HighscoreModal/style.css';
+import './components/HighScoreModal/style.css';
 
 function App() {
     const dispatch = useDispatch();
