@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Login, Home, NumPlayers, Category, Difficulty, Quiz, Finish } from './pages'
 import { fetchResults } from "../src/actions";
 
-
+import './pages/Home/style.css';
+import './components/HighscoreModal/style.css';
 
 function App() {
     const dispatch = useDispatch();
@@ -26,7 +27,7 @@ function App() {
                 <Route path="finish" element={<Finish />} />
                 
             </Routes>
-            <button onClick={searchResult}></button>
+            {/* <button onClick={searchResult}></button>
 
             {loading ? (
                 <h2>Loading...</h2>
@@ -35,7 +36,7 @@ function App() {
                     <h1>Quiz game</h1>
                     <button onClick={searchResult}>Search results</button>
                 </>
-            )}
+            )} */}
 
         </>
         
