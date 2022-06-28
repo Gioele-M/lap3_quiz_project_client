@@ -11,7 +11,7 @@ const QuizForm = () => {
     const [score, setScore] = useState(0);
     const [CAVisibility, setCAVisibility] = useState('hidden');
     const [NCAVisibility, setNCAVisibility] = useState('hidden');
-    const [randomAnswers, setRandomAnswers] = useState([]);
+    const [quiz, setQuiz] = useState([]);
 
     const dispatch = useDispatch();
     const error = useSelector((state) => state.error);
@@ -25,6 +25,7 @@ const QuizForm = () => {
 
     useEffect(() => {
         if (results.length) {
+            console.log('results', results);
             const correctAnswers = results.map((result) => {
                 return { name: result.correct_answer, isCorrect: true };
             });
@@ -35,14 +36,16 @@ const QuizForm = () => {
             });
             for (let i = 0; i < correctAnswers.length; i++) {
                 const tempAnswers = [correctAnswers[i], ...incorrectAnswers[i]];
-                setRandomAnswers((prev) => {
+                setQuiz((prev) => {
                     const randomised = tempAnswers.sort(
                         () => Math.random() - 0.5
                     );
-                    return [...prev, randomised];
+                    const question = { question: results[i].question };
+                    const quiz = [question, ...randomised];
+                    return [...prev, quiz];
                 });
             }
-            console.log('ALICE', randomAnswers);
+            console.log('ALICE', quiz);
         }
     }, [results]);
 
@@ -76,7 +79,7 @@ const QuizForm = () => {
 
     return (
         <>
-            {results.length && (
+            {quiz.length && (
                 <>
                     <div className={style.questionSection}>
                         <div className={style.questionCount}>
@@ -85,47 +88,51 @@ const QuizForm = () => {
                             </span>
                         </div>
                         <div className={style.questionText}>
-                            {results[currentQuestion].question}
+                            {quiz[currentQuestion][0].question}
                         </div>
                     </div>
+
                     <div className={style.answerSection}>
                         {results[currentQuestion].correct_answer}
-                        <button
-                            onClick={() =>
-                                handleRightAnswer(
-                                    results[currentQuestion].correct_answer
-                                )
-                            }
-                        >
-                            {results[currentQuestion].correct_answer}
-                        </button>
-                        {results &&
-                            results[currentQuestion].incorrect_answers.map(
-                                (incorrect_answer) => {
+
+                        {quiz.length &&
+                            quiz[currentQuestion].map((answer) => {
+                                if (answer.isCorrect) {
                                     return (
                                         <button
                                             onClick={() =>
-                                                handleWrongAnswer({
-                                                    incorrect_answer,
-                                                })
+                                                handleRightAnswer(answer.name)
                                             }
                                         >
-                                            {incorrect_answer}
+                                            {answer.name}
+                                        </button>
+                                    );
+                                } else if (
+                                    typeof answer.isCorrect === 'boolean'
+                                ) {
+                                    return (
+                                        <button
+                                            onClick={() =>
+                                                handleWrongAnswer(answer.name)
+                                            }
+                                        >
+                                            {answer.name}
                                         </button>
                                     );
                                 }
-                            )}
-                        <div className={style.modalSection}>
-                            <InCorrectAnswerModal
-                                NCAVisibility={NCAVisibility}
-                                setNCAVisibility={setNCAVisibility}
-                            />
+                            })}
+                    </div>
 
-                            <CorrectAnswerModal
-                                CAVisibility={CAVisibility}
-                                setCAVisibility={setCAVisibility}
-                            />
-                        </div>
+                    <div className={style.modalSection}>
+                        <InCorrectAnswerModal
+                            NCAVisibility={NCAVisibility}
+                            setNCAVisibility={setNCAVisibility}
+                        />
+
+                        <CorrectAnswerModal
+                            CAVisibility={CAVisibility}
+                            setCAVisibility={setCAVisibility}
+                        />
                     </div>
                 </>
             )}
