@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchResults } from '../../actions';
 import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
-import styles from './index.module.css';
+import style from './index.module.css';
 
 const QuizForm = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -53,17 +53,17 @@ const QuizForm = () => {
         <>
             {results.length && (
                 <>
-                    <div className={styles.questionSection}>
-                        <div className={styles.questionCount}>
+                    <div className={style.questionSection}>
+                        <div className={style.questionCount}>
                             <span>
                                 {currentQuestion + 1}/{results.length}
                             </span>
                         </div>
-                        <div className={styles.questionText}>
+                        <div className={style.questionText}>
                             {results[currentQuestion].question}
                         </div>
                     </div>
-                    <div className={styles.answerSection}>
+                    <div className={style.answerSection}>
                         {results[currentQuestion].correct_answer}
                         <button
                             onClick={() =>
@@ -90,15 +90,18 @@ const QuizForm = () => {
                                     );
                                 }
                             )}
-                        <InCorrectAnswerModal
-                            NCAVisibility={NCAVisibility}
-                            setNCAVisibility={setNCAVisibility}
-                        />
+                        <div className={style.modalSection}>
+                            <InCorrectAnswerModal
+                                NCAVisibility={NCAVisibility}
+                                setNCAVisibility={setNCAVisibility}
+                            />
+
+                            <CorrectAnswerModal
+                                CAVisibility={CAVisibility}
+                                setCAVisibility={setCAVisibility}
+                            />
+                        </div>
                     </div>
-                    <CorrectAnswerModal
-                        CAVisibility={CAVisibility}
-                        setCAVisibility={setCAVisibility}
-                    />
                 </>
             )}
         </>

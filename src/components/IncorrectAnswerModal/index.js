@@ -1,10 +1,10 @@
 import React from 'react';
 
-import style from './style.module.css';
+import style from './index.module.css';
 
-const IncorrectAnswerModal = ({ NCAVisibility, setNCAVisibility }) => {
+const IncorrectAnswerModal = ({ NCAVisibility }) => {
     return (
-        <div className="NCAModal" style={{ visibility: NCAVisibility }}>
+        <div className={style.NCAModal} style={{ visibility: NCAVisibility }}>
             Oops, that was a wrong answer!
         </div>
     );

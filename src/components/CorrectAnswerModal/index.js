@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
-import style from './style.module.css';
+import style from './index.module.css';
 
-const CorrectAnswerModal = ({ CAVisibility, setCAVisibility }) => {
+const CorrectAnswerModal = ({ CAVisibility }) => {
     return (
-        <div className="CAModal" style={{ visibility: CAVisibility }}>
+        <div className={style.CAModal} style={{ visibility: CAVisibility }}>
             This is the correct answer!!!
         </div>
     );
