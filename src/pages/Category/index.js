@@ -91,6 +91,7 @@ const Category = () => {
             <button onClick={()=>navigate("/numplayers")}>Go back</button>
             <button onClick={()=>navigate("/difficulty")}>Go to difficulty selection</button>
             <div className="selections">
+            <p>Selections</p>
                 <ul>
                     <li>Players: {statePlayers}</li>
                     <li></li>

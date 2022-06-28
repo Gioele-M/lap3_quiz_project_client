@@ -7,6 +7,7 @@ const Difficulty = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch()
     const [difficultyLi, setDifficultyLi] = useState('')
+    const [confirmationVisibility, setConfirmationVisibility] = useState("hidden")
     //redux functions
     const difficulty = useSelector(state => {
         // console.log({ state })
@@ -18,6 +19,7 @@ const Difficulty = () => {
         setDifficultyLi("Difficulty: " + e.target.textContent)
         let newDifficulty = selectedDifficulty.toLowerCase()
         dispatch({ type: 'SET DIFFICULTY', payload: newDifficulty }) 
+        setConfirmationVisibility("visible")
     }
     
     //animation functions
@@ -84,8 +86,9 @@ const Difficulty = () => {
                 <button className="btn btn-prev" onClick={difficultyRightButton}> Right </button>
             </div>
             <button onClick={()=>navigate("/category")}>Go back</button>
-            <button onClick={handleConfirmation}>Confirm selections</button>
+            <button onClick={handleConfirmation} style={{visibility: confirmationVisibility}}>Confirm selections</button>
             <div className="selections">
+                <p>Selections</p>
                 <ul>
                     <li>Players: {statePlayers}</li>
                     <li>Category: {stateCategoryDesc}</li>

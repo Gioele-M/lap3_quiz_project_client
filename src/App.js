@@ -18,7 +18,7 @@ import './pages/Home/style.css';
 import './pages/NumPlayers/style.css';
 import './pages/Difficulty/style.css';
 import './pages/Category/style.css';
-import './components/HighScoreModal/style.css';
+import './components/HighscoreModal/style.css';
 
 function App() {
     const dispatch = useDispatch();

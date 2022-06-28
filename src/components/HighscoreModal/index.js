@@ -6,6 +6,17 @@ const HighScoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) 
     const closeHsModal = () => {
         setHsModalVisibility('hidden')
     }
+
+    const renderedHighScores = hsUsernames.map((score, i) => {
+        return (
+            <tr key={i}>
+                    <td>{score.username}</td>
+                    <td>{score.total}</td>
+                    <td>{score.percentage * score.total}</td>
+            </tr>
+        )
+    })
+
     return (
         <div className="hsModal" style={{visibility: hsModalVisibility}}>
             <h2>High Scores</h2>
@@ -19,46 +30,7 @@ const HighScoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) 
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>{hsUsernames[0].username}</td>
-                        <td>{hsUsernames[0].quizzes}</td>
-                        <td>{hsUsernames[0].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[1].username}</td>
-                        <td>{hsUsernames[1].quizzes}</td>
-                        <td>{hsUsernames[1].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[2].username}</td>
-                        <td>{hsUsernames[2].quizzes}</td>
-                        <td>{hsUsernames[2].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[3].username}</td>
-                        <td>{hsUsernames[3].quizzes}</td>
-                        <td>{hsUsernames[3].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[4].username}</td>
-                        <td>{hsUsernames[4].quizzes}</td>
-                        <td>{hsUsernames[4].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[5].username}</td>
-                        <td>{hsUsernames[5].quizzes}</td>
-                        <td>{hsUsernames[5].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[6].username}</td>
-                        <td>{hsUsernames[6].quizzes}</td>
-                        <td>{hsUsernames[6].points}</td>
-                    </tr>
-                    <tr>
-                        <td>{hsUsernames[7].username}</td>
-                        <td>{hsUsernames[7].quizzes}</td>
-                        <td>{hsUsernames[7].points}</td>
-                    </tr>
+                    {renderedHighScores}
                 </tbody>
             </table>
         </div>
