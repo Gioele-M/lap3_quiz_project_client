@@ -3,56 +3,56 @@ import { useNavigate } from "react-router-dom";
 
 const NumPlayers = () => {
 
-    const [idNumbers, setIdNumbers] = useState([1, 2, 3, 4])
-    const [direction, setDirection] = useState("")
+    const [playersIdNumbers, setPlayersIdNumbers] = useState([1, 2, 3, 4])
+    const [playersDrection, setPlayersDirection] = useState("")
     let navigate = useNavigate();
-    const leftButton = () => {
+    const playerLeftButton = () => {
         console.log('go left')
-        setDirection("left")
+        setPlayersDirection("left")
         let newOrder = []
-        for(let i = idNumbers.length - 1; i >= 0 ; i--){
+        for(let i = playersIdNumbers.length - 1; i >= 0 ; i--){
             
-            if(idNumbers[i] === 1){
-                newOrder.unshift(idNumbers[i] = 4)
+            if(playersIdNumbers[i] === 1){
+                newOrder.unshift(playersIdNumbers[i] = 4)
             }else{
-                newOrder.unshift(idNumbers[i] -= 1)
+                newOrder.unshift(playersIdNumbers[i] -= 1)
             }
         }
-        setIdNumbers(newOrder)
+        setPlayersIdNumbers(newOrder)
     }
-    const rightButton = () => {
+    const playerRightButton = () => {
         console.log('go right')
-        setDirection("right")
+        setPlayersDirection("right")
         let newOrder = []
-        for(let i = idNumbers.length - 1; i >= 0 ; i--){
-            if(idNumbers[i] === 4){
-                newOrder.unshift(idNumbers[i] = 1)
+        for(let i = playersIdNumbers.length - 1; i >= 0 ; i--){
+            if(playersIdNumbers[i] === 4){
+                newOrder.unshift(playersIdNumbers[i] = 1)
             }else{
-                newOrder.unshift(idNumbers[i] += 1)
+                newOrder.unshift(playersIdNumbers[i] += 1)
             }
         }
-        setIdNumbers(newOrder)
+        setPlayersIdNumbers(newOrder)
     }
     return (
         <>
             <h1>Select number of players</h1>
             <div className="sliderContainer">
-                <button className="btn btn-next" onClick={leftButton}> Left </button>
+                <button className="btn btn-next" onClick={playerLeftButton}> Left </button>
                 <div className="slider">
-                    <div className={"slide " + direction} id={"slide" + idNumbers[0]}>
+                    <div className={"slide " + playersDrection} id={"playerSlide" + playersIdNumbers[0]}>
                         <h2>1</h2>
                     </div>
-                    <div className={"slide " + direction} id={"slide" + idNumbers[1]}>
+                    <div className={"slide " + playersDrection} id={"playerSlide" + playersIdNumbers[1]}>
                         <h2>2</h2>
                     </div>
-                    <div className={"slide " + direction} id={"slide" + idNumbers[2]}>
+                    <div className={"slide " + playersDrection} id={"playerSlide" + playersIdNumbers[2]}>
                         <h2>3</h2>
                     </div>
-                    <div className={"slide " + direction} id={"slide" + idNumbers[3]}>
+                    <div className={"slide " + playersDrection} id={"playerSlide" + playersIdNumbers[3]}>
                         <h2>4</h2>
                     </div>
                 </div>
-                <button className="btn btn-prev" onClick={rightButton}> Right </button>
+                <button className="btn btn-prev" onClick={playerRightButton}> Right </button>
             </div>
             <button onClick={()=>navigate("/home")}>Go back</button>
             <button onClick={()=>navigate("/category")}>Go to category selection</button>

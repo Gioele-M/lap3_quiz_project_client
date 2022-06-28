@@ -1,0 +1,73 @@
+#difficultySlide1 {
+    background-color: red;
+    z-index: 0;
+    top: 100px;
+}
+#difficultySlide2 {
+    background-color: rgb(255, 170, 0);
+    z-index: 0;
+    top: 160px;
+    left: 220px;
+}
+#difficultySlide3 {
+    background-color: rgb(242, 255, 0);
+    z-index: 0;
+    top: 100px;
+    right: 0;
+}
+#difficultySlide4 {
+    background-color: rgb(255, 0, 251);
+    z-index: -1;
+    left: 220px;
+    top: 40px;
+}
+
+#difficultySlide1.right {
+animation: difficultySlide1right 0.5s linear;
+}
+#difficultySlide2.right {
+    animation: difficultySlide2right 0.5s linear;
+}
+#difficultySlide3.right {
+    animation: difficultySlide3right 0.5s linear;
+}
+
+@keyframes difficultySlide1right {
+    0%   {transform: translate(500px, 0px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes difficultySlide2right {
+    0%   {transform: translate(-220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes difficultySlide3right {
+    0%   {transform: translate(-220px, 60px)}
+    100% {transform: translate(0, 0)}
+}
+
+#difficultySlide1.left {
+    animation: difficultySlide1left 0.5s linear;
+}
+#difficultySlide2.left {
+    animation: difficultySlide2left 0.5s linear;
+}
+#difficultySlide3.left {
+    animation: difficultySlide3left 0.5s linear;
+}
+
+@keyframes difficultySlide1left {
+    0%   {transform: translate(220px, 60px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes difficultySlide2left {
+    0%   {transform: translate(220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes difficultySlide3left {
+    0%   {transform: translate(-500px, 0px)}
+    100% {transform: translate(0, 0)}
+}
