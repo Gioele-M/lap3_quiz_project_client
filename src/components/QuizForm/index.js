@@ -11,15 +11,40 @@ const QuizForm = () => {
     const [score, setScore] = useState(0);
     const [CAVisibility, setCAVisibility] = useState('hidden');
     const [NCAVisibility, setNCAVisibility] = useState('hidden');
+    const [randomAnswers, setRandomAnswers] = useState([]);
 
     const dispatch = useDispatch();
     const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
 
     const getResults = () => dispatch(fetchResults());
+
     useEffect(() => {
         getResults();
     }, []);
+
+    useEffect(() => {
+        if (results.length) {
+            const correctAnswers = results.map((result) => {
+                return { name: result.correct_answer, isCorrect: true };
+            });
+            const incorrectAnswers = results.map((result) => {
+                return result.incorrect_answers.map((incorrectAnswer) => {
+                    return { name: incorrectAnswer, isCorrect: false };
+                });
+            });
+            for (let i = 0; i < correctAnswers.length; i++) {
+                const tempAnswers = [correctAnswers[i], ...incorrectAnswers[i]];
+                setRandomAnswers((prev) => {
+                    const randomised = tempAnswers.sort(
+                        () => Math.random() - 0.5
+                    );
+                    return [...prev, randomised];
+                });
+            }
+            console.log('ALICE', randomAnswers);
+        }
+    }, [results]);
 
     const handleRightAnswer = (correct_answer) => {
         if (correct_answer) {
