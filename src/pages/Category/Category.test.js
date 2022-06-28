@@ -6,9 +6,12 @@ describe('Category', () => {
 
     test('it renders', () => {
         render(
-        <Router>
+          <Provider store={store}>
+            <Router>
           <Category />  
         </Router>
+          </Provider>
+        
         )
         const heading = screen.getByRole('heading');
         expect(heading.textContent).toMatch(/category/i);
