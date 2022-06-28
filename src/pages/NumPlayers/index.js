@@ -72,7 +72,8 @@ const NumPlayers = () => {
             </div>
             <button onClick={()=>navigate("/home")}>Go back</button>
             <button onClick={()=>navigate("/category")}>Go to category selection</button>
-            <div className="selections">
+            <div className="selections" style={{visibility: 'hidden'}}>
+            <p>Selections</p>
                 <ul>
                     <li></li>
                     <li></li>

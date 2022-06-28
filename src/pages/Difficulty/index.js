@@ -86,6 +86,7 @@ const Difficulty = () => {
             <button onClick={()=>navigate("/category")}>Go back</button>
             <button onClick={handleConfirmation}>Confirm selections</button>
             <div className="selections">
+                <p>Selections</p>
                 <ul>
                     <li>Players: {statePlayers}</li>
                     <li>Category: {stateCategoryDesc}</li>

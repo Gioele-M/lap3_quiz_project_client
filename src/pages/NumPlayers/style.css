@@ -20,6 +20,17 @@
     height: 160px;
     text-align: center;
 }
+
+.selections{
+    background-color: aliceblue;
+    width: 300px;
+}
+
+.selections > ul {
+    list-style-type: none;
+}
+
+
 #playerSlide1 {
     background-color: red;
     z-index: 0;
