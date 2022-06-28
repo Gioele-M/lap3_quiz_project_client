@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { fetchResults } from '../../actions';
+// import { fetchResults } from '../../actions';
+import styles from './index.module.css';
 import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
@@ -17,11 +18,10 @@ const QuizForm = () => {
     const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
 
-    const getResults = () => dispatch(fetchResults());
-
-    useEffect(() => {
-        getResults();
-    }, []);
+    // const getResults = () => dispatch(fetchResults());
+    // useEffect(() => {
+    //     getResults();
+    // }, []);
 
     useEffect(() => {
         if (results.length) {
