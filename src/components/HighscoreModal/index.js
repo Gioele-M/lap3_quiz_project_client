@@ -7,12 +7,12 @@ const HighScoreModal = ({hsModalVisibility, setHsModalVisibility, hsUsernames}) 
         setHsModalVisibility('hidden')
     }
 
-    const renderedHighScores = hsUsernames.map(score => {
+    const renderedHighScores = hsUsernames.map((score, i) => {
         return (
-            <tr>
+            <tr key={i}>
                     <td>{score.username}</td>
-                    <td>{score.total_quest}</td>
-                    <td>{score.percentage * score.total_quest}</td>
+                    <td>{score.total}</td>
+                    <td>{score.percentage * score.total}</td>
             </tr>
         )
     })
