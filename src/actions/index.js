@@ -4,7 +4,7 @@ let amount = 20;
 let category = 18;
 let difficulty = 'easy';
 
-const loading = ({ category, amount, difficulty }) => ({
+const loading = ({ amount, category, difficulty }) => ({
     type: 'LOADING',
     payload: { category: category, amount: amount, difficulty: difficulty },
 });
@@ -13,8 +13,8 @@ export const fetchResults = () => {
     return async (dispatch) => {
         dispatch(
             loading({
-                category: category,
                 amount: amount,
+                category: category,
                 difficulty: difficulty,
             })
         );
