@@ -1,15 +1,111 @@
 .slider {
-    background-color: aliceblue;
-    width: 100%;
-    max-width: 800px;
-    height: 350px;
+    /* background-color: aliceblue; */
+    width: 600px;
+    /* max-width: 800px; */
+    height: 400px;
     position: relative;
-    /* overflow: hidden; */
-  }
-  .slide {
-    width: 100%;
-    max-width: 800px;
-    height: 350px;
+    margin: 0 auto;
+}
+.sliderContainer {
+    display: flex;
+}
+.btn {
+    height: 50px;
+}
+
+.slide {
+    background-color: red;
+    width: 160px;
     position: absolute;
-    transition: all 0.5s;
-  }
+    height: 160px;
+    text-align: center;
+}
+#slide1 {
+    background-color: red;
+    z-index: 0;
+    top: 100px;
+}
+#slide2 {
+    background-color: rgb(255, 170, 0);
+    z-index: 0;
+    top: 160px;
+    left: 220px;
+}
+#slide3 {
+    background-color: rgb(242, 255, 0);
+    z-index: 0;
+    top: 100px;
+    right: 0;
+}
+#slide4 {
+    background-color: rgb(255, 0, 251);
+    z-index: -1;
+    left: 220px;
+    top: 40px;
+}
+
+#slide1.right {
+animation: slide1right 0.5s linear;
+}
+#slide2.right {
+    animation: slide2right 0.5s linear;
+}
+#slide3.right {
+    animation: slide3right 0.5s linear;
+}
+#slide4.right {
+    animation: slide4right 0.5s linear;
+}
+#slide1.left {
+    animation: slide1left 0.5s linear;
+}
+#slide2.left {
+    animation: slide2left 0.5s linear;
+}
+#slide3.left {
+    animation: slide3left 0.5s linear;
+}
+#slide4.left {
+    animation: slide4left 0.5s linear;
+}
+
+
+@keyframes slide1right {
+    0%   {transform: translate(220px, -60px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes slide2right {
+    0%   {transform: translate(-220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes slide3right {
+    0%   {transform: translate(-220px, 60px)}
+    100% {transform: translate(0, 0)}
+}
+
+@keyframes slide4right {
+    0%   {transform: translate(220px, 60px)}
+    100% {transform: translate(0, 0)}
+}
+
+@keyframes slide1left {
+    0%   {transform: translate(220px, 60px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes slide2left {
+    0%   {transform: translate(220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes slide3left {
+    0%   {transform: translate(-220px, -60px)}
+    100% {transform: translate(0, 0)}
+}
+
+@keyframes slide4left {
+    0%   {transform: translate(-220px, 60px)}
+    100% {transform: translate(0, 0)}
+}

@@ -10,6 +10,7 @@ const SignUp = () => {
     let navigate = useNavigate();
 
     const handleSignUp = (e) => {
+        //post the user data using axios
         e.preventDefault();
         setUsername('');
         setEmail('');

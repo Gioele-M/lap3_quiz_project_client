@@ -1,90 +1,76 @@
-// import React, { useEffect, useState } from 'react';
-// import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
-// import styles from './index.module.css';
+import { fetchResults } from '../../actions';
+import styles from './index.module.css';
 
-// const QuizForm = () => {
-//     const [results, setResults] = useState(['']);
+const QuizForm = () => {
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [showScore, setShowScore] = useState(false);
+    const [score, setScore] = useState(0);
 
-//     useEffect(() => {
-//         const category_number = 18;
-//         try {
-//             async function getArray() {
-//                 const { data } = await axios.get(
-//                     `https://opentdb.com/api.php?amount=10&category=${category_number}&difficulty=easy`
-//                 );
+    const dispatch = useDispatch();
+    const error = useSelector((state) => state.error);
+    const results = useSelector((state) => state.results);
 
-//                 setResults(data.results);
-//             }
-//             getArray();
-//         } catch (err) {
-//             console.log(err);
-//         }
-//     }, []);
+    const getResults = () => dispatch(fetchResults());
+    useEffect(() => {
+        getResults();
+    }, []);
 
-//     const [currentQuestion, setCurrentQuestion] = useState(0);
-//     const [showScore, setShowScore] = useState(false);
-//     const [score, setScore] = useState(0);
-//     console.log(score);
+    const handleAnswerButtonClick = (correct_answer) => {
+        if (correct_answer) {
+            setScore(score + 1);
+            alert(
+                `This is the correct answer!!! You have now ${score} correct answers out of ${results.length} questions!`
+            );
+        }
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < results.length) {
+            setCurrentQuestion(nextQuestion);
+        } else {
+            setShowScore(true);
+        }
+    };
 
-//     const handleAnswerButtonClick = (correct_answer) => {
-//         if (correct_answer) {
-//             setScore(score + 1);
-//         }
-//         const nextQuestion = currentQuestion + 1;
-//         if (nextQuestion < results.length) {
-//             setCurrentQuestion(nextQuestion);
-//         } else {
-//             setShowScore(true);
-//         }
-//     };
-//     console.log(data);
-//     console.log(data.results[currentQuestion].correct_answer);
-//     return (
-//         <div>{results}</div>
-//             results && (
-//                 <div className={styles.quizForm}>
-//                     {showScore ? (
-//                         <div className={styles.scoreSection}>
-//                             You scored {score} out of {results.length}
-//                         </div>
-//                     ) : (
-//                         <>
-//                             <div className={styles.questionSection}>
-//                                 <div className={styles.questionCount}>
-//                                     <span>
-//                                         {currentQuestion + 1}/{results.length}
-//                                     </span>
-//                                 </div>
-//                                 <div className={styles.questionText}>
-//                                     {results[currentQuestion].question}
-//                                 </div>
-//                             </div>
-//                             <div className={styles.answerSection}>
-//                                 {results[currentQuestion].correct_answer}
-//                                 <button onClick={() => handleAnswerButtonClick()}>
-//                                     {results[currentQuestion].correct_answer}
-//                                 </button>
-//                                 {results &&
-//                                     results[currentQuestion].incorrect_answers.map(
-//                                         (incorrect_answer) => {
-//                                             return (
-//                                                 <button
-//                                                     onClick={() =>
-//                                                         handleAnswerButtonClick()
-//                                                     }
-//                                                 >
-//                                                     {incorrect_answer}
-//                                                 </button>
-//                                             );
-//                                         }
-//                                     )}
-//                             </div>
-//                         </>
-//                     )}
-//                 </div>
-//             )
-//     );
-// };
+    return (
+        <>
+            {results.length && (
+                <>
+                    <div className={styles.questionSection}>
+                        <div className={styles.questionCount}>
+                            <span>
+                                {currentQuestion + 1}/{results.length}
+                            </span>
+                        </div>
+                        <div className={styles.questionText}>
+                            {results[currentQuestion].question}
+                        </div>
+                    </div>
+                    <div className={styles.answerSection}>
+                        {results[currentQuestion].correct_answer}
+                        <button onClick={() => handleAnswerButtonClick()}>
+                            {results[currentQuestion].correct_answer}
+                        </button>
+                        {results &&
+                            results[currentQuestion].incorrect_answers.map(
+                                (incorrect_answer) => {
+                                    return (
+                                        <button
+                                            onClick={() =>
+                                                handleAnswerButtonClick()
+                                            }
+                                        >
+                                            {incorrect_answer}
+                                        </button>
+                                    );
+                                }
+                            )}
+                    </div>
+                </>
+            )}
+        </>
+    );
+};
 
-// export default QuizForm;
+export default QuizForm;

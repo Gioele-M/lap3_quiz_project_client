@@ -13,5 +13,6 @@ describe('Category', () => {
         const heading = screen.getByRole('heading', { level: 1 });
         expect(heading.textContent).toMatch(/number of players/i);
     });
+    
 
 });

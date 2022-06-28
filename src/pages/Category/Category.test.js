@@ -13,5 +13,27 @@ describe('Category', () => {
         const heading = screen.getByRole('heading');
         expect(heading.textContent).toMatch(/category/i);
     });
+    test('it renders', () => {
+        render(
+        <Router >
+           <Category /> 
+        </Router>
+        )
+        const heading = screen.getByRole('button', { 
+            name: /go back/i 
+          });
+        expect(heading).toBeInTheDocument();
+    });
+    test('it renders', () => {
+        render(
+        <Router >
+           <Category /> 
+        </Router>
+        )
+        const heading = screen.getByRole('button', { 
+            name: /Go to difficulty selection/i 
+          });
+        expect(heading).toBeInTheDocument();
+    });
 
 });
