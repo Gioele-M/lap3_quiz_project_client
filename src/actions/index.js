@@ -1,15 +1,17 @@
 import axios from 'axios';
 
-let amount = 20;
-let category = 18;
-let difficulty = 'easy';
+// let amount = 20;
+// let category = 18;
+// let difficulty = 'easy';
 
 const loading = ({ amount, category, difficulty }) => ({
     type: 'LOADING',
     payload: { category: category, amount: amount, difficulty: difficulty },
 });
 
-export const fetchResults = () => {
+console.log('loading', loading)
+
+export const fetchResults = (amount, category, difficulty) => {
     return async (dispatch) => {
         dispatch(
             loading({
@@ -20,7 +22,7 @@ export const fetchResults = () => {
         );
         try {
             const { data } = await axios.get(
-                `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}`
+                `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
             );
             let results = data.results;
             console.log(results);
