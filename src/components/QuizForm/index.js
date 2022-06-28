@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchResults } from '../../actions';
+import { CorrectAnswerModal } from '../index';
+import { InCorrectAnswerModal } from '../index';
 import styles from './index.module.css';
 
 const QuizForm = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
+    const [CAVisibility, setCAVisibility] = useState('hidden');
+    const [NCAVisibility, setNCAVisibility] = useState('hidden');
 
     const dispatch = useDispatch();
     const error = useSelector((state) => state.error);
@@ -18,18 +21,31 @@ const QuizForm = () => {
         getResults();
     }, []);
 
-    const handleAnswerButtonClick = (correct_answer) => {
+    const handleRightAnswer = (correct_answer) => {
         if (correct_answer) {
             setScore(score + 1);
-            alert(
-                `This is the correct answer!!! You have now ${score} correct answers out of ${results.length} questions!`
-            );
+            setCAVisibility('visible');
+            setTimeout(() => {
+                setCAVisibility('hidden');
+            }, '2000');
+            console.log(CAVisibility);
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
-        } else {
-            setShowScore(true);
+        }
+    };
+
+    const handleWrongAnswer = (incorrect_answer) => {
+        if (incorrect_answer) {
+            setNCAVisibility('visible');
+        }
+        setTimeout(() => {
+            setNCAVisibility('hidden');
+        }, '2000');
+        const nextQuestion = currentQuestion + 1;
+        if (nextQuestion < results.length) {
+            setCurrentQuestion(nextQuestion);
         }
     };
 
@@ -49,7 +65,13 @@ const QuizForm = () => {
                     </div>
                     <div className={styles.answerSection}>
                         {results[currentQuestion].correct_answer}
-                        <button onClick={() => handleAnswerButtonClick()}>
+                        <button
+                            onClick={() =>
+                                handleRightAnswer(
+                                    results[currentQuestion].correct_answer
+                                )
+                            }
+                        >
                             {results[currentQuestion].correct_answer}
                         </button>
                         {results &&
@@ -58,7 +80,9 @@ const QuizForm = () => {
                                     return (
                                         <button
                                             onClick={() =>
-                                                handleAnswerButtonClick()
+                                                handleWrongAnswer({
+                                                    incorrect_answer,
+                                                })
                                             }
                                         >
                                             {incorrect_answer}
@@ -66,7 +90,15 @@ const QuizForm = () => {
                                     );
                                 }
                             )}
+                        <InCorrectAnswerModal
+                            NCAVisibility={NCAVisibility}
+                            setNCAVisibility={setNCAVisibility}
+                        />
                     </div>
+                    <CorrectAnswerModal
+                        CAVisibility={CAVisibility}
+                        setCAVisibility={setCAVisibility}
+                    />
                 </>
             )}
         </>
