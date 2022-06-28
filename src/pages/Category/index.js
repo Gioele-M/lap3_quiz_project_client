@@ -1,14 +1,44 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 
 const Category = () => {
     let navigate = useNavigate();
+    const dispatch = useDispatch()
+    const statePlayers = useSelector((state) => state.players);
+    
+    const category = useSelector(state => {
+        // console.log({ state })
+        return state.category 
+    })
+    
+    const handleCategory = (e) => {
+        let newCategory = 0
+        const selectedCategory  = e.target.textContent
+        if(selectedCategory === "General Knowledge"){
+            newCategory = 9 
+        } else if (selectedCategory === "Science & Nature"){
+            newCategory = 17 
+        }else if (selectedCategory === "Sports"){
+            newCategory = 21 
+        }else if (selectedCategory === "History"){
+            newCategory = 23 
+        }else if (selectedCategory === "Animals"){
+            newCategory = 27 
+        }
+        dispatch({ type: 'SET CATEGORY', payload: newCategory  }) 
+        dispatch({ type: 'SET CATEGORY DESCRIPTION', payload: selectedCategory  }) 
+        navigate("/difficulty")
+    }
+
+
+
 
     const [categoryIdNumbers, setCategoryIdNumbers] = useState([1, 2, 3, 4, 5])
-    const [categoryDrection, setCategoryDirection] = useState("")
+    const [categoryDirection, setCategoryDirection] = useState("")
 
     const categoryLeftButton = () => {
-        console.log('go left')
+        // console.log('go left')
         setCategoryDirection("left")
         let newOrder = []
         for(let i = categoryIdNumbers.length - 1; i >= 0 ; i--){
@@ -22,7 +52,7 @@ const Category = () => {
         setCategoryIdNumbers(newOrder)
     }
     const categoryRightButton = () => {
-        console.log('go right')
+        // console.log('go right')
         setCategoryDirection("right")
         let newOrder = []
         for(let i = categoryIdNumbers.length - 1; i >= 0 ; i--){
@@ -40,19 +70,19 @@ const Category = () => {
             <div className="sliderContainer">
                 <button className="btn btn-next" onClick={categoryLeftButton}> Left </button>
                 <div className="slider">
-                    <div className={"slide " + categoryDrection} id={"categorySlide" + categoryIdNumbers[0]}>
-                        <h2>General knowledge</h2>
+                    <div className={"slide " + categoryDirection} id={"categorySlide" + categoryIdNumbers[0]} onClick={handleCategory}>
+                        <h2>General Knowledge</h2>
                     </div>
-                    <div className={"slide " + categoryDrection} id={"categorySlide" + categoryIdNumbers[1]}>
+                    <div className={"slide " + categoryDirection} id={"categorySlide" + categoryIdNumbers[1]} onClick={handleCategory}>
                         <h2>Science & Nature</h2>
                     </div>
-                    <div className={"slide " + categoryDrection} id={"categorySlide" + categoryIdNumbers[2]}>
+                    <div className={"slide " + categoryDirection} id={"categorySlide" + categoryIdNumbers[2]} onClick={handleCategory}>
                         <h2>Sports</h2>
                     </div>
-                    <div className={"slide " + categoryDrection} id={"categorySlide" + categoryIdNumbers[3]}>
+                    <div className={"slide " + categoryDirection} id={"categorySlide" + categoryIdNumbers[3]} onClick={handleCategory}>
                         <h2>History</h2>
                     </div>
-                    <div className={"slide " + categoryDrection} id={"categorySlide" + categoryIdNumbers[4]}>
+                    <div className={"slide " + categoryDirection} id={"categorySlide" + categoryIdNumbers[4]} onClick={handleCategory}>
                         <h2>Animals</h2>
                     </div>
                 </div>
@@ -60,6 +90,13 @@ const Category = () => {
             </div>
             <button onClick={()=>navigate("/numplayers")}>Go back</button>
             <button onClick={()=>navigate("/difficulty")}>Go to difficulty selection</button>
+            <div className="selections">
+                <ul>
+                    <li>Players: {statePlayers}</li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
         </>
     )
 }
