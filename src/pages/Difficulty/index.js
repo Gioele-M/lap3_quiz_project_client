@@ -15,7 +15,7 @@ const Difficulty = () => {
     
     const handleDifficulty = (e) => {
         let selectedDifficulty = e.target.textContent
-        setDifficultyLi(e.target.textContent)
+        setDifficultyLi("Difficulty: " + e.target.textContent)
         let newDifficulty = selectedDifficulty.toLowerCase()
         dispatch({ type: 'SET DIFFICULTY', payload: newDifficulty }) 
     }
@@ -89,7 +89,7 @@ const Difficulty = () => {
                 <ul>
                     <li>Players: {statePlayers}</li>
                     <li>Category: {stateCategoryDesc}</li>
-                    <li>Difficulty: {difficultyLi}</li>
+                    <li>{difficultyLi}</li>
                 </ul>
             </div>
         </>
