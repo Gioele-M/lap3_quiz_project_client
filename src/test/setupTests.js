@@ -1,5 +1,6 @@
 import React from 'react';
-
+import userEvent from '@testing-library/user-event';
+import '@testing-library/jest-dom/extend-expect';
 import '@testing-library/jest-dom';
 
 import { render } from '@testing-library/react';
@@ -32,3 +33,6 @@ axios.get.mockResolvedValue({ data: [ { latlng: [123, 456] }]})
 
 global.renderWithReduxProvider = renderWithReduxProvider
 global.React = React;
+
+global.render = render;
+global.userEvent = userEvent;

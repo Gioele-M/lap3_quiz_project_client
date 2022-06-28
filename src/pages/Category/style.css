@@ -1,0 +1,110 @@
+#categorySlide1 {
+    /* background-color: red; */
+    z-index: 0;
+    top: 100px;
+}
+#categorySlide2 {
+    /* background-color: rgb(255, 170, 0); */
+    z-index: 0;
+    top: 160px;
+    left: 220px;
+}
+#categorySlide3 {
+    /* background-color: rgb(242, 255, 0); */
+    z-index: 0;
+    top: 100px;
+    right: 0;
+}
+#categorySlide4 {
+    /* background-color: rgb(255, 0, 251); */
+    z-index: -1;
+    left: 330px;
+    top: 40px;
+}
+#categorySlide5 {
+    /* background-color: rgb(123, 0, 255); */
+    z-index: -1;
+    left: 110px;
+    top: 40px;
+}
+
+#categorySlide1.right {
+animation: categorySlide1right 0.5s linear;
+}
+#categorySlide2.right {
+    animation: categorySlide2right 0.5s linear;
+}
+#categorySlide3.right {
+    animation: categorySlide3right 0.5s linear;
+}
+#categorySlide4.right {
+    animation: categorySlide4right 0.5s linear;
+}
+#categorySlide5.right {
+    animation: categorySlide5right 0.5s linear;
+}
+@keyframes categorySlide1right {
+    0%   {transform: translate(110px, -60px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes categorySlide2right {
+    0%   {transform: translate(-220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes categorySlide3right {
+    0%   {transform: translate(-220px, 60px)}
+    100% {transform: translate(0, 0)}
+}
+
+@keyframes categorySlide4right {
+    0%   {transform: translate(110px, 60px)}
+    100% {transform: translate(0, 0)}
+}
+@keyframes categorySlide5right {
+    0%   {transform: translate(220px, 0px)}
+    100% {transform: translate(0, 0)}
+}
+
+#categorySlide1.left {
+    animation: categorySlide1left 0.5s linear;
+}
+#categorySlide2.left {
+    animation: categorySlide2left 0.5s linear;
+}
+#categorySlide3.left {
+    animation: categorySlide3left 0.5s linear;
+}
+#categorySlide4.left {
+    animation: categorySlide4left 0.5s linear;
+}
+#categorySlide5.left {
+    animation: categorySlide5left 0.5s linear;
+}
+
+
+
+@keyframes categorySlide1left {
+    0%   {transform: translate(220px, 60px)}
+    100% {transform: translate(0%, 0)}
+}
+
+@keyframes categorySlide2left {
+    0%   {transform: translate(220px, -60px)}
+    100% {transform: translate(0%, 0%)}
+}
+
+@keyframes categorySlide3left {
+    0%   {transform: translate(-110px, -60px)}
+    100% {transform: translate(0, 0)}
+}
+
+@keyframes categorySlide4left {
+    0%   {transform: translate(-220px, 0px)}
+    100% {transform: translate(0, 0)}
+}
+@keyframes categorySlide5left {
+    0%   {transform: translate(-110px, 60px)}
+    100% {transform: translate(0, 0)}
+}

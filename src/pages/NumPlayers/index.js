@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 const NumPlayers = () => {
-
+    let navigate = useNavigate();
+    
     const [playersIdNumbers, setPlayersIdNumbers] = useState([1, 2, 3, 4])
     const [playersDrection, setPlayersDirection] = useState("")
-    let navigate = useNavigate();
+    
     const playerLeftButton = () => {
         console.log('go left')
         setPlayersDirection("left")
