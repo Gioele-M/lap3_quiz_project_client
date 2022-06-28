@@ -20,92 +20,93 @@
     height: 160px;
     text-align: center;
 }
-#slide1 {
+#playerSlide1 {
     background-color: red;
     z-index: 0;
     top: 100px;
 }
-#slide2 {
+#playerSlide2 {
     background-color: rgb(255, 170, 0);
     z-index: 0;
     top: 160px;
     left: 220px;
 }
-#slide3 {
+#playerSlide3 {
     background-color: rgb(242, 255, 0);
     z-index: 0;
     top: 100px;
     right: 0;
 }
-#slide4 {
+#playerSlide4 {
     background-color: rgb(255, 0, 251);
     z-index: -1;
     left: 220px;
     top: 40px;
 }
 
-#slide1.right {
-animation: slide1right 0.5s linear;
+#playerSlide1.right {
+animation: playerSlide1right 0.5s linear;
 }
-#slide2.right {
-    animation: slide2right 0.5s linear;
+#playerSlide2.right {
+    animation: playerSlide2right 0.5s linear;
 }
-#slide3.right {
-    animation: slide3right 0.5s linear;
+#playerSlide3.right {
+    animation: playerSlide3right 0.5s linear;
 }
-#slide4.right {
-    animation: slide4right 0.5s linear;
+#playerSlide4.right {
+    animation: playerSlide4right 0.5s linear;
 }
-#slide1.left {
-    animation: slide1left 0.5s linear;
-}
-#slide2.left {
-    animation: slide2left 0.5s linear;
-}
-#slide3.left {
-    animation: slide3left 0.5s linear;
-}
-#slide4.left {
-    animation: slide4left 0.5s linear;
-}
-
-
-@keyframes slide1right {
+@keyframes playerSlide1right {
     0%   {transform: translate(220px, -60px)}
     100% {transform: translate(0%, 0)}
 }
 
-@keyframes slide2right {
+@keyframes playerSlide2right {
     0%   {transform: translate(-220px, -60px)}
     100% {transform: translate(0%, 0%)}
 }
 
-@keyframes slide3right {
+@keyframes playerSlide3right {
     0%   {transform: translate(-220px, 60px)}
     100% {transform: translate(0, 0)}
 }
 
-@keyframes slide4right {
+@keyframes playerSlide4right {
     0%   {transform: translate(220px, 60px)}
     100% {transform: translate(0, 0)}
 }
+#playerSlide1.left {
+    animation: playerSlide1left 0.5s linear;
+}
+#playerSlide2.left {
+    animation: playerSlide2left 0.5s linear;
+}
+#playerSlide3.left {
+    animation: playerSlide3left 0.5s linear;
+}
+#playerSlide4.left {
+    animation: playerSlide4left 0.5s linear;
+}
 
-@keyframes slide1left {
+
+
+
+@keyframes playerSlide1left {
     0%   {transform: translate(220px, 60px)}
     100% {transform: translate(0%, 0)}
 }
 
-@keyframes slide2left {
+@keyframes playerSlide2left {
     0%   {transform: translate(220px, -60px)}
     100% {transform: translate(0%, 0%)}
 }
 
-@keyframes slide3left {
+@keyframes playerSlide3left {
     0%   {transform: translate(-220px, -60px)}
     100% {transform: translate(0, 0)}
 }
 
-@keyframes slide4left {
+@keyframes playerSlide4left {
     0%   {transform: translate(-220px, 60px)}
     100% {transform: translate(0, 0)}
 }
