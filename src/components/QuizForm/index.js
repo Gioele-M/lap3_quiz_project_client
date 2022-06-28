@@ -8,7 +8,6 @@ import styles from './index.module.css';
 
 const QuizForm = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [showScore, setShowScore] = useState(false);
     const [score, setScore] = useState(0);
     const [CAVisibility, setCAVisibility] = useState('hidden');
     const [NCAVisibility, setNCAVisibility] = useState('hidden');
@@ -26,31 +25,29 @@ const QuizForm = () => {
         if (correct_answer) {
             setScore(score + 1);
             setCAVisibility('visible');
+            setTimeout(() => {
+                setCAVisibility('hidden');
+            }, '2000');
             console.log(CAVisibility);
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
-        } else {
-            setShowScore(true);
         }
     };
 
     const handleWrongAnswer = (incorrect_answer) => {
-        if (correct_answer) {
-            setScore(score + 1);
-            setCAVisibility('visible');
-            console.log(CAVisibility);
+        if (incorrect_answer) {
+            setNCAVisibility('visible');
         }
+        setTimeout(() => {
+            setNCAVisibility('hidden');
+        }, '2000');
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
-        } else {
-            setShowScore(true);
         }
     };
-
-    //function for incorrectanswer
 
     return (
         <>
@@ -82,7 +79,11 @@ const QuizForm = () => {
                                 (incorrect_answer) => {
                                     return (
                                         <button
-                                            onClick={() => handleWrongAnswer()}
+                                            onClick={() =>
+                                                handleWrongAnswer({
+                                                    incorrect_answer,
+                                                })
+                                            }
                                         >
                                             {incorrect_answer}
                                         </button>

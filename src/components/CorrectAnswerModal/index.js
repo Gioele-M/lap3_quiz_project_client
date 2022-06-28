@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 
+import style from './style.module.css';
+
 const CorrectAnswerModal = ({ CAVisibility, setCAVisibility }) => {
-    const closeAnswerModal = () => {
-        setCAVisibility('visible');
-    };
     return (
         <div className="CAModal" style={{ visibility: CAVisibility }}>
             This is the correct answer!!!

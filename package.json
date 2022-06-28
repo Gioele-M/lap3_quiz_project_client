@@ -22,7 +22,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "coverage": "jest --setupFilesAfterEnv ./src/setupTests.js --coverage --watchAll=false"
+        "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --watchAll=false"
     },
     "jest": {
         "moduleNameMapper": {
