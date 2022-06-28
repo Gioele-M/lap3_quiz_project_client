@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { HighScoreModal } from '../../components'
+import axios from 'axios';
 
 
 const Home = () => {
@@ -16,8 +17,20 @@ const Home = () => {
         {username: "jimmy666", quizzes: 1, points: 1}
     ])
     
+    //fetch highscores from leaderboard
+    //set usernames to results
+
+    const fetchHighScores = async () => {
+        const { data } = await axios.get("http://localhost:3001/leaderboard/leaderboard")
+        console.log(data)
+        setHsUsernames(data)
+    }
+
+
     const openHsModal = () => {
         setHsModalVisibility('visible')
+        fetchHighScores()
+        
     }
 
     let navigate = useNavigate();
