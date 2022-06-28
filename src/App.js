@@ -15,6 +15,7 @@ import {
 import { fetchResults } from '../src/actions';
 
 import './pages/Home/style.css';
+import './pages/NumPlayers/style.css';
 import './components/HighScoreModal/style.css';
 
 function App() {
