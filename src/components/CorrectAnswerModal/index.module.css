@@ -1,0 +1,7 @@
+.CAModal {
+    background-color: rgb(197, 253, 197);
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    position: absolute;
+}
