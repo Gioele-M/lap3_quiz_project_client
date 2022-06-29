@@ -2,6 +2,7 @@ const initialState = {
     results: [],
     quiz: [],
     loading: false,
+    user: '',
     players: 0,
     amount: 0,
     category: 0,
@@ -25,6 +26,8 @@ const quizReducer = (state = initialState, action) => {
                 loading: false,
                 error: false,
             };
+        case 'SET USER':
+            return { ...state, user: action.payload };
         case 'SET DIFFICULTY':
             return { ...state, difficulty: action.payload };
         case 'SET CATEGORY':
