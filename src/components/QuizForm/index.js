@@ -172,10 +172,7 @@ const QuizForm = () => {
     }
 
   return (
-    <>
-      {quiz.length && (
         <>
-
             {loading && <h2>Loading...</h2>}
             {quiz.length && (
                 <>
