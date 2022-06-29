@@ -11,7 +11,8 @@ import {
     Quiz,
     Finish,
     Register,
-    FinishOnline
+    FinishOnline,
+    PageNotFound,
 } from './pages';
 
 import { Background } from './layout'
@@ -31,17 +32,18 @@ function App() {
     return (
         <>
             {/* {user && ( */}
-                <Routes>
-                    <Route index element={<Login />} />
-                    <Route path="home" element={<Home />} />
-                    <Route path="numplayers" element={<NumPlayers />} />
-                    <Route path="category" element={<Category />} />
-                    <Route path="difficulty" element={<Difficulty />} />
-                    <Route path="quiz" element={<Quiz />} />
-                    <Route path="finish" element={<Finish />} />
-                    <Route path="finishonline" element={<FinishOnline />} />
-                    <Route path="register" element={<Register />} />
-                </Routes>
+            <Routes>
+                <Route index element={<Login />} />
+                <Route path="home" element={<Home />} />
+                <Route path="numplayers" element={<NumPlayers />} />
+                <Route path="category" element={<Category />} />
+                <Route path="difficulty" element={<Difficulty />} />
+                <Route path="quiz" element={<Quiz />} />
+                <Route path="finish" element={<Finish />} />
+                <Route path="finishonline" element={<FinishOnline />} />
+                <Route path="register" element={<Register />} />
+                <Route path="*" element={<PageNotFound />} />
+            </Routes>
                 <Background />
             {/* // )} */}
             {/* {!user && (
