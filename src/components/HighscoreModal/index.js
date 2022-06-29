@@ -14,9 +14,9 @@ const HighScoreModal = ({
   const renderedHighScores = hsUsernames.map((score, i) => {
     return (
       <tr key={i}>
-        <td>{score.username}</td>
-        <td>{score.total}</td>
-        <td>{score.percentage * score.total}</td>
+        <td className="hsTableData">{score.username}</td>
+        <td className="hsTableData">{score.total}</td>
+        <td className="hsTableData">{score.percentage * score.total}</td>
       </tr>
     );
   });
@@ -27,11 +27,10 @@ const HighScoreModal = ({
       className="hsModal"
       style={{ visibility: hsModalVisibility }}
     >
-      <h2>High Scores</h2>
       <p className="cross" onClick={closeHsModal}>
         X
       </p>
-      <table>
+      <table className="hsTable">
         <thead>
           <tr>
             <th>Username</th>
@@ -39,7 +38,7 @@ const HighScoreModal = ({
             <th>Points</th>
           </tr>
         </thead>
-        <tbody>{renderedHighScores}</tbody>
+        <tbody className="hsTableBody">{renderedHighScores}</tbody>
       </table>
     </div>
   );
