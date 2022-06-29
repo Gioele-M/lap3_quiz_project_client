@@ -61,18 +61,18 @@ const SignUp = () => {
         }
     };
 
-    const onUsernameChange = (e) => {
-        setUsername(e.target.value);
-    };
+  const onUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
 
-    const onPasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
+  const onPasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const onEmailChange = (e) => {
-        setEmail(e.target.value);
-    };
-
+  const onEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  
     const onConfirmPasswordChange = (e) => {
         setConfirmPassword(e.target.value);
     };

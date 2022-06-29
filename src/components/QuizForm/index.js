@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 // import { useDispatch, useSelector } from 'react-redux';
-import { useSelector, useDispatch } from 'react-redux';
 
+import { useSelector, useDispatch } from 'react-redux';
 // import { fetchResults } from '../../actions';
 // import styles from './index.module.css';
-import { CorrectAnswerModal } from '../index';
-import { InCorrectAnswerModal } from '../index';
-import style from './index.module.css';
+import { CorrectAnswerModal } from "../index";
+import { InCorrectAnswerModal } from "../index";
+import style from "./index.module.css";
 
 const QuizForm = () => {
 
@@ -162,8 +162,11 @@ const QuizForm = () => {
         }
     }
 
-    return (
+  return (
+    <>
+      {quiz.length && (
         <>
+
             {loading && <h2>Loading...</h2>}
             {quiz.length && (
                 <>
@@ -209,21 +212,21 @@ const QuizForm = () => {
                             })}
                     </div>
 
-                    <div className={style.modalSection}>
-                        <InCorrectAnswerModal
-                            NCAVisibility={NCAVisibility}
-                            setNCAVisibility={setNCAVisibility}
-                        />
+          <div className={style.modalSection}>
+            <InCorrectAnswerModal
+              NCAVisibility={NCAVisibility}
+              setNCAVisibility={setNCAVisibility}
+            />
 
-                        <CorrectAnswerModal
-                            CAVisibility={CAVisibility}
-                            setCAVisibility={setCAVisibility}
-                        />
-                    </div>
-                </>
-            )}
+            <CorrectAnswerModal
+              CAVisibility={CAVisibility}
+              setCAVisibility={setCAVisibility}
+            />
+          </div>
         </>
-    );
+      )}
+    </>
+  );
 };
 
 export default QuizForm;

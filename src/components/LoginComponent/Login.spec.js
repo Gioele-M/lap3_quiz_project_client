@@ -1,4 +1,4 @@
-import { default as NumPlayers } from ".";
+import { default as LoginComponent } from ".";
 import { screen, render, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as router from "react-router";
@@ -6,41 +6,46 @@ import { Provider } from "react-redux";
 import store from "../../store";
 import "@testing-library/jest-dom";
 
-describe("NumPlayers", () => {
+describe("Login", () => {
   const navigate = jest.fn();
   beforeEach(() => {
     jest.spyOn(router, "useNavigate").mockImplementation(() => navigate);
   });
-
-  const num = (
+  const correct = (
     <Provider store={store}>
       <Router>
-        <NumPlayers />
+        <LoginComponent />
       </Router>
     </Provider>
   );
 
-  test("it renders the heading", () => {
-    render(num);
-    const heading = screen.getByRole("heading", { level: 1 });
-    expect(heading.textContent).toMatch(/number of players/i);
+  test("it renders the h1 ", () => {
+    render(correct);
+    const div = screen.getByText(/Fun quiz game - test your knowledge/i);
+    expect(div).toBeTruthy();
   });
 
-  test("it navigates the button to home ", () => {
-    render(num);
+  test("it renders the form ", () => {
+    render(correct);
+    const div = screen.queryByTestId(/form/i);
+    expect(div).toBeTruthy();
+  });
+
+  test("it renders the button 'Go to difficulty home' ", () => {
+    render(correct);
     const button = screen.getByRole("button", {
-      name: /Go back/i,
+      name: /Sign in/i,
     });
     fireEvent.click(button);
     expect(navigate).toHaveBeenCalledWith("/home");
   });
 
-  test("it navigates the button to category ", () => {
-    render(num);
+  test("it renders the button 'Go to register' ", () => {
+    render(correct);
     const button = screen.getByRole("button", {
-      name: /Go to category selection/i,
+      name: /Create an account/i,
     });
     fireEvent.click(button);
-    expect(navigate).toHaveBeenCalledWith("/category");
+    expect(navigate).toHaveBeenCalledWith("/register");
   });
 });

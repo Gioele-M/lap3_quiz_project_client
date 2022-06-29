@@ -46,13 +46,13 @@ const LoginComponent = ({ props }) => {
         }
     };
 
-    const onUsernameChange = (e) => {
-        setUsername(e.target.value);
-    };
+  const onUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
 
-    const onPasswordChange = (e) => {
-        setPassword(e.target.value);
-    };
+  const onPasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
 
     return (
         <>
