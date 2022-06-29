@@ -1,14 +1,14 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
 
-const Finish = () => {
+const FinishOnline = () => {
     let navigate = useNavigate();
     return (
         <>
-            <h1>Game finished</h1>
+            <h1>Game finished online</h1>
             <button onClick={()=>navigate("/home")}>Home</button>
         </>
     )
 }
 
-export default Finish;
+export default FinishOnline;

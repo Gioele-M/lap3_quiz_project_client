@@ -6,3 +6,4 @@ export { default as Finish } from './Finish';
 export { default as Difficulty } from './Difficulty';
 export { default as Category } from './Category';
 export { default as Register } from './Register';
+export { default as FinishOnline } from './FinishOnline';
