@@ -25,7 +25,18 @@ const HostRequestHandler = (props) => {
 
         resultsAreIn = true
 
+        let playerName = 'playerName'
 
+        results.forEach(element => {
+            element.player = playerName
+        });
+
+
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
+
+        console.log(results)
+
+        console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
 
         // SEND REQUEST TO SERVER TO GET DATA THERE; SERVER WILL RESPOND TO ALL GUESTS !!!!
 
