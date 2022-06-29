@@ -10,6 +10,8 @@ import style from "./index.module.css";
 
 const QuizForm = () => {
 
+    //need to add conditional rendering for finish quiz button
+
     const dispatch = useDispatch()
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
@@ -178,7 +180,11 @@ const QuizForm = () => {
                 <>
                     <div className={style.questionSection}>
                         <div className={style.questionCount}>
+<<<<<<< HEAD
                             {(gameMode !== "rank" || gameMode !== "online") && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
+=======
+                            {gameMode !== "rank" && players !== "1" && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
+>>>>>>> main
                             <span>
                                 {currentQuestion + 1}/{results.length}
                             </span>
