@@ -9,10 +9,10 @@ const Difficulty = () => {
     const [difficultyLi, setDifficultyLi] = useState('')
     const [confirmationVisibility, setConfirmationVisibility] = useState("hidden")
     //redux functions
-    const difficulty = useSelector(state => {
-        // console.log({ state })
-        return state.difficulty
-    })
+    // const difficulty = useSelector(state => {
+    //     // console.log({ state })
+    //     return state.difficulty
+    // })
     
     const handleDifficulty = (e) => {
         let selectedDifficulty = e.target.textContent

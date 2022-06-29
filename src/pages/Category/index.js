@@ -7,10 +7,10 @@ const Category = () => {
     const dispatch = useDispatch()
     const statePlayers = useSelector((state) => state.players);
     
-    const category = useSelector(state => {
-        // console.log({ state })
-        return state.category 
-    })
+    // const category = useSelector(state => {
+    //     // console.log({ state })
+    //     return state.category 
+    // })
     
     const handleCategory = (e) => {
         let newCategory = 0
