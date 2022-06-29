@@ -49,7 +49,7 @@ const Home = () => {
         dispatch({ type: 'SET AMOUNT', payload: "10" })
         dispatch({ type: 'SET PLAYERS', payload: "1" }) 
         getRankingQuestions()
-        navigate("/quiz")
+        navigate("/waitingroom")
     }
 
     const getRankingQuestions = () => dispatch(fetchRankingQuestions());

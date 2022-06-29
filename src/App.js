@@ -11,7 +11,8 @@ import {
     Quiz,
     Finish,
     Register,
-    FinishOnline
+    FinishOnline,
+    OnlineWaitingRoom
 } from './pages';
 // import { fetchResults } from '../src/actions';
 
@@ -36,6 +37,7 @@ function App() {
                     <Route path="quiz" element={<Quiz />} />
                     <Route path="finish" element={<Finish />} />
                     <Route path="finishonline" element={<FinishOnline />} />
+                    <Route path="waitingroom" element={<OnlineWaitingRoom />} />
                     <Route path="register" element={<Register />} />
                 </Routes>
             {/* // )} */}
