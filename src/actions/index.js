@@ -39,3 +39,24 @@ export const fetchResults = (amount, category, difficulty) => {
         }
     };
 };
+
+export const fetchRankingQuestions = () => {
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple"
+            );
+            let results = data.results;
+            console.log(results);
+            dispatch({
+                type: 'LOAD RANKING QUESTIONS',
+                payload: results,
+            });
+        } catch (err) {
+            dispatch({
+                type: 'SET_ERROR',
+                payload: err,
+            });
+            console.warn(err.message);
+        }
+    };
+}

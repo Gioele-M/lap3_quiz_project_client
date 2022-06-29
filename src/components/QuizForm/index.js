@@ -22,7 +22,9 @@ const QuizForm = () => {
     const [playerThreeScore, setPlayerThreeScore] = useState(0)
     const [playerFourScore, setPlayerFourScore] = useState(0)
 
-    // const dispatch = useDispatch();
+    const gameMode = useSelector((state) => state.mode);
+
+
     // const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
     const statePlayerOneScore = useSelector((state) => state.playerOneScore);
@@ -36,9 +38,16 @@ const QuizForm = () => {
     const players = useSelector((state) => state.players);
     // console.log(players)
     const addOnePlayer = () => {
-        for (let i = 0; i < 5; i++){    
+        if(gameMode === "rank"){
+            for (let i = 0; i < 10; i++){    
+                quizQuestionArray[i].push({player: "1"})
+            }
+        } else {
+           for (let i = 0; i < 5; i++){    
             quizQuestionArray[i].push({player: "1"})
+        } 
         }
+        
     }
     const addTwoPlayers = () => {
         for (let i = 0; i < 10; i+=2){
@@ -110,7 +119,7 @@ const QuizForm = () => {
         }
     }, [results]);
     
-    // console.log(quiz);
+    console.log(quiz);
 
     const handleRightAnswer = (correct_answer, playerNum) => {
         if (correct_answer) {
@@ -165,7 +174,7 @@ const QuizForm = () => {
                 <>
                     <div className={style.questionSection}>
                         <div className={style.questionCount}>
-                            <p>Player {quiz[currentQuestion][5].player} it's your turn</p>
+                            {gameMode !== "rank" && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
                             <span>
                                 {currentQuestion + 1}/{results.length}
                             </span>

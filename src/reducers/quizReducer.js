@@ -10,7 +10,8 @@ const initialState = {
     playerOneScore: 0,
     playerTwoScore: 0,
     playerThreeScore: 0,
-    playerFourScore: 0
+    playerFourScore: 0,
+    mode: ""
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -25,6 +26,16 @@ const quizReducer = (state = initialState, action) => {
                 loading: false,
                 error: false,
             };
+        case 'LOAD RANKING QUESTIONS':
+            console.log('state', state);
+            return {
+                ...state,
+                results: action.payload,
+                loading: false,
+                error: false,
+            };
+        case 'SET MODE':
+            return { ...state, mode: action.payload };
         case 'SET DIFFICULTY':
             return { ...state, difficulty: action.payload };
         case 'SET CATEGORY':

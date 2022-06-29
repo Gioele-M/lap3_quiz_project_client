@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
 import { HighScoreModal } from '../../components'
+import { fetchRankingQuestions } from '../../actions'
 import axios from 'axios';
 
 
@@ -16,9 +18,8 @@ const Home = () => {
         // {username: "mort456", quizzes: 4, points: 4},
         // {username: "jimmy666", quizzes: 1, points: 1}
     ])
-    
-    //fetch highscores from leaderboard
-    //set usernames to results
+    let navigate = useNavigate();
+    const dispatch = useDispatch()
 
     const fetchHighScores = async () => {
         const { data } = await axios.get("http://localhost:3001/leaderboard/leaderboard")
@@ -26,15 +27,33 @@ const Home = () => {
         setHsUsernames(data)
     }
 
-
     const openHsModal = () => {
         setHsModalVisibility('visible')
         fetchHighScores()
         
     }
 
-    let navigate = useNavigate();
+    // const players = useSelector((state) => state.players);
+
+    const handleLocalClick = () => {
+        dispatch({ type: 'SET MODE', payload: "local" })
+        navigate("/numplayers")
+    }
+
+    const handleOnlineClick = () => {
+        dispatch({ type: 'SET MODE', payload: "online" })
+    }
+
+    const getRankingQuestions = () => dispatch(fetchRankingQuestions());
     
+    const handleRankClick = () => {
+        dispatch({ type: 'SET AMOUNT', payload: "10" })
+        dispatch({ type: 'SET PLAYERS', payload: "1" }) 
+        dispatch({ type: 'SET MODE', payload: "rank" }) 
+        getRankingQuestions()
+        navigate("/quiz")
+    }
+
     return (
         <>
             <div className="highScores" onClick={openHsModal}>
@@ -42,11 +61,14 @@ const Home = () => {
             </div>
             <HighScoreModal hsModalVisibility={hsModalVisibility} hsUsernames={hsUsernames} setHsModalVisibility={setHsModalVisibility}/>
             <h1>Dumbfounded</h1>
-            <div className="localGame" onClick={()=>navigate("/numplayers")}>
+            <div className="localGame" onClick={()=>handleLocalClick()}>
                 <h2>Local game</h2>
             </div>
-            <div className="onlineGame">
+            <div className="onlineGame" onClick={()=>handleOnlineClick()}>
                 <h2>Online game</h2>
+            </div>
+            <div className="rankingGame" onClick={()=>handleRankClick()}>
+                <h2>Start ranking game</h2>
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
