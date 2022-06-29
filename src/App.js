@@ -25,7 +25,7 @@ function App() {
 
     return (
         <>
-            {user && (
+            {/* {user && ( */}
                 <Routes>
                     <Route index element={<Login />} />
                     <Route path="home" element={<Home />} />
@@ -36,8 +36,14 @@ function App() {
                     <Route path="finish" element={<Finish />} />
                     <Route path="register" element={<Register />} />
                 </Routes>
-            )}
-            {!user && <Login />}
+            {/* // )} */}
+            {/* {!user && (
+                <Routes>
+                    <Route index element={<Login />} />
+                    <Route path="register" element={<Register />} />
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                </Routes>
+            )} */}
         </>
     );
 }
