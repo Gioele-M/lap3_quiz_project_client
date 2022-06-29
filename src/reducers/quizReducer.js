@@ -4,8 +4,9 @@ const initialState = {
     players: 0,
     amount: 0,
     category: 0,
-    categoryDesc: "",
-    difficulty: ""
+    categoryDesc: '',
+    difficulty: '',
+    user: '',
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -20,6 +21,8 @@ const quizReducer = (state = initialState, action) => {
                 loading: false,
                 error: false,
             };
+        case 'SET USER':
+            return { ...state, user: action.payload };
         case 'SET DIFFICULTY':
             return { ...state, difficulty: action.payload };
         case 'SET CATEGORY':

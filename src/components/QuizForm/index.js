@@ -17,6 +17,7 @@ const QuizForm = () => {
     const dispatch = useDispatch();
     const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
+    const loading = useSelector((state) => state.loading);
 
     // const getResults = () => dispatch(fetchResults());
     // useEffect(() => {
@@ -79,6 +80,7 @@ const QuizForm = () => {
 
     return (
         <>
+            {loading && <h2>Loading...</h2>}
             {quiz.length && (
                 <>
                     <div className={style.questionSection}>
