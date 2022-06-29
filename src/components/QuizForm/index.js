@@ -41,7 +41,7 @@ const QuizForm = () => {
     const players = useSelector((state) => state.players);
     // console.log(players)
     const addOnePlayer = () => {
-        if(gameMode === "rank"){
+        if(gameMode === "rank" || gameMode === "online"){
             for (let i = 0; i < 10; i++){    
                 quizQuestionArray[i].push({player: "1"})
             }
@@ -178,7 +178,7 @@ const QuizForm = () => {
                 <>
                     <div className={style.questionSection}>
                         <div className={style.questionCount}>
-                            {gameMode !== "rank" && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
+                            {(gameMode !== "rank" || gameMode !== "online") && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
                             <span>
                                 {currentQuestion + 1}/{results.length}
                             </span>

@@ -46,6 +46,9 @@ const Home = () => {
 
     const handleOnlineClick = () => {
         dispatch({ type: 'SET MODE', payload: "online" })
+        dispatch({ type: 'SET AMOUNT', payload: "10" })
+        dispatch({ type: 'SET PLAYERS', payload: "1" }) 
+        getRankingQuestions()
         navigate("/quiz")
     }
 
