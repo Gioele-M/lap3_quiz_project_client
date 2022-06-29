@@ -6,25 +6,20 @@ import store from "../../store";
 import "@testing-library/jest-dom";
 
 describe("Register", () => {
+  const register = (
+    <Provider store={store}>
+      <Router>
+        <Register />
+      </Router>
+    </Provider>
+  );
   test("it renders", () => {
-    render(
-      <Provider store={store}>
-        <Router>
-          <Register />
-        </Router>
-      </Provider>
-    );
+    render(register);
     const heading = screen.getByRole("heading", { level: 1 });
     expect(heading.textContent).toMatch(/Fun quiz game - test you knowledge/i);
   });
   test("it renders", () => {
-    render(
-      <Provider store={store}>
-        <Router>
-          <Register />
-        </Router>
-      </Provider>
-    );
+    render(register);
     const heading = screen.getByRole("button", {
       name: /sign up/i,
     });

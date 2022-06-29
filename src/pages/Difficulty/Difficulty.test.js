@@ -38,9 +38,9 @@ describe("Category", () => {
         </Router>
       </Provider>
     );
-    const heading = screen.getByRole("button", {
-      name: /Confirm selections/i,
+    const button = screen.getByRole("button", {
+      name: /Right/i,
     });
-    expect(heading).toBeInTheDocument();
+    expect(button).toBeInTheDocument();
   });
 });

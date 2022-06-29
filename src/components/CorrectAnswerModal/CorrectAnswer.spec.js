@@ -1,4 +1,4 @@
-import { default as Footer } from ".";
+import { default as CorrectAnswerModal } from ".";
 import { screen, render, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import * as router from "react-router";
@@ -6,18 +6,18 @@ import { Provider } from "react-redux";
 import store from "../../store";
 import "@testing-library/jest-dom";
 
-describe("Footer", () => {
+describe("Category", () => {
   const correct = (
     <Provider store={store}>
       <Router>
-        <Footer />
+        <CorrectAnswerModal />
       </Router>
     </Provider>
   );
 
-  test("it renders the h1 'Footer' ", () => {
+  test("it renders the h1 'category' ", () => {
     render(correct);
-    const div = screen.getByText(/Footer/i);
+    const div = screen.getByText(/this is the correct answer!!!/i);
     expect(div).toBeTruthy();
   });
 });
