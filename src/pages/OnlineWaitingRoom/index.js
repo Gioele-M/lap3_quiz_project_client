@@ -43,11 +43,8 @@ const OnlineWaitingRoom = () => {
         
         })
 
-        socket.on('responseJoinRoom', (msg) => {
+        setPlayersConnected(1)
 
-            console.log(msg)
-        
-        })
         
     }
 
@@ -73,14 +70,15 @@ const OnlineWaitingRoom = () => {
 
         socket.emit('message', 'Join room', toJoin)
 
-        socket.on('responseJoinRoom', (msg) => {
-
-            console.log(msg)
-        
-        })
-
     }
+    
 
+    //Listen to how many users are in the room
+    socket.on('responseJoinRoom', (msg) => {
+        setPlayersConnected(msg)
+        console.log(msg)
+    
+    })
 
     function onStartGame(){
 
@@ -122,6 +120,12 @@ const OnlineWaitingRoom = () => {
                 <div>
                     <button onClick={onStartGame}>Start game</button>
                 </div>
+
+
+                <div>
+                    People in the room {playersConnected}
+                </div>
+
 
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
