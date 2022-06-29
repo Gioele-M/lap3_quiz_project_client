@@ -23,7 +23,7 @@ const Home = () => {
     const dispatch = useDispatch()
 
     const fetchHighScores = async () => {
-        const { data } = await axios.get("http://localhost:3001/leaderboard/leaderboard")
+        const { data } = await axios.get("https://red-devils-quiz.herokuapp.com/leaderboard")
         console.log(data)
         setHsUsernames(data)
     }
