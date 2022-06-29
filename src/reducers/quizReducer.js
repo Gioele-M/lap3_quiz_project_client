@@ -1,12 +1,17 @@
 const initialState = {
     results: [],
+    quiz: [],
     loading: false,
+    user: '',
     players: 0,
     amount: 0,
     category: 0,
-    categoryDesc: '',
-    difficulty: '',
-    user: '',
+    categoryDesc: "",
+    difficulty: "",
+    playerOneScore: 0,
+    playerTwoScore: 0,
+    playerThreeScore: 0,
+    playerFourScore: 0
 };
 
 const quizReducer = (state = initialState, action) => {
@@ -33,6 +38,14 @@ const quizReducer = (state = initialState, action) => {
             return { ...state, amount: action.payload };
         case 'SET PLAYERS':
             return { ...state, players: action.payload };
+        case 'SET PLAYER ONE SCORE':
+            return { ...state, playerOneScore: action.payload };
+        case 'SET PLAYER TWO SCORE':
+            return { ...state, playerTwoScore: action.payload };
+        case 'SET PLAYER THREE SCORE':
+            return { ...state, playerThreeScore: action.payload };
+        case 'SET PLAYER FOUR SCORE':
+            return { ...state, playerFourScore: action.payload };
         case 'SET ERROR':
             return {
                 ...state,
