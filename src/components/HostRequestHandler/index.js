@@ -4,7 +4,9 @@ import { useState } from "react";
 
 import socket from "../../actions/socket";
 
-const HostRequestHandler = () => {
+const HostRequestHandler = (props) => {
+
+    const roomNumber = props.room
 
 
     let resultsAreIn = false
@@ -24,12 +26,19 @@ const HostRequestHandler = () => {
         resultsAreIn = true
 
 
+
+        // SEND REQUEST TO SERVER TO GET DATA THERE; SERVER WILL RESPOND TO ALL GUESTS !!!!
+
+        socket.emit('startGame', 'Start the game pls!!!', roomNumber, (t)=>{console.log(t)})
+
     }
+    
+
     
 
     return(
         
-        <div>Working on it... {resultsAreIn ? 'done' : 'not done'}</div>
+        <div>Working on it...Room ID {roomNumber}... {resultsAreIn ? 'done' : 'not done'}</div>
 
         
     )

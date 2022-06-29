@@ -190,7 +190,7 @@ const OnlineWaitingRoom = () => {
                     People in the room {playersConnected}
                 </div>
 
-                { startGame ? <HostRequestHandler /> : ''}
+                { startGame ? <HostRequestHandler room={roomCode} /> : ''}
 
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
