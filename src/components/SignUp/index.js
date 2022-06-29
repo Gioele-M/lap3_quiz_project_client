@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignUp = () => {
-    const [hasAccount, setHasAccount] = useState(false);
+    // const [hasAccount, setHasAccount] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');

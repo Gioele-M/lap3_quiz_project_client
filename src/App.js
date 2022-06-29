@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import {
     Login,
     Home,
@@ -12,7 +12,7 @@ import {
     Finish,
     Register,
 } from './pages';
-import { fetchResults } from '../src/actions';
+// import { fetchResults } from '../src/actions';
 
 import './pages/Home/style.css';
 import './pages/NumPlayers/style.css';
