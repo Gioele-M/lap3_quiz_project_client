@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // import { fetchResults } from '../../actions';
-import styles from './index.module.css';
+// import styles from './index.module.css';
 import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
@@ -14,8 +15,8 @@ const QuizForm = () => {
     const [NCAVisibility, setNCAVisibility] = useState('hidden');
     const [quiz, setQuiz] = useState([]);
 
-    const dispatch = useDispatch();
-    const error = useSelector((state) => state.error);
+    // const dispatch = useDispatch();
+    // const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
 
     // const getResults = () => dispatch(fetchResults());
@@ -46,6 +47,7 @@ const QuizForm = () => {
                 });
             }
             console.log('ALICE', quiz);
+            // eslint-disable-next-line
         }
     }, [results]);
 
@@ -94,7 +96,6 @@ const QuizForm = () => {
 
                     <div className={style.answerSection}>
                         {results[currentQuestion].correct_answer}
-
                         {quiz.length &&
                             quiz[currentQuestion].map((answer) => {
                                 if (answer.isCorrect) {

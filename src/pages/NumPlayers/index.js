@@ -6,10 +6,10 @@ const NumPlayers = () => {
     let navigate = useNavigate();
     const dispatch = useDispatch()
 
-    const players = useSelector(state => {
-        // console.log({ state })
-        return state.players
-    })
+    // const players = useSelector(state => {
+    //     // console.log({ state })
+    //     return state.players
+    // })
     
     const handleAmount = (e) => {
         let newPlayers = e.target.textContent
