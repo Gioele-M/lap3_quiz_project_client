@@ -54,25 +54,36 @@ const Home = () => {
     
     
     
+    const [roomCode, setRoomCode] = useState('')
     
     
     
-    
-    const roomCode = ''
 
     function onCreateRoom(){
 
         socket.emit('message', 'Create room')
 
         
-        socket.on('responseCreateRoom', msg => console.log(msg))
+        socket.on('responseCreateRoom', (msg) => {
+
+            setRoomCode(msg)
+            console.log(msg)
+        
+        })
+
+        socket.on('responseJoinRoom', (msg) => {
+
+            console.log(msg)
+        
+        })
+        
 
     }
 
 
     function onJoinRoom(){
 
-        socket.emit('message', 'Join room')
+        
 
 
     }
@@ -82,9 +93,20 @@ const Home = () => {
     function onFormSumbit(e){
         e.preventDefault()
 
+
         let toJoin = e.target[0].value
         console.log(e.target[0].value)
 
+
+        setRoomCode(toJoin)
+
+        socket.emit('message', 'Join room', toJoin)
+
+        socket.on('responseJoinRoom', (msg) => {
+
+            console.log(msg)
+        
+        })
 
     }
 
