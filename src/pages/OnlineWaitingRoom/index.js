@@ -4,6 +4,12 @@ import socket from '../../actions/socket'
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+
+import { fetchRankingQuestions } from "../../actions";
+
+
+import { HostRequestHandler } from "../../components";
 
 
 
@@ -13,8 +19,10 @@ const OnlineWaitingRoom = () => {
 
     let navigate = useNavigate();
     
+    const dispatch = useDispatch()
 
     
+
     
     
     socket.on('connect', () => {console.log('Connected with id'+socket.id)})
@@ -25,11 +33,24 @@ const OnlineWaitingRoom = () => {
     
     
     const [roomCode, setRoomCode] = useState('')
+
+    const [hostOrGuest, setHostOrGuest] = useState('')
     
 
     const [playersConnected, setPlayersConnected] = useState(0)
+
+
+    const [startGame, setStartGame] = useState(false)
     
     
+    //Listen to how many users are in the room
+    socket.on('responseJoinRoom', (msg) => {
+        setPlayersConnected(msg)
+        console.log(msg)
+    
+    })
+
+
 
     function onCreateRoom(){
 
@@ -45,6 +66,7 @@ const OnlineWaitingRoom = () => {
 
         setPlayersConnected(1)
 
+        setHostOrGuest('host')
         
     }
 
@@ -70,25 +92,67 @@ const OnlineWaitingRoom = () => {
 
         socket.emit('message', 'Join room', toJoin)
 
+        setHostOrGuest('guest')
+
     }
     
 
-    //Listen to how many users are in the room
-    socket.on('responseJoinRoom', (msg) => {
-        setPlayersConnected(msg)
-        console.log(msg)
-    
-    })
 
-    function onStartGame(){
+
+    function onStartGame(e){
+
+        console.log(e.target.innerText)
+
+        // IF STARTED ROOM
+        // Get ranking questions from state and send it to server
+
+        if(hostOrGuest == 'host'){
+            const getRankingQuestions = () => dispatch(fetchRankingQuestions());
+
+            getRankingQuestions()
+            setStartGame(true)
+            
+
+            // Get questions from reducer
+            // const question = returnQuestions()
+            
+        
+        }else if(hostOrGuest == 'guest'){
+
+            alert('Let the host start the game')
+
+        }else{
+            return
+        }
 
         //Socket situation to let all users know to go ahead
+
+
+
+
+
+        //IF NOT STARTED ROOM
+        // get ranking questions from server and set it in state
+
+
+
+        // dispatch({
+        //     type: 'LOAD RANKING QUESTIONS',
+        //     payload: results,
+        // });
 
     }
 
     
     //Socket on listen to message start game, if it is then redirect to /quiz
 
+    
+
+
+    // function returnQuestions(){
+    //     ;
+    //     return results
+    // }
 
     
     return (
@@ -126,6 +190,7 @@ const OnlineWaitingRoom = () => {
                     People in the room {playersConnected}
                 </div>
 
+                { startGame ? <HostRequestHandler /> : ''}
 
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
