@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { HighScoreModal } from '../../components'
 import { fetchRankingQuestions } from '../../actions'
+import brain from '../../Images/brain.png'
 
 import axios from 'axios';
 
@@ -62,26 +63,37 @@ const Home = () => {
 
     return (
         <>
-            <div className="highScores" onClick={openHsModal}>
+            <div className="hsArea">
+               <div className="highScores" onClick={openHsModal}>
                 <h2>High Scores</h2>
             </div>
             <HighScoreModal
                 hsModalVisibility={hsModalVisibility}
                 hsUsernames={hsUsernames}
                 setHsModalVisibility={setHsModalVisibility}
-            />
-            <h1>Dumbfounded</h1>
-
-            <div className="localGame" onClick={()=>handleLocalClick()}>
+            /> 
+            </div>
+            
+            <div className="homeBrainDiv">
+                <img src={brain} className="homeBrain"/>
+            </div>
+            
+            <h1 className="dumbfounded">Dumbfounded?</h1>
+            <div className="gameTypes">
+               <div className="localGame" onClick={()=>handleLocalClick()}>
 
                 <h2>Local game</h2>
-            </div>
+            </div> 
+
             <div className="onlineGame" onClick={()=>handleOnlineClick()}>
                 <h2>Online game</h2>
             </div>
             <div className="rankingGame" onClick={()=>handleRankClick()}>
                 <h2>Start ranking game</h2>
             </div>
+            </div>
+            
+            
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
     );

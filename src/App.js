@@ -14,13 +14,17 @@ import {
     FinishOnline,
     PageNotFound,
 } from './pages';
+
+import { Background } from './layout'
 // import { fetchResults } from '../src/actions';
 
 import './pages/Home/style.css';
 import './pages/NumPlayers/style.css';
 import './pages/Difficulty/style.css';
 import './pages/Category/style.css';
+import './layout/Background/style.css'
 import './components/HighscoreModal/style.css';
+import './index.css'
 
 function App() {
     const user = useSelector((state) => state.user);
@@ -40,6 +44,7 @@ function App() {
                 <Route path="register" element={<Register />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
+                <Background />
             {/* // )} */}
             {/* {!user && (
                 <Routes>

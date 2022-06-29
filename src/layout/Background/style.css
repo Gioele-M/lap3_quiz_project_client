@@ -1,0 +1,144 @@
+body {
+    background: radial-gradient(#7E2C8D, #382A6F);
+    height: 100vh;
+    overflow: hidden;
+}
+.space {
+    background: rgba(128, 0, 128, 0.1) center / 200px 200px round;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.backgroundContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.area1{
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 0;
+    right: 50%;
+}
+.area2{
+    position: absolute;
+    top: 0;
+    bottom: 50%;
+    left: 50%;
+    right: 0;
+}
+.area3{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 0;
+    right: 50%;
+}
+.area4{
+    position: absolute;
+    top: 50%;
+    bottom: 0;
+    left: 50%;
+    right: 0;
+}
+
+.questionMark{
+    color: white;
+    width: 50px;
+    position: absolute;
+    text-align: center;
+    margin: 20px;
+    font-size: 20px;
+}
+.questionMark0{
+    animation: qMark0 4s linear infinite;
+}
+.questionMark1{
+    animation: qMark1 4s linear infinite;
+}
+.questionMark2{
+    animation: qMark2 4s linear infinite;
+}
+.questionMark3{
+    animation: qMark3 4s linear infinite;
+}
+
+
+@keyframes qMark0 {
+    0% {
+        transform: rotate(0deg) scale(150%,150%);
+    }
+    25% {
+        transform: rotate(90deg) scale(125%,125%);
+    }
+    50% {
+        transform: rotate(180deg) scale(100%,100%);
+    }
+    75% {
+        transform: rotate(270deg) scale(125%,125%);
+    }
+    100% {
+        transform: rotate(360deg) scale(150%,150%);
+    }
+}
+@keyframes qMark1 {
+    0% {
+        transform: rotate(90deg) scale(200%,200%);
+    }
+    25% {
+        transform: rotate(0deg) scale(150%,150%);
+    }
+    50% {
+        transform: rotate(-90deg) scale(175%,175%);
+    }
+    75% {
+        transform: rotate(-180deg) scale(150%,150%);
+    }
+    100% {
+        transform: rotate(-270deg) scale(200%,200%);
+    }
+}
+@keyframes qMark2 {
+    0% {
+        transform: rotate(270deg) scale(110%,110%);
+    }
+    25% {
+        transform: rotate(360deg) scale(110%,110%);
+    }
+    50% {
+        transform: rotate(450deg) scale(110%,110%);
+    }
+    75% {
+        transform: rotate(540deg) scale(110%,110%);
+    }
+    100% {
+        transform: rotate(630deg) scale(110%,110%);
+    }
+}
+
+@keyframes qMark3 {
+    0% {
+        transform: rotate(180deg) scale(110%,110%);
+    }
+    25% {
+        transform: rotate(90deg) scale(110%,110%);
+    }
+    50% {
+        transform: rotate(0deg) scale(110%,110%);
+    }
+    75% {
+        transform: rotate(-90deg) scale(110%,110%);
+    }
+    100% {
+        transform: rotate(-180deg) scale(110%,110%);
+    }
+}

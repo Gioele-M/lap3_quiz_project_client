@@ -1,19 +1,74 @@
-.highScores {
-    background-color: rgb(122, 165, 175);
-    width: 200px;
+.hsArea{
+    width: 300px;
+    margin-left: auto;
 }
 
+.highScores {
+    background-color: rgb(122, 165, 175);
+    width: 250px;
+    margin-left: auto;
+    margin-right: 30px;
+    text-align: center;
+}
+
+.homeBrainDiv{
+    width: 50%;
+    object-fit: contain;
+    margin: 0 auto;
+    z-index: -1;
+    position: absolute;
+    left: 25%;
+    top: 20%;
+}
+.homeBrain{
+    width: 100%;
+}
+
+.dumbfounded{
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 20px;
+    font-size: 52px;
+    text-align: center;
+    background-color: rgb(133, 93, 170);
+    border-radius: 25px;
+}
+
+.gameTypes {
+    display: grid;
+    grid-template-areas: 
+    'area1 area2'
+    'area3 area3';
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-around;
+    text-align: center;
+    padding-top: 50px;
+}
+
+
 .localGame {
-    background-color: green;
+    background-color: rgb(120, 92, 221);
     width: 200px;
+    grid-area: area1;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 .onlineGame {
-    background-color: rgb(196, 156, 125);
+    background-color: rgb(62, 121, 229);
     width: 200px;
+    grid-area: area2;
+    margin: 10px;
+    border-radius: 15px;
 }
 
 .rankingGame{
-    background-color: rgb(125, 176, 196);
-    width: 200px;
+    background-color: rgb(191, 121, 223);
+    width: 250px;
+    grid-area: area3;
+    margin: 10px auto;
+    border-radius: 15px;
 }
+

@@ -1,4 +1,17 @@
 .hsModal {
-    background-color: rgb(223, 190, 229);
-    width: 200px;
+    background-color: rgb(122, 165, 175);
+    width: 250px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+.cross {
+    text-align: right;
+    margin-right: 10px;
+    padding-top: 10px;
+}
+.hsTable{
+    width: 100%;
+}
+.hsTableData{
+    padding-left: 9px;
 }
