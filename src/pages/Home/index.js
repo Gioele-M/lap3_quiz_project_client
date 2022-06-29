@@ -46,6 +46,7 @@ const Home = () => {
 
     const handleOnlineClick = () => {
         dispatch({ type: 'SET MODE', payload: "online" })
+        navigate("/quiz")
     }
 
     const getRankingQuestions = () => dispatch(fetchRankingQuestions());
