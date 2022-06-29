@@ -180,11 +180,7 @@ const QuizForm = () => {
                 <>
                     <div className={style.questionSection}>
                         <div className={style.questionCount}>
-<<<<<<< HEAD
-                            {(gameMode !== "rank" || gameMode !== "online") && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
-=======
-                            {gameMode !== "rank" && players !== "1" && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
->>>>>>> main
+                            {(gameMode !== "rank" || gameMode !== "online") && players !== "1" && <p>Player {quiz[currentQuestion][5].player} it's your turn</p>}
                             <span>
                                 {currentQuestion + 1}/{results.length}
                             </span>
