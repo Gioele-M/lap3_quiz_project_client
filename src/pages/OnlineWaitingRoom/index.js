@@ -145,9 +145,11 @@ const OnlineWaitingRoom = () => {
 
     
     //Socket on listen to message start game, if it is then redirect to /quiz
+    //////////////////////////////////////////////////////////////////////////////////Model to follow to answer just once 
+    socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
 
-    
-
+        console.log(msg)
+    })
 
     // function returnQuestions(){
     //     ;
