@@ -29,7 +29,7 @@ const HostRequestHandler = (props) => {
 
         // SEND REQUEST TO SERVER TO GET DATA THERE; SERVER WILL RESPOND TO ALL GUESTS !!!!
 
-        socket.emit('startGame', 'Start the game pls!!!', roomNumber, (t)=>{console.log(t)})
+        socket.emit('startGame', results, roomNumber, (t)=>{console.log(t)})
 
     }
     

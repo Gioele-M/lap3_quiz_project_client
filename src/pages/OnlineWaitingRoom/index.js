@@ -149,6 +149,26 @@ const OnlineWaitingRoom = () => {
     socket.off('serverAuthToStartGame').on('serverAuthToStartGame', (msg) => {
 
         console.log(msg)
+
+
+        //       DISPATCH data to reducer then redirect to quiz
+
+
+        let playerName = 'playerName'
+
+        msg.forEach(element => {
+            element.player = playerName
+        });
+
+        dispatch({
+            type: 'LOAD RANKING QUESTIONS',
+            payload: msg
+        });
+
+
+        navigate('/quiz')
+
+
     })
 
     // function returnQuestions(){
