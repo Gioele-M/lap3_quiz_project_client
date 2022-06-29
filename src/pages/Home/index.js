@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { HighScoreModal } from '../../components'
 import axios from 'axios';
+import io from "socket.io-client";
 
 
 const Home = () => {
@@ -33,7 +34,60 @@ const Home = () => {
         
     }
 
+
     let navigate = useNavigate();
+    
+
+    
+    
+    const serverEndpoint = "http://localhost:3000/";
+    
+    
+    let state = { socket: null };
+    
+    const socket = io(serverEndpoint);
+    
+    socket.on('connect', () => {console.log('Connected with id'+socket.id)})
+    
+    socket.on('admin-message', msg => console.log(msg));
+    
+    
+    
+    
+    
+    
+    
+    
+    const roomCode = ''
+
+    function onCreateRoom(){
+
+        socket.emit('message', 'Create room')
+
+        
+        socket.on('responseCreateRoom', msg => console.log(msg))
+
+    }
+
+
+    function onJoinRoom(){
+
+        socket.emit('message', 'Join room')
+
+
+    }
+    
+
+    
+    function onFormSumbit(e){
+        e.preventDefault()
+
+        let toJoin = e.target[0].value
+        console.log(e.target[0].value)
+
+
+    }
+
     
     return (
         <>
@@ -47,6 +101,29 @@ const Home = () => {
             </div>
             <div className="onlineGame">
                 <h2>Online game</h2>
+            </div>
+            <div className="socketGame">
+                <h2>Socket game</h2>
+                <div onClick={onCreateRoom}>
+                    Create Room
+                    {/* Click + p tag where to append  */}
+
+                    <p>
+                        Room code: {roomCode}
+                    </p>
+                </div>
+
+
+                <br/>
+
+                <div onClick={onJoinRoom}>
+                    Join room
+                    {/* Form + submit */}
+                    <form onSubmit={onFormSumbit}>
+                        <input type='text'></input>
+                        <button type='submit'>Enter</button>
+                    </form>
+                </div>
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
