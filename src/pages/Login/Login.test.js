@@ -7,13 +7,14 @@ import "@testing-library/jest-dom";
 
 describe("Category", () => {
   test("it renders", () => {
-    render(
+    const login = (
       <Provider store={store}>
         <Router>
           <Login />
         </Router>
       </Provider>
     );
+    render(login);
     const heading = screen.getByRole("heading", { level: 2 });
     expect(heading.textContent).toMatch(/login/i);
   });

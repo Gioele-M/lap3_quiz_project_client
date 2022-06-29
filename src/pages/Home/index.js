@@ -3,11 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { HighScoreModal } from '../../components'
 import { fetchRankingQuestions } from '../../actions'
+
 import axios from 'axios';
 
-
 const Home = () => {
-    const [hsModalVisibility, setHsModalVisibility] = useState('hidden')
+    const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
     const [hsUsernames, setHsUsernames] = useState([
         // {username: "bob123", quizzes: 10, points: 12},
         // {username: "tina123", quizzes: 9, points: 9},
@@ -17,6 +17,7 @@ const Home = () => {
         // {username: "teddy456", quizzes: 5, points: 5},
         // {username: "mort456", quizzes: 4, points: 4},
         // {username: "jimmy666", quizzes: 1, points: 1}
+
     ])
     let navigate = useNavigate();
     const dispatch = useDispatch()
@@ -27,11 +28,14 @@ const Home = () => {
         setHsUsernames(data)
     }
 
+
     const openHsModal = () => {
-        setHsModalVisibility('visible')
-        fetchHighScores()
-        
-    }
+        setHsModalVisibility('visible');
+        fetchHighScores();
+    };
+
+    const user = useSelector((state) => state.user);
+    console.log(user);
 
     // const players = useSelector((state) => state.players);
 
@@ -54,14 +58,21 @@ const Home = () => {
         navigate("/quiz")
     }
 
+
     return (
         <>
             <div className="highScores" onClick={openHsModal}>
                 <h2>High Scores</h2>
             </div>
-            <HighScoreModal hsModalVisibility={hsModalVisibility} hsUsernames={hsUsernames} setHsModalVisibility={setHsModalVisibility}/>
+            <HighScoreModal
+                hsModalVisibility={hsModalVisibility}
+                hsUsernames={hsUsernames}
+                setHsModalVisibility={setHsModalVisibility}
+            />
             <h1>Dumbfounded</h1>
+
             <div className="localGame" onClick={()=>handleLocalClick()}>
+
                 <h2>Local game</h2>
             </div>
             <div className="onlineGame" onClick={()=>handleOnlineClick()}>
@@ -72,7 +83,7 @@ const Home = () => {
             </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
-    )
-}
+    );
+};
 
 export default Home;
