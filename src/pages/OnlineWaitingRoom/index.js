@@ -1,5 +1,6 @@
 import React from "react";
-import io from "socket.io-client";
+
+import socket from '../../actions/socket'
 
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -15,12 +16,6 @@ const OnlineWaitingRoom = () => {
 
     
     
-    const serverEndpoint = "http://localhost:3000/";
-    
-    
-    let state = { socket: null };
-    
-    const socket = io(serverEndpoint);
     
     socket.on('connect', () => {console.log('Connected with id'+socket.id)})
     
@@ -31,6 +26,8 @@ const OnlineWaitingRoom = () => {
     
     const [roomCode, setRoomCode] = useState('')
     
+
+    const [playersConnected, setPlayersConnected] = useState(0)
     
     
 
@@ -52,7 +49,6 @@ const OnlineWaitingRoom = () => {
         
         })
         
-
     }
 
 
