@@ -96,4 +96,24 @@ describe("Category", () => {
     fireEvent.click(div);
     expect(navigate).toHaveBeenCalledWith("/difficulty");
   });
+
+  test("it navigates from button to /difficulty ", () => {
+    render(category);
+    const button = screen.getByRole("button", {
+      name: /Left/i,
+    });
+    const GK = screen.queryByTestId("GK");
+    fireEvent.click(button);
+    expect(GK.classList).toContain("left");
+  });
+
+  test("it navigates from button to /difficulty ", () => {
+    render(category);
+    const button = screen.getByRole("button", {
+      name: /Right/i,
+    });
+    const GK = screen.queryByTestId("GK");
+    fireEvent.click(button);
+    expect(GK.classList).toContain("right");
+  });
 });

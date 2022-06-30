@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux'
-import { HighScoreModal } from '../../components'
-import { fetchRankingQuestions } from '../../actions'
-import brain from '../../Images/brain.png'
+import { useSelector, useDispatch } from "react-redux";
+import { HighScoreModal } from "../../components";
+import { fetchRankingQuestions } from "../../actions";
+import brain from "../../Images/brain.png";
 
-import axios from 'axios';
+import axios from "axios";
 
 const Home = () => {
     const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
@@ -24,17 +24,16 @@ const Home = () => {
     const dispatch = useDispatch()
 
     const fetchHighScores = async () => {
-        const { data } = await axios.get("https://red-devils-quiz.herokuapp.com/leaderboard")
-        console.log(data)
-        setHsUsernames(data)
-    }
-
-
+        const { data } = await axios.get(
+          "https://red-devils-quiz.herokuapp.com/leaderboard"
+        );
+        console.log(data);
+        setHsUsernames(data);
+      };
     const openHsModal = () => {
-        setHsModalVisibility('visible');
+        setHsModalVisibility("visible");
         fetchHighScores();
-    };
-
+      };
     const user = useSelector((state) => state.user);
     console.log(user);
 
@@ -58,45 +57,53 @@ const Home = () => {
         dispatch({ type: 'SET MODE', payload: "rank" }) 
         getRankingQuestions()
         navigate("/quiz")
-    }
+    } 
+  return (
+    <>
+      <div className="hsArea">
+        <div className="highScores" onClick={openHsModal}>
+          <h2>High Scores</h2>
+        </div>
+        <HighScoreModal
+          hsModalVisibility={hsModalVisibility}
+          hsUsernames={hsUsernames}
+          setHsModalVisibility={setHsModalVisibility}
+        />
+      </div>
 
+      <div className="homeBrainDiv">
+        <img src={brain} className="homeBrain" />
+      </div>
 
-    return (
-        <>
-            <div className="hsArea">
-               <div data-testid="highscoreTitle" className="highScores" onClick={openHsModal}>
-                <h2>High Scores</h2>
-            </div>
-            <HighScoreModal
-                hsModalVisibility={hsModalVisibility}
-                hsUsernames={hsUsernames}
-                setHsModalVisibility={setHsModalVisibility}
-            /> 
-            </div>
-            
-            <div className="homeBrainDiv">
-                <img src={brain} className="homeBrain"/>
-            </div>
-            
-            <h1 className="dumbfounded">Dumbfounded?</h1>
-            <div className="gameTypes">
-               <div data-testid="local" className="localGame" onClick={()=>handleLocalClick()}>
+      <h1 className="dumbfounded">Dumbfounded?</h1>
+      <div className="gameTypes">
+        <div
+          data-testid="local"
+          className="localGame"
+          onClick={() => handleLocalClick()}
+        >
+          <h2>Local game</h2>
+        </div>
 
-                <h2>Local game</h2>
-            </div> 
+        <div
+          data-testid="online"
+          className="onlineGame"
+          onClick={() => handleOnlineClick()}
+        >
+          <h2>Online game</h2>
+        </div>
+        <div
+          data-testid="rank"
+          className="rankingGame"
+          onClick={() => handleRankClick()}
+        >
+          <h2>Start ranking game</h2>
+        </div>
+      </div>
 
-            <div className="onlineGame" onClick={()=>handleOnlineClick()}>
-                <h2>Online game</h2>
-            </div>
-            <div className="rankingGame" onClick={()=>handleRankClick()}>
-                <h2>Start ranking game</h2>
-            </div>
-            </div>
-            
-            
-            {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
-        </>
-    );
+      {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
+    </>
+  );
 };
 
 export default Home;

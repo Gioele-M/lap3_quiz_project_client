@@ -1,15 +1,12 @@
 import axios from 'axios';
-
-// let amount = 20;
-// let category = 18;
-// let difficulty = 'easy';
+import { decode } from 'html-entities';
 
 const loading = ({ amount, category, difficulty }) => ({
     type: 'LOADING',
     payload: { category: category, amount: amount, difficulty: difficulty },
 });
 
-console.log('loading', loading)
+console.log('loading', loading);
 
 export const fetchResults = (amount, category, difficulty) => {
     return async (dispatch) => {
@@ -24,8 +21,21 @@ export const fetchResults = (amount, category, difficulty) => {
             const { data } = await axios.get(
                 `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
             );
-            let results = data.results;
-            console.log(results);
+            const results = data.results;
+            console.log('BEFORE', results);
+            for (let i = 0; i < results.length; i++) {
+                let instance = results[i];
+                let newQuestion = decode(instance.question);
+                instance.question = newQuestion;
+                let newCorrectAnswer = decode(instance.correct_answer);
+                instance.correct_answer = newCorrectAnswer;
+                for (let j = 0; j < results[i].incorrect_answers.length; j++) {
+                    let wronganswer = results[i].incorrect_answers[j];
+                    let newWrongAnswer = decode(wronganswer);
+                    results[i].incorrect_answers[j] = newWrongAnswer;
+                }
+            }
+
             dispatch({
                 type: 'LOAD_RESULTS',
                 payload: results,
@@ -43,7 +53,8 @@ export const fetchResults = (amount, category, difficulty) => {
 export const fetchRankingQuestions = () => {
     return async (dispatch) => {
         try {
-            const { data } = await axios.get("https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple"
+            const { data } = await axios.get(
+                'https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple'
             );
             let results = data.results;
             console.log(results);
@@ -59,4 +70,4 @@ export const fetchRankingQuestions = () => {
             console.warn(err.message);
         }
     };
-}
+};
