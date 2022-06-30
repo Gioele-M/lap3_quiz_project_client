@@ -12,24 +12,19 @@ const Background = () => {
         let randomYPositions = []
         let randomXPositions = []
         for(let i = 0; i < 15; i++){
-            let randomTop = Math.floor(Math.random()*100)  
-            let randomLeft = Math.floor(Math.random()*100)
+            let randomTop = Math.floor(Math.random()*80)  
+            let randomLeft = Math.floor(Math.random()*80)
             let randQMark = Math.floor(Math.random()*4)
-            const checkYPos = (yValue) => {
-                randomYPositions.includes(yValue)
+
+            while(randomYPositions.includes(randomTop) || randomYPositions.includes(randomTop + 1) || randomYPositions.includes(randomTop - 1) || randomYPositions.includes(randomTop + 2) || randomYPositions.includes(randomTop - 2) || randomYPositions.includes(randomTop + 3) || randomYPositions.includes(randomTop - 3)){
+                randomTop = Math.floor(Math.random()*80) 
             }
-            const checkXPos = (yValue) => {
-                randomYPositions.includes(yValue)
-            }
-            while(checkYPos(randomTop) || checkYPos(randomTop + 1) || checkYPos(randomTop - 1) || checkYPos(randomTop + 2) || checkYPos(randomTop - 2) || checkYPos(randomTop + 3) || checkYPos(randomTop - 3)){
-                randomTop = Math.floor(Math.random()*100) 
-            }
-            while(checkXPos(randomLeft) || checkXPos(randomLeft + 1) || checkXPos(randomLeft - 1) || checkXPos(randomLeft + 2) || checkXPos(randomLeft - 2) || checkXPos(randomLeft + 3) || checkXPos(randomLeft - 3)){
-                randomLeft = Math.floor(Math.random()*100) 
+            
+            while(randomXPositions.includes(randomLeft) || randomXPositions.includes(randomLeft + 1) || randomXPositions.includes(randomLeft - 1) || randomXPositions.includes(randomLeft + 2) || randomXPositions.includes(randomLeft - 2) || randomXPositions.includes(randomLeft + 3) || randomXPositions.includes(randomLeft - 3)){
+                randomLeft = Math.floor(Math.random()*80) 
             }
             randomYPositions.push(randomTop)
             randomXPositions.push(randomLeft)
-            console.log('hi')
                 divs.push(
                             <>
                                 <div className={`questionMark questionMark${randQMark}`} style={{top: `${randomTop}%`, left: `${randomLeft}%`}}>?</div>
