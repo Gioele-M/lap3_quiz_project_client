@@ -59,6 +59,7 @@ const Home = () => {
     };
     return (
         <>
+            <LogoutButton />
             <div className="hsArea">
                 <div className="highScores" onClick={openHsModal}>
                     <h2>High Scores</h2>

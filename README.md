@@ -94,7 +94,7 @@ Look for a file named CONTRIBUTING on a file root level.
 
 ## Future features
 
--   Wider variety of topics and possibilty to include more players at once.
+-   Wider variety of topics and option to include more players at once.
 
 ## Licence
 
