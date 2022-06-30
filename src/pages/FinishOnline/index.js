@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
+import { HighScoreModal } from '../../components';
+
 
 import socket from '../../actions/socket';
 
@@ -14,6 +16,22 @@ const FinishOnline = () => {
     const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
     let showLeaderBoard = false
     const [leaderBoardData, setLeaderBoardData] = useState([])
+
+
+
+
+    const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
+    const [hsUsernames, setHsUsernames] = useState([
+        // {username: "bob123", total: 1, percentage: 12},
+        // {username: "tina123", quizzes: 9, points: 9},
+        // {username: "louise123", quizzes: 8, points: 9},
+        // {username: "gene123", quizzes: 7, points: 6},
+        // {username: "linda123", quizzes: 6, points: 5},
+        // {username: "teddy456", quizzes: 5, points: 5},
+        // {username: "mort456", quizzes: 4, points: 4},
+        // {username: "jimmy666", quizzes: 1, points: 1}
+
+    ])
 
 
 
@@ -114,6 +132,8 @@ const FinishOnline = () => {
 
                 console.log('Showing leaderboard!!!!')
         
+
+                //----
                 setLeaderBoardData(data)
 
                 console.log(data)
@@ -122,27 +142,44 @@ const FinishOnline = () => {
 
                 console.log('Show leaderboard boolean?? ' + showLeaderBoard)
 
+                //-----
+
+
+                let arrayToSend = [{}]
+
+                for(let i = 0; i < data.length; i++){
+                    const {playerId, name, result, questions, roomSize} = data[i]
+
+                    let formattedData = {
+                        username: name,
+                        total: questions,
+                        percentage: parseInt(result) / parseInt(questions)
+                    }
+
+                    arrayToSend.push(formattedData)
+                }
+
+                if(arrayToSend.length > 0){
+                    arrayToSend.sort((a, b) => b.percentage - a.percentage)
+                    setHsUsernames(arrayToSend)
+                }
+
+                // const toAppend = {
+                //     playerId: playerId, name : playerName, result: result, questions: questionNumber, roomSize: roomSize 
+                // }
+
+                // {username: "bob123", total: 1, percentage: 12} -> correct/total
+
+
+                setHsModalVisibility('visible')
+
+
+
             })
 
 
     })
 
-
-
-
-    function showLeaderBoardFn(){
-        
-        let data = leaderBoardData
-
-        return(
-            <div>
-                This is the leaderboard, deal with it
-                
-            </div>
-        )
-
-
-    }
 
     
 
@@ -157,7 +194,11 @@ const FinishOnline = () => {
 
             <button onClick={()=>navigate("/home")}>Home</button>
 
-            { showLeaderBoard ? showLeaderBoardFn : <div>No leaderboard yet!</div>}
+            <HighScoreModal
+                hsModalVisibility={hsModalVisibility}
+                hsUsernames={hsUsernames}
+                setHsModalVisibility={setHsModalVisibility}
+            />
         </>
     )
 }
