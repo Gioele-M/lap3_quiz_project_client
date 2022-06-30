@@ -25,9 +25,9 @@ const OnlineWaitingRoom = () => {
 
     
     
-    socket.on('connect', () => {console.log('Connected with id'+socket.id)})
+    socket.off('connect').on('connect', () => {console.log('Connected with id'+socket.id)})
     
-    socket.on('admin-message', msg => console.log(msg));
+    socket.off('admin-message').on('admin-message', msg => console.log(msg));
     
     
     
@@ -44,7 +44,7 @@ const OnlineWaitingRoom = () => {
     
     
     //Listen to how many users are in the room
-    socket.on('responseJoinRoom', (msg) => {
+    socket.off('responseJoinRoom').on('responseJoinRoom', (msg) => {
         setPlayersConnected(msg)
         console.log(msg)
     
@@ -57,7 +57,7 @@ const OnlineWaitingRoom = () => {
         socket.emit('message', 'Create room')
 
         
-        socket.on('responseCreateRoom', (msg) => {
+        socket.off('responseCreateRoom').on('responseCreateRoom', (msg) => {
 
             setRoomCode(msg)
             console.log(msg)

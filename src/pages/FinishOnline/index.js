@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux';
 
+import { useEffect } from 'react';
+
 import { HighScoreModal } from '../../components';
 
 
@@ -14,6 +16,8 @@ const FinishOnline = () => {
     let playersWhoCompletedGame = []
 
     const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
+
+    let sizeOfRoom 
     let showLeaderBoard = false
     const [leaderBoardData, setLeaderBoardData] = useState([])
 
@@ -50,7 +54,15 @@ const FinishOnline = () => {
     // USE EFFECT??
 
     // This will send (... , loggedUser, result)
-    socket.emit('finishGame', playerName, playerScore, questionsAmount)   ///////////// this gets sent twice :(
+    
+    useEffect(() => {
+        socket.emit('finishGame', playerName, playerScore, questionsAmount)   
+    }, [])
+
+    
+    
+    
+    ///////////// this gets sent twice :(
 
     // Socket.emit score and amount + player name (useEffect?)
 
@@ -62,10 +74,11 @@ const FinishOnline = () => {
 
     // Listen to how many players completed the quiz
 
-    socket.on('playerHasCompleted', (playerId, playerName, result, questionNumber, roomSize)=>{
+    socket.off('playerHasCompleted').on('playerHasCompleted', (playerId, playerName, result, questionNumber, roomSize)=>{
         console.log('player has completed print!')
         console.log(playerId, playerName, result, questionNumber, roomSize)
 
+        sizeOfRoom = roomSize
 
         const toAppend = {
             playerId: playerId, name : playerName, result: result, questions: questionNumber, roomSize: roomSize 
@@ -115,7 +128,7 @@ const FinishOnline = () => {
 
 
 
-            //IF THE ARRAY LENGTH IS = TO PLAYERS IN THE ROOM SEND MESSAGE TO ROOM WITH ALL PLAYERS AND SCORES
+            // IF THE ARRAY LENGTH IS = TO PLAYERS IN THE ROOM SEND MESSAGE TO ROOM WITH ALL PLAYERS AND SCORES
 
             if(playersWhoCompletedGame.length == roomSize){
 
@@ -128,7 +141,8 @@ const FinishOnline = () => {
 
 
 
-            socket.on('showLeaderBoard', (data) => {
+
+            socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
 
                 console.log('Showing leaderboard!!!!')
         
@@ -179,6 +193,19 @@ const FinishOnline = () => {
 
 
     })
+
+    // useEffect(() => {
+
+        if(playersWhoCompletedGame.length == sizeOfRoom){
+            
+            console.log('Emitting that everyone is done!!')
+            socket.emit('everyoneIsDone', playersWhoCompletedGame)
+        }
+
+
+
+    // }, [playersWhoCompletedGame])
+
 
 
     
