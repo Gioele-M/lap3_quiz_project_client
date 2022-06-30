@@ -1,25 +1,57 @@
-#difficultySlide1 {
+.easy {
+background-color: rgb(128, 255, 0);
+}
+
+.medium {
+background-color: rgb(255, 170, 0);
+}
+
+.hard {
     background-color: red;
+}
+
+.buttonsNSelections{
+    display: flex;
+    justify-content: space-around;
+}
+
+.confirmSelections{
+    font-size: 24px;
+    width: 175px;
+    margin: 0 auto;
+    margin-left: 100px;
+    background-color: rgb(62, 210, 148);
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.selections {
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(133, 209, 209);
+    height: 125px;
+}
+
+.selections > p {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+#difficultySlide1 {
     z-index: 0;
     top: 100px;
 }
 #difficultySlide2 {
-    background-color: rgb(255, 170, 0);
+    
     z-index: 0;
     top: 160px;
     left: 220px;
 }
 #difficultySlide3 {
-    background-color: rgb(242, 255, 0);
+    
     z-index: 0;
     top: 100px;
     right: 0;
-}
-#difficultySlide4 {
-    background-color: rgb(255, 0, 251);
-    z-index: -1;
-    left: 220px;
-    top: 40px;
 }
 
 #difficultySlide1.right {
@@ -33,7 +65,8 @@ animation: difficultySlide1right 0.5s linear;
 }
 
 @keyframes difficultySlide1right {
-    0%   {transform: translate(500px, 0px)}
+    0%   {transform: translate(500px, 0px); z-index: -1}
+    75%  {z-index: -1}
     100% {transform: translate(0%, 0)}
 }
 
@@ -68,6 +101,7 @@ animation: difficultySlide1right 0.5s linear;
 }
 
 @keyframes difficultySlide3left {
-    0%   {transform: translate(-500px, 0px)}
+    0%   {transform: translate(-500px, 0px); z-index: -1}
+    75%  {z-index: -1}
     100% {transform: translate(0, 0)}
 }

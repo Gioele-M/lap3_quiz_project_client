@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchResults } from "../../actions";
+import brain from "../../Images/brain.png";
 
 const Difficulty = () => {
   let navigate = useNavigate();
@@ -70,30 +71,28 @@ const Difficulty = () => {
   };
   return (
     <>
-      <h1>Select your difficulty</h1>
+      <h1 className="selectionH1">Select your difficulty</h1>
       <div className="sliderContainer">
         <button className="btn btn-next" onClick={difficultyLeftButton}>
-          {" "}
-          Left{" "}
         </button>
         <div className="slider">
           <div
             data-testid="difficulty"
-            className={"slide " + difficultyDirection}
+            className={"slide easy " + difficultyDirection}
             id={"difficultySlide" + difficultyIdNumbers[0]}
             onClick={handleDifficulty}
           >
             <h2>Easy</h2>
           </div>
           <div
-            className={"slide " + difficultyDirection}
+            className={"slide medium " + difficultyDirection}
             id={"difficultySlide" + difficultyIdNumbers[1]}
             onClick={handleDifficulty}
           >
             <h2>Medium</h2>
           </div>
           <div
-            className={"slide " + difficultyDirection}
+            className={"slide hard " + difficultyDirection}
             id={"difficultySlide" + difficultyIdNumbers[2]}
             onClick={handleDifficulty}
           >
@@ -101,24 +100,34 @@ const Difficulty = () => {
           </div>
         </div>
         <button className="btn btn-prev" onClick={difficultyRightButton}>
-          {" "}
-          Right{" "}
         </button>
       </div>
-      <button onClick={() => navigate("/category")}>Go back</button>
-      <button
-        onClick={handleConfirmation}
-        style={{ visibility: confirmationVisibility }}
-      >
-        Confirm selections
-      </button>
-      <div className="selections">
-        <p>Selections</p>
-        <ul>
-          <li>Players: {statePlayers}</li>
-          <li>Category: {stateCategoryDesc}</li>
-          <li>{difficultyLi}</li>
-        </ul>
+      <div className="buttonsNSelections">
+      <div className="backButtonDiv">
+        <button className="backButton" onClick={() => navigate("/category")}>Go back</button>
+        </div>
+        <div className="confirmSelectionsDiv">
+          <button
+                className="confirmSelections" onClick={handleConfirmation}
+                style={{ visibility: confirmationVisibility }}
+              >
+                Confirm selections
+              </button>
+        </div>
+              
+              <div className="selections">
+                <p>Selections</p>
+                <ul>
+                  <li>Players: {statePlayers}</li>
+                  <li>Category: {stateCategoryDesc}</li>
+                  <li>{difficultyLi}</li>
+                </ul>
+              </div>
+
+      </div>
+      
+      <div className="selectionBrainDiv">
+                <img src={brain} className="selectionBrain" />
       </div>
     </>
   );
