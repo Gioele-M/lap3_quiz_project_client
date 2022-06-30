@@ -34,8 +34,27 @@ describe.only("Home", () => {
   });
   test("it renders the div 'local' ", () => {
     render(home);
-    const div = screen.queryByTestId("local");
+
+    const div = screen.getByTestId("local");
     fireEvent.click(div);
+
     expect(navigate).toHaveBeenCalledWith("/numplayers");
+  });
+  test("it renders the div 'local' ", () => {
+    render(home);
+
+    const div = screen.getByTestId("online");
+    fireEvent.click(div);
+
+    expect(navigate).toHaveBeenCalledWith("/quiz");
+  });
+
+  test("it renders the div 'local' ", () => {
+    render(home);
+
+    const div = screen.getByTestId("rank");
+    fireEvent.click(div);
+
+    expect(navigate).toHaveBeenCalledWith("/quiz");
   });
 });
