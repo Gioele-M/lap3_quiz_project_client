@@ -145,7 +145,7 @@ const FinishOnline = () => {
                 //-----
 
 
-                let arrayToSend = [{}]
+                let arrayToSend = []
 
                 for(let i = 0; i < data.length; i++){
                     const {playerId, name, result, questions, roomSize} = data[i]
