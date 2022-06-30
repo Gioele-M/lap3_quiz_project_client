@@ -115,13 +115,13 @@ const FinishOnline = () => {
         if(hasToBePushed){
             playersWhoCompletedGame.push(toAppend)
 
-            setNOfPlayersDone(playersWhoCompletedGame.length)
-
+            
             console.log('I have pushed this object in the array!!')
             console.log(toAppend)
             console.log('Now the array is:')
             console.log(playersWhoCompletedGame)}
-
+            
+            setNOfPlayersDone(playersWhoCompletedGame.length)
 
 
 
@@ -145,6 +145,8 @@ const FinishOnline = () => {
         
 
         socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
+
+            socket.off('showLeaderBoard')
 
             console.log('Showing leaderboard!!!!')
     
