@@ -57,7 +57,7 @@ body {
     position: absolute;
     text-align: center;
     margin: 20px;
-    font-size: 20px;
+    font-size: 28px;
 }
 .questionMark0{
     animation: qMark0 4s linear infinite;

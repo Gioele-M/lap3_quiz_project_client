@@ -31,8 +31,8 @@ const Home = () => {
         setHsUsernames(data);
       };
     const openHsModal = () => {
-        setHsModalVisibility("visible");
         fetchHighScores();
+        setHsModalVisibility("visible");
       };
     const user = useSelector((state) => state.user);
     console.log(user);
@@ -97,7 +97,7 @@ const Home = () => {
           className="rankingGame"
           onClick={() => handleRankClick()}
         >
-          <h2>Start ranking game</h2>
+          <h2>Ranking game</h2>
         </div>
       </div>
 

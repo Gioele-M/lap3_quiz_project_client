@@ -56,34 +56,39 @@ const LoginComponent = ({ props }) => {
 
     return (
         <>
-            <h1>Fun quiz game - test your knowledge</h1>
+            <div className="introText">
+                <h2>Fun quiz game</h2>
+                <h2>Test your knowledge</h2>
+            </div>
             <div>{error}</div>
-            <form data-testid="form" aria-label="login" onSubmit={handleSignIn}>
-                <h2>Login</h2>
-                <label htmlFor="username">Username</label>
+            <form data-testid="form" aria-label="login" className="loginForm" onSubmit={handleSignIn}>
+                <h2 className="loginText">Login</h2>
+                <label className="userLabel" htmlFor="username">Username</label>
                 <input
                     type="text"
                     name="username"
                     id="username"
+                    className="usernameInput"
                     autoFocus
                     placeholder="Enter your username"
                     value={username}
                     onChange={onUsernameChange}
                     data-testid="usernameInput"
                 />
-                <label htmlFor="password">Password</label>
+                <label className="passLabel" htmlFor="password">Password</label>
                 <input
                     type="password"
                     name="password"
                     id="password"
+                    className="passwordInput"
                     autoFocus
                     placeholder="Enter your password"
                     value={password}
                     onChange={onPasswordChange}
                     data-testid="passwordInput"
                 />
-                <button data-testid="signIn" onClick={handleSignIn}>Sign in</button>
-                <button onClick={() => navigate('/register')}>
+                <button data-testid="signIn" className="signIn"onClick={handleSignIn}>Sign in</button>
+                <button className="createAccount" onClick={() => navigate('/register')}>
                     Create an account
                 </button>
             </form>

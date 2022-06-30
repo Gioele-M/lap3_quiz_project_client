@@ -27,9 +27,7 @@ const HighScoreModal = ({
       className="hsModal"
       style={{ visibility: hsModalVisibility }}
     >
-      <p data-testid="cross" className="cross" onClick={closeHsModal}>
-        X
-      </p>
+      
       <table className="hsTable">
         <thead>
           <tr>
@@ -40,6 +38,9 @@ const HighScoreModal = ({
         </thead>
         <tbody className="hsTableBody">{renderedHighScores}</tbody>
       </table>
+      <p data-testid="cross" className="cross" onClick={closeHsModal}>
+        X
+      </p>
     </div>
   );
 };

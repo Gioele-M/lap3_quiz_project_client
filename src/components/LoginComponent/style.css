@@ -1,0 +1,78 @@
+.introText {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 32px;
+    text-align: center;
+    margin-top: 100px;
+    height: 220px;
+    grid-area: intro;
+    /*TODO: change color and add shadow behind text*/
+    background-color: rgb(138, 44, 226, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.loginForm {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "userLabel username"
+    "passLabel password"
+    "signIn signIn"
+    "createAccount createAccount";
+    width: 85%;
+    margin: 0 auto;
+    grid-area: form;
+    /*TODO: change color and add shadow behind text*/
+    background-color: rgb(138, 44, 226, 0.5);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.loginText {
+    grid-area: header;
+    text-align: center;
+    margin: 15px;
+    font-size: 32px;
+}
+.userLabel {
+    grid-area: userLabel;
+    font-size: 24px;
+    width: 70px;
+}
+.usernameInput {
+    grid-area: username;
+    font-size: 20px;
+    height: 34px;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+}
+.passLabel {
+    grid-area: passLabel;
+    font-size: 24px;
+}
+.passwordInput {
+    grid-area: password;
+    font-size: 20px;
+    height: 34px;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+}
+.signIn {
+    grid-area: signIn;
+    font-size: 24px;
+    width: 200px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+.createAccount {
+    grid-area: createAccount;
+    font-size: 24px;
+    width: 300px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
