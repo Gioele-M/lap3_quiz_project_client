@@ -29,12 +29,10 @@ const Home = () => {
         console.log(data);
         setHsUsernames(data);
     };
-
     const openHsModal = () => {
         setHsModalVisibility('visible');
         fetchHighScores();
     };
-
     const user = useSelector((state) => state.user);
     console.log(user);
 
@@ -59,7 +57,6 @@ const Home = () => {
         getRankingQuestions();
         navigate('/quiz');
     };
-
     return (
         <>
             <div className="hsArea">
@@ -102,7 +99,7 @@ const Home = () => {
                     <h2>Start ranking game</h2>
                 </div>
             </div>
-            <LogoutButton />
+
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
     );
