@@ -1,7 +1,21 @@
 .CAModal {
     background-color: rgb(197, 253, 197);
-    width: 200px;
-    height: 30px;
+    width: 500px;
+    height: 250px;
+    line-height: 135px;
     padding: 5px;
     position: absolute;
+    top: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0; 
+    right: 0; 
+    visibility: visible;
+    font-size: 38px;
+    border-radius: 25px;
+    text-align: center;
+    border: 3px solid black;
+}
+.CAModal > h2 {
+    margin-top: 35px;
 }

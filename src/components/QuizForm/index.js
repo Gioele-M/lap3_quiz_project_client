@@ -8,7 +8,7 @@ import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
 
-const QuizForm = () => {
+const QuizForm = ({setFinishGameVisibility}) => {
     //need to add conditional rendering for finish quiz button
 
     const dispatch = useDispatch();
@@ -144,6 +144,11 @@ const QuizForm = () => {
                 setPlayerFourScore(playerFourScore + 1);
             }
             // setScore(score + 1);
+            if(currentQuestion + 1 === results.length){
+                setTimeout(() => {
+                    setFinishGameVisibility("visible")
+                }, '2000');
+            }
             setCAVisibility('visible');
             setTimeout(() => {
                 setCAVisibility('hidden');
@@ -165,6 +170,12 @@ const QuizForm = () => {
         setTimeout(() => {
             setNCAVisibility('hidden');
         }, '2000');
+        if(currentQuestion + 1 === results.length){
+            setTimeout(() => {
+                setFinishGameVisibility("visible")
+            }, '2000');
+        }
+        console.log(currentQuestion)
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
@@ -173,22 +184,22 @@ const QuizForm = () => {
 
     return (
         <>
-            {loading && <h2>Loading...</h2>}
+            {loading && <h2 className="loadingH2">Loading...</h2>}
             {quiz.length && (
-                <>
+                <div className={style.quizSection}>
                     <div
                         data-testid="quizArea"
                         className={style.questionSection}
                     >
                         <div className={style.questionCount}>
                             {gameMode !== 'rank' && players !== '1' && (
-                                <p data-testId="playerP">
+                                <p data-testId="playerP" className={"playerTurnInfo " + quiz[currentQuestion][5].player}>
                                     Player {quiz[currentQuestion][5].player}{' '}
                                     it's your turn
                                 </p>
                             )}
-                            <span>
-                                {currentQuestion + 1}/{results.length}
+                            <span className={style.questionNumber}>
+                                Question {currentQuestion + 1}/{results.length}
                             </span>
                         </div>
                         <div className={style.questionText}>
@@ -201,7 +212,7 @@ const QuizForm = () => {
                             quiz[currentQuestion].map((answer) => {
                                 if (answer.isCorrect) {
                                     return (
-                                        <button
+                                        <button className={style.answerButton}
                                             onClick={() =>
                                                 handleRightAnswer(
                                                     answer.name,
@@ -217,7 +228,7 @@ const QuizForm = () => {
                                     typeof answer.isCorrect === 'boolean'
                                 ) {
                                     return (
-                                        <button
+                                        <button className={style.answerButton}
                                             onClick={() =>
                                                 handleWrongAnswer(
                                                     answer.name,
@@ -233,7 +244,7 @@ const QuizForm = () => {
                             })}
                     </div>
 
-                    <div className={style.modalSection}>
+                    {/* <div className={style.modalSection}> */}
                         <InCorrectAnswerModal
                             NCAVisibility={NCAVisibility}
                             setNCAVisibility={setNCAVisibility}
@@ -243,8 +254,8 @@ const QuizForm = () => {
                             CAVisibility={CAVisibility}
                             setCAVisibility={setCAVisibility}
                         />
-                    </div>
-                </>
+                    {/* </div> */}
+                </div>
             )}
         </>
     );
