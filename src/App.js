@@ -13,6 +13,7 @@ import {
     Register,
     FinishOnline,
     PageNotFound,
+    OnlineWaitingRoom
 } from './pages';
 
 import { Background } from './layout'
@@ -44,6 +45,7 @@ function App() {
                 <Route path="finish" element={<Finish />} />
                 <Route path="finishonline" element={<FinishOnline />} />
                 <Route path="register" element={<Register />} />
+                <Route path="waitingroom" element={<OnlineWaitingRoom />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
                 <Background />
