@@ -22,8 +22,10 @@ import './pages/Home/style.css';
 import './pages/NumPlayers/style.css';
 import './pages/Difficulty/style.css';
 import './pages/Category/style.css';
+import './pages/Login/style.css';
 import './layout/Background/style.css'
 import './components/HighscoreModal/style.css';
+import './components/LoginComponent/style.css';
 import './index.css'
 
 function App() {

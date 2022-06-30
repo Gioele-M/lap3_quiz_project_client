@@ -30,9 +30,10 @@ const Home = () => {
         setHsUsernames(data);
     };
     const openHsModal = () => {
-        setHsModalVisibility('visible');
         fetchHighScores();
-    };
+        setHsModalVisibility("visible");
+      };
+
     const user = useSelector((state) => state.user);
     console.log(user);
 
@@ -84,23 +85,21 @@ const Home = () => {
                 >
                     <h2>Local game</h2>
                 </div>
-
-                <div
-                    data-testid="online"
-                    className="onlineGame"
-                    onClick={() => handleOnlineClick()}
-                >
-                    <h2>Online game</h2>
-                </div>
-                <div
-                    data-testid="rank"
-                    className="rankingGame"
-                    onClick={() => handleRankClick()}
-                >
-                    <h2>Start ranking game</h2>
-                </div>
-            </div>
-
+        <div
+          data-testid="online"
+          className="onlineGame"
+          onClick={() => handleOnlineClick()}
+        >
+          <h2>Online game</h2>
+        </div>
+        <div
+          data-testid="rank"
+          className="rankingGame"
+          onClick={() => handleRankClick()}
+        >
+          <h2>Ranking game</h2>
+        </div>
+      </div>
             {/* <button onClick={()=>navigate("/numplayers")}>Go to game setup</button> */}
         </>
     );

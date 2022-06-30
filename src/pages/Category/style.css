@@ -1,3 +1,34 @@
+.categorySlide {
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    font-size: 16px;
+}
+
+.categorySlide > h2 {
+    margin-top: 50px;
+    height: 40px;
+}
+.genKno{
+    background-image: url(../../Images/genKno.png);
+    background-color: antiquewhite;
+}
+.science{
+    background-image: url(../../Images/science.png);
+    background-color: rgb(152, 215, 103);
+}
+.sports{
+    background-image: url(../../Images/sports.png);
+    background-color: rgb(113, 173, 236);
+}
+.history{
+    background-image: url(../../Images/history.png);
+    background-color: rgb(240, 77, 77);
+}
+.animals{
+    background-image: url(../../Images/animals.png);
+    background-color: rgb(255, 170, 60);
+}
 #categorySlide1 {
     /* background-color: red; */
     z-index: 0;
@@ -44,7 +75,8 @@ animation: categorySlide1right 0.5s linear;
     animation: categorySlide5right 0.5s linear;
 }
 @keyframes categorySlide1right {
-    0%   {transform: translate(110px, -60px)}
+    0%   {transform: translate(110px, -60px); z-index: -1}
+    75%  {z-index: -1}
     100% {transform: translate(0%, 0)}
 }
 

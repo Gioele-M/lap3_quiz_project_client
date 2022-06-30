@@ -1,18 +1,30 @@
 .hsModal {
     background-color: rgb(122, 165, 175);
-    width: 250px;
+    width: 375px;
     margin-left: auto;
+    margin-top: 10px;
     right: 30px;
     position: absolute;
+    display: flex;
+    font-size: 22px;
+    border-radius: 15px;
+    padding: 5px;
 }
 .cross {
     text-align: right;
     margin-right: 10px;
-    padding-top: 10px;
+    margin-top: 0;
+    font-size: 28px;
+    /* padding-top: 10px; */
 }
 .hsTable{
     width: 100%;
+    margin-top: 20px;
 }
 .hsTableData{
     padding-left: 9px;
+}
+th{
+    text-decoration: underline;
+    font-size: 24px;
 }

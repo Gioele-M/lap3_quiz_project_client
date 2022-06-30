@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+import brain from "../../Images/brain.png";
 
 const Category = () => {
   let navigate = useNavigate();
@@ -62,32 +63,30 @@ const Category = () => {
   };
   return (
     <>
-      <h1>Select your category</h1>
+      <h1 className="selectionH1">Select your category</h1>
       <div className="sliderContainer" data-testid="slider">
         <button className="btn btn-next" onClick={categoryLeftButton}>
-          {" "}
-          Left{" "}
         </button>
         <div className="slider">
           <div
             data-testid="GK"
-            className={"slide " + categoryDirection}
+            className={"slide genKno categorySlide " + categoryDirection}
             id={"categorySlide" + categoryIdNumbers[0]}
             onClick={handleCategory}
           >
-            <h2>General Knowledge</h2>
+            <h2>General</h2>
           </div>
           <div
             data-testid="Science & Nature"
-            className={"slide " + categoryDirection}
+            className={"slide science categorySlide " + categoryDirection}
             id={"categorySlide" + categoryIdNumbers[1]}
             onClick={handleCategory}
           >
-            <h2>Science & Nature</h2>
+            <h2>Science</h2>
           </div>
           <div
             data-testid="Sports"
-            className={"slide " + categoryDirection}
+            className={"slide sports categorySlide " + categoryDirection}
             id={"categorySlide" + categoryIdNumbers[2]}
             onClick={handleCategory}
           >
@@ -95,7 +94,7 @@ const Category = () => {
           </div>
           <div
             data-testid="History"
-            className={"slide " + categoryDirection}
+            className={"slide history categorySlide " + categoryDirection}
             id={"categorySlide" + categoryIdNumbers[3]}
             onClick={handleCategory}
           >
@@ -103,7 +102,7 @@ const Category = () => {
           </div>
           <div
             data-testid="Animals"
-            className={"slide " + categoryDirection}
+            className={"slide animals categorySlide " + categoryDirection}
             id={"categorySlide" + categoryIdNumbers[4]}
             onClick={handleCategory}
           >
@@ -111,14 +110,16 @@ const Category = () => {
           </div>
         </div>
         <button className="btn btn-prev" onClick={categoryRightButton}>
-          {" "}
-          Right{" "}
         </button>
       </div>
-      <button onClick={() => navigate("/numplayers")}>Go back</button>
-      <button onClick={() => navigate("/difficulty")}>
+      <div className="buttonsNSelections">
+        <div className="backButtonDiv">
+          <button className="backButton" onClick={() => navigate("/numplayers")}>Go back</button>
+      </div>
+      
+      {/* <button onClick={() => navigate("/difficulty")}>
         Go to difficulty selection
-      </button>
+      </button> */}
       <div className="selections">
         <p>Selections</p>
         <ul>
@@ -126,6 +127,10 @@ const Category = () => {
           <li></li>
           <li></li>
         </ul>
+      </div>
+      </div>
+      <div className="selectionBrainDiv">
+                <img src={brain} className="selectionBrain" />
       </div>
     </>
   );
