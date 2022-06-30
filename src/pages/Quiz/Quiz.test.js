@@ -38,4 +38,13 @@ describe("Quiz", () => {
     fireEvent.click(button);
     expect(navigate).toHaveBeenCalledWith("/finish");
   });
+
+  // test("it navigates the button to category ", () => {
+  //   render(quiz);
+  //   const button = screen.getByRole("button", {
+  //     name: /Finish quiz/i,
+  //   });
+  //   fireEvent.click(button);
+  //   expect(navigate).toHaveBeenCalledWith("/finishonline");
+  // });
 });

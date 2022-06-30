@@ -43,4 +43,31 @@ describe("NumPlayers", () => {
     fireEvent.click(button);
     expect(navigate).toHaveBeenCalledWith("/category");
   });
+
+  test("it navigates from button to /difficulty ", () => {
+    render(num);
+    const button = screen.getByRole("button", {
+      name: /Left/i,
+    });
+    const number = screen.queryByTestId("number");
+    fireEvent.click(button);
+    expect(number.classList).toContain("left");
+  });
+
+  test("it navigates from button to /difficulty ", () => {
+    render(num);
+    const button = screen.getByRole("button", {
+      name: /Right/i,
+    });
+    const number = screen.queryByTestId("number");
+    fireEvent.click(button);
+    expect(number.classList).toContain("right");
+  });
+
+  test("it navigates from button to /difficulty ", () => {
+    render(num);
+    const number = screen.queryByTestId("number");
+    fireEvent.click(number);
+    expect(navigate).toHaveBeenCalledWith("/category");
+  });
 });
