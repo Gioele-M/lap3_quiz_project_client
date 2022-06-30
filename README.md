@@ -1,72 +1,102 @@
 # lap3_quiz_project_client
 
-# Getting Started with Create React App
+<h1 align="center">Dumbfounded?</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img src="https://i.ibb.co/xg8CmTT/john-schnobrich-2-FPjl-Ay-MQTA-unsplash-1.jpg">
+</p>
 
-## Available Scripts
+<div align="center">
 
-In the project directory, you can run:
+[Dumbfounded?](https://red-devil-quiz.netlify.app) is an application that allows you to relax, have fun and get smarter! There are 3 different ways you can choose from how to play. For local game on cozy Friday evening when all the friends have gathered together, there is a great choice of "Local game", it allows you to play with up to 4 friends, each taking their turn. On the other hand, you can always play alone, choose the topic and diffulty level. Altogether there are 5 different topics that you can choose from: "Animals", "Science and Nature", "History", "Sports" and lastly "General Knowledge". But what about Tuesday evenings when all friends are in their own homes but you still want to spend time together by trying to beat each other with quiz scores??? Well, you can choose to play in an online room, having the same questions and seeing who comes up with the highest score. And, if you feel confident enough, you can take up a challenge and tackle the questions in a "Ranking game" with wide range questions about everything and anything on hard level, go ahead and enjoy!
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+</div>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<br>
 
-### `npm run build`
+## Installation & usage
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   Open the webpage here: [Dumbfounded?](https://red-devil-quiz.netlify.app) OR
+-   Clone or download code:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    -   cd into the folder
+    -   npm start:
+        -   Runs the app in the development mode.
+        -   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+        -   The page will reload when you make changes.
+        -   You may also see any lint errors in the console.
+    -   feel free to play in your own local environment, change code or implement new functionalities
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+-   The backend for this repo is deployed in [Heroku](https://red-devils-quiz.herokuapp.com/) and GitHub repository you can find from here: [https://github.com/Gioele-M/lap3_quiz_project_server](https://github.com/Gioele-M/lap3_quiz_project_server)
 
-### `npm run eject`
+## Technologies
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+-   React framework
+-   JavaScript
+-   CSS
+-   axios
+-   Netlify
+-   Git/Github
+-   Jest
+-   React tesing library
+-   Figma
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Process
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+This project was created during project week with Futureproof.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+-   Planning
 
-## Learn More
+    -   Creating a team environment where we focused achieving a goal together and give each other opportunity to work on parts that we wished - allocating areas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    -   Creating a vision for our webpage:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+        -   Using Figma for visualisation:
 
-### Code Splitting
+        <br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+        <div align="center">
 
-### Analyzing the Bundle Size
+        ![]()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+        </div>
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Wins
 
-### Deployment
+-   we have 3 different choices how to play a quiz:
+    -   Local
+    -   Online
+    -   Ranking
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Challenges
 
-### `npm run build` fails to minify
+-   To get the socket.io working for online game
+-   To manage to get everything done on time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">
+
+![]()
+
+</div>
+
+## Contribution guide
+
+## Bugs
+
+## Future features
+
+## Licence
+
+[MIT licence]()
