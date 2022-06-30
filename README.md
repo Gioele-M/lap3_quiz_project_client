@@ -1,9 +1,7 @@
-# lap3_quiz_project_client
-
 <h1 align="center">Dumbfounded?</h1>
 
 <p align="center">
-<img src="https://i.ibb.co/xg8CmTT/john-schnobrich-2-FPjl-Ay-MQTA-unsplash-1.jpg">
+<img src="https://i.ibb.co/PcJWJ4T/john-schnobrich-2-FPjl-Ay-MQTA-unsplash-1.jpg" >
 </p>
 
 <div align="center">
@@ -63,7 +61,7 @@ This project was created during project week with Futureproof.
 
         <div align="center">
 
-        ![]()
+        ![Figma plan](https://i.ibb.co/k8P3Kfh/Screenshot-2022-06-30-160748.png)
 
         </div>
 
@@ -84,19 +82,20 @@ This project was created during project week with Futureproof.
 
 -   To get the socket.io working for online game
 -   To manage to get everything done on time
-
-<div align="center">
-
-![]()
-
-</div>
+-   To replace "&code;" for example('&quot';) with the actual meaning behind it
 
 ## Contribution guide
 
+Look for a file named CONTRIBUTING on a file root level.
+
 ## Bugs
+
+-   Too many calls done by socket.io therefore limiting our app's capacity to interact with many players.
 
 ## Future features
 
+-   Wider variety of topics and option to include more players at once.
+
 ## Licence
 
-[MIT licence]()
+[MIT licence](https://opensource.org/licenses/MIT)
