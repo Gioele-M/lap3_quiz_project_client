@@ -64,7 +64,7 @@ const Home = () => {
     return (
         <>
             <div className="hsArea">
-               <div className="highScores" onClick={openHsModal}>
+               <div data-testid="highscoreTitle" className="highScores" onClick={openHsModal}>
                 <h2>High Scores</h2>
             </div>
             <HighScoreModal
@@ -80,7 +80,7 @@ const Home = () => {
             
             <h1 className="dumbfounded">Dumbfounded?</h1>
             <div className="gameTypes">
-               <div className="localGame" onClick={()=>handleLocalClick()}>
+               <div data-testid="local" className="localGame" onClick={()=>handleLocalClick()}>
 
                 <h2>Local game</h2>
             </div> 

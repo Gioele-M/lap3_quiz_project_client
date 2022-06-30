@@ -58,7 +58,7 @@ const LoginComponent = ({ props }) => {
         <>
             <h1>Fun quiz game - test your knowledge</h1>
             <div>{error}</div>
-            <form aria-label="login" onSubmit={handleSignIn}>
+            <form data-testid="form" aria-label="login" onSubmit={handleSignIn}>
                 <h2>Login</h2>
                 <label htmlFor="username">Username</label>
                 <input
@@ -69,6 +69,7 @@ const LoginComponent = ({ props }) => {
                     placeholder="Enter your username"
                     value={username}
                     onChange={onUsernameChange}
+                    data-testid="usernameInput"
                 />
                 <label htmlFor="password">Password</label>
                 <input
@@ -79,8 +80,9 @@ const LoginComponent = ({ props }) => {
                     placeholder="Enter your password"
                     value={password}
                     onChange={onPasswordChange}
+                    data-testid="passwordInput"
                 />
-                <button onClick={handleSignIn}>Sign in</button>
+                <button data-testid="signIn" onClick={handleSignIn}>Sign in</button>
                 <button onClick={() => navigate('/register')}>
                     Create an account
                 </button>
