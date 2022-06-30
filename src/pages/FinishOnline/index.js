@@ -17,9 +17,7 @@ const FinishOnline = () => {
 
     const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
 
-    let sizeOfRoom 
     let showLeaderBoard = false
-    const [leaderBoardData, setLeaderBoardData] = useState([])
 
 
 
@@ -74,11 +72,10 @@ const FinishOnline = () => {
 
     // Listen to how many players completed the quiz
 
-    socket.off('playerHasCompleted').on('playerHasCompleted', (playerId, playerName, result, questionNumber, roomSize)=>{
+    socket.on('playerHasCompleted', (playerId, playerName, result, questionNumber, roomSize)=>{
         console.log('player has completed print!')
         console.log(playerId, playerName, result, questionNumber, roomSize)
 
-        sizeOfRoom = roomSize
 
         const toAppend = {
             playerId: playerId, name : playerName, result: result, questions: questionNumber, roomSize: roomSize 
@@ -142,70 +139,58 @@ const FinishOnline = () => {
 
 
 
-            socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
-
-                console.log('Showing leaderboard!!!!')
+            
+            
+        })
         
 
-                //----
-                setLeaderBoardData(data)
+        socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
 
-                console.log(data)
-                
-                showLeaderBoard = true
+            console.log('Showing leaderboard!!!!')
+    
 
-                console.log('Show leaderboard boolean?? ' + showLeaderBoard)
-
-                //-----
-
-
-                let arrayToSend = []
-
-                for(let i = 0; i < data.length; i++){
-                    const {playerId, name, result, questions, roomSize} = data[i]
-
-                    let formattedData = {
-                        username: name,
-                        total: questions,
-                        percentage: parseInt(result) / parseInt(questions)
-                    }
-
-                    arrayToSend.push(formattedData)
-                }
-
-                if(arrayToSend.length > 0){
-                    arrayToSend.sort((a, b) => b.percentage - a.percentage)
-                    setHsUsernames(arrayToSend)
-                }
-
-                // const toAppend = {
-                //     playerId: playerId, name : playerName, result: result, questions: questionNumber, roomSize: roomSize 
-                // }
-
-                // {username: "bob123", total: 1, percentage: 12} -> correct/total
-
-
-                setHsModalVisibility('visible')
-
-
-
-            })
-
-
-    })
-
-    // useEffect(() => {
-
-        if(playersWhoCompletedGame.length == sizeOfRoom){
             
-            console.log('Emitting that everyone is done!!')
-            socket.emit('everyoneIsDone', playersWhoCompletedGame)
-        }
+            showLeaderBoard = true
+
+            console.log('Show leaderboard boolean?? ' + showLeaderBoard)
+
+            //-----
+
+
+            let arrayToSend = []
+
+            for(let i = 0; i < data.length; i++){
+                const {playerId, name, result, questions, roomSize} = data[i]
+
+                let formattedData = {
+                    username: name,
+                    total: questions,
+                    percentage: parseInt(result) / parseInt(questions)
+                }
+
+                arrayToSend.push(formattedData)
+            }
+
+            if(arrayToSend.length > 0){
+                arrayToSend.sort((a, b) => b.percentage - a.percentage)
+                setHsUsernames(arrayToSend)
+            }
+
+            // const toAppend = {
+            //     playerId: playerId, name : playerName, result: result, questions: questionNumber, roomSize: roomSize 
+            // }
+
+            // {username: "bob123", total: 1, percentage: 12} -> correct/total
+
+
+            setHsModalVisibility('visible')
 
 
 
-    // }, [playersWhoCompletedGame])
+        })
 
+
+ 
 
 
     
