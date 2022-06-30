@@ -1,16 +1,20 @@
 import React from 'react'
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 const Finish = () => {
     let navigate = useNavigate();
-    const gameMode = useSelector((state) => state.mode);
+
     const players = useSelector((state) => state.players);
     const statePlayerOneScore = useSelector((state) => state.playerOneScore);
     const statePlayerTwoScore = useSelector((state) => state.playerTwoScore);
     const statePlayerThreeScore = useSelector((state) => state.playerThreeScore);
     const statePlayerFourScore = useSelector((state) => state.playerFourScore);
     let scores = []
+
+
+    
+
     const getScoresArray = () => {
         if(players === "1"){
             scores.push(["Player One", statePlayerOneScore])
@@ -49,10 +53,8 @@ const Finish = () => {
     const declareWinner = () => {
         const winningValue = scores[0][1]
         const winnersScores = scores.filter(word => word[1] === winningValue)
-        // console.log(winners)
         let winningSentence = ""
         if(winnersScores.length === 1){
-            // winners = scores[0]
             winningSentence = `${scores[0][0]} wins!`
             return winningSentence
         }else if(winnersScores.length === 2){
@@ -67,9 +69,6 @@ const Finish = () => {
         }
         
         return scores[0][1]
-        //if the first number only appears once in the array, declare one winner
-        //if appears twice, declare two winners
-        //if appears > 3 times, names all win
     }
     return (
         <>
