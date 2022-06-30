@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import { fetchResults } from '../../actions';
 // import styles from './index.module.css';
-import { CorrectAnswerModal, LogoutButton } from '../index';
+import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
 
@@ -173,7 +173,6 @@ const QuizForm = () => {
 
     return (
         <>
-            <LogoutButton />
             {loading && <h2>Loading...</h2>}
             {quiz.length && (
                 <>
