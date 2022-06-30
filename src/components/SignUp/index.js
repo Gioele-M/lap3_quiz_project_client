@@ -91,6 +91,7 @@ const SignUp = () => {
                     placeholder="Enter your username"
                     value={username}
                     onChange={onUsernameChange}
+                    data-testid="usernameInput"
                 />
                 <label htmlFor="email">Email</label>
                 <input
@@ -101,6 +102,7 @@ const SignUp = () => {
                     placeholder="Enter your email"
                     value={email}
                     onChange={onEmailChange}
+                    data-testid="emailInput"
                 />
                 <label htmlFor="password">Password</label>
                 <input
@@ -111,6 +113,7 @@ const SignUp = () => {
                     placeholder="Enter your password"
                     value={password}
                     onChange={onPasswordChange}
+                    data-testid="passwordInput"
                 />
                 <label htmlFor="confirmPassword">Confirm password</label>
                 <input
@@ -121,9 +124,10 @@ const SignUp = () => {
                     placeholder="Confirm password"
                     value={confirmPassword}
                     onChange={onConfirmPasswordChange}
+                    data-testid="confirmPasswordInput"
                 />
                 <button>Sign up</button>
-                <button onClick={() => navigate('/')}>
+                <button data-testid="button1" onClick={() => navigate('/')}>
                     Already have an account? Login
                 </button>
             </form>

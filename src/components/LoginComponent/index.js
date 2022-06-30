@@ -54,37 +54,41 @@ const LoginComponent = ({ props }) => {
     setPassword(e.target.value);
   };
 
-  return (
-    <>
-      <h1>Fun quiz game - test your knowledge</h1>
-      <div>{error}</div>
-      <form data-testid="form" aria-label="login" onSubmit={handleSignIn}>
-        <h2>Login</h2>
-        <label htmlFor="username">Username</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          autoFocus
-          placeholder="Enter your username"
-          value={username}
-          onChange={onUsernameChange}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          autoFocus
-          placeholder="Enter your password"
-          value={password}
-          onChange={onPasswordChange}
-        />
-        <button onClick={handleSignIn}>Sign in</button>
-        <button onClick={() => navigate("/register")}>Create an account</button>
-      </form>
-    </>
-  );
+    return (
+        <>
+            <h1>Fun quiz game - test your knowledge</h1>
+            <div>{error}</div>
+            <form data-testid="form" aria-label="login" onSubmit={handleSignIn}>
+                <h2>Login</h2>
+                <label htmlFor="username">Username</label>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    autoFocus
+                    placeholder="Enter your username"
+                    value={username}
+                    onChange={onUsernameChange}
+                    data-testid="usernameInput"
+                />
+                <label htmlFor="password">Password</label>
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    autoFocus
+                    placeholder="Enter your password"
+                    value={password}
+                    onChange={onPasswordChange}
+                    data-testid="passwordInput"
+                />
+                <button data-testid="signIn" onClick={handleSignIn}>Sign in</button>
+                <button onClick={() => navigate('/register')}>
+                    Create an account
+                </button>
+            </form>
+        </>
+    );
 };
 
 export default LoginComponent;
