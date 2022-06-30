@@ -38,7 +38,7 @@ const FinishOnline = () => {
 
 
     //This is going to be a state with the username
-    const playerName = 'Player1' // USESELECTOR
+    const playerName = useSelector((state) => state.user) // USESELECTOR
 
     let playerScore = 0
 
