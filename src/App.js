@@ -23,9 +23,12 @@ import './pages/NumPlayers/style.css';
 import './pages/Difficulty/style.css';
 import './pages/Category/style.css';
 import './pages/Login/style.css';
+import './pages/Quiz/style.css';
+import './pages/Finish/style.css';
 import './layout/Background/style.css'
 import './components/HighscoreModal/style.css';
 import './components/LoginComponent/style.css';
+import './components/QuizForm/style.css';
 import './index.css'
 
 function App() {

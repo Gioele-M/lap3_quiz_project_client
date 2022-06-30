@@ -10,9 +10,11 @@ const Finish = () => {
     const statePlayerTwoScore = useSelector((state) => state.playerTwoScore);
     const statePlayerThreeScore = useSelector((state) => state.playerThreeScore);
     const statePlayerFourScore = useSelector((state) => state.playerFourScore);
+    const gameMode = useSelector((state) => state.mode);
     let scores = []
+    const user = useSelector((state) => state.user);
 
-
+console.log(user)
     
 
     const getScoresArray = () => {
@@ -72,15 +74,15 @@ const Finish = () => {
     }
     return (
         <>
-            <h1>Game finished</h1>
+            <h1 className="selectionH1">Final Scores</h1>
             <div className="scores">
                 {scores.length && (
-                    <>
-                        <h2>{declareWinner()}</h2>
-                        <table>
+                    <>{gameMode !== "rank" && <h2 className="scoresH2">{declareWinner()}</h2>}
+                        
+                        <table className="scoresTable">
                             <thead>
                                 <tr>
-                                  <th>Player</th>
+                                    <th>Player</th>
                                     <th>Score</th>  
                                 </tr>
                             </thead>
@@ -93,7 +95,7 @@ const Finish = () => {
                 )}
                 
             </div>
-            <button onClick={()=>navigate("/home")}>Home</button>
+            <button className="homeButton" onClick={()=>navigate("/home")}>Home</button>
         </>
     )
 }

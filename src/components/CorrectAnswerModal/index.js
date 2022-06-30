@@ -4,8 +4,10 @@ import style from './index.module.css';
 
 const CorrectAnswerModal = ({ CAVisibility }) => {
     return (
-        <div className={style.CAModal} style={{ visibility: CAVisibility }}>
-            This is the correct answer!!!
+        <div className={style.CAModal} 
+        style={{ visibility: CAVisibility }}
+        >
+            <h2>Correct!</h2>
         </div>
     );
 };

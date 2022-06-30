@@ -1,0 +1,29 @@
+.finishGameDiv{
+    background-color: #8B9EB7;
+    position: absolute;
+    width: 600px;
+    top: 300px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 32px;
+    text-align: center;
+    border: 10px solid #745296;
+    outline: 3px solid black;
+}
+
+.seeScoresButton {
+    font-size: 32px;
+    margin-top: 45px;
+    height: 75px;
+    width: 250px;
+    border-radius: 25px;
+    background-color: rgb(78, 78, 205);
+    color: antiquewhite;
+    font-weight: bold;
+    border: 3px solid black;
+}
