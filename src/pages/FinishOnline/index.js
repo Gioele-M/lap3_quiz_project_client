@@ -144,7 +144,7 @@ const FinishOnline = () => {
         })
         
 
-        socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
+    socket.off('showLeaderBoard').on('showLeaderBoard', (data) => {
 
             socket.off('showLeaderBoard')
 
@@ -189,7 +189,7 @@ const FinishOnline = () => {
 
 
 
-        })
+    })
 
 
  
