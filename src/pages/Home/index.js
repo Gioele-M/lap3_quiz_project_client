@@ -52,6 +52,7 @@ const Home = () => {
     const getRankingQuestions = () => dispatch(fetchRankingQuestions());
 
     const handleRankClick = () => {
+        dispatch({ type: "SET RANK LOADING"})
         dispatch({ type: 'SET AMOUNT', payload: '10' });
         dispatch({ type: 'SET PLAYERS', payload: '1' });
         dispatch({ type: 'SET MODE', payload: 'rank' });
