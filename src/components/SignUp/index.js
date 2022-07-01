@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignUp = () => {
-    // const [hasAccount, setHasAccount] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -37,7 +36,6 @@ const SignUp = () => {
                     JSON.stringify({ username, email, password }),
                     {
                         headers: { 'Content-Type': 'application/json' },
-                        // withCredentials: true,
                     }
                 );
 
@@ -61,18 +59,18 @@ const SignUp = () => {
         }
     };
 
-  const onUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
+    const onUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
 
-  const onPasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+    const onPasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
 
-  const onEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  
+    const onEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
     const onConfirmPasswordChange = (e) => {
         setConfirmPassword(e.target.value);
     };
