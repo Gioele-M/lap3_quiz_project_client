@@ -33,9 +33,18 @@
 
 -   The backend for this repo is deployed in [Heroku](https://red-devils-quiz.herokuapp.com/) and GitHub repository you can find from here: [https://github.com/Gioele-M/lap3_quiz_project_server](https://github.com/Gioele-M/lap3_quiz_project_server)
 
+## Contact
+
+-   [Gioele Montis](https://github.com/Gioele-M)
+-   [Layla Southcombe](https://github.com/LaylaSouthcombe)
+-   [Igor Mirowski](https://github.com/Igormirowski)
+-   [Nadir Ahmed Khan](https://github.com/Nadirkhan98)
+-   [Alice Kreslins](https://github.com/alicekres)
+
 ## Technologies
 
 -   React framework
+-   Redux
 -   JavaScript
 -   CSS
 -   axios
