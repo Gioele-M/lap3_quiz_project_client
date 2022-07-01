@@ -35,9 +35,9 @@ const QuizForm = ({setFinishGameVisibility}) => {
     const players = useSelector((state) => state.players);
 
     const addOnePlayer = () => {
-        if (gameMode === 'rank') {
-            for (let i = 0; i < 10; i++) {
-                quizQuestionArray[i].push({ player: '1' });
+        if(gameMode === "rank" || gameMode === "online"){
+            for (let i = 0; i < 10; i++){    
+                quizQuestionArray[i].push({player: "1"})
             }
         } else {
             for (let i = 0; i < 5; i++) {
@@ -192,7 +192,7 @@ const QuizForm = ({setFinishGameVisibility}) => {
                         className={style.questionSection}
                     >
                         <div className={style.questionCount}>
-                            {gameMode !== 'rank' && players !== '1' && (
+                            {(gameMode !== "rank" || gameMode !== "online") && players !== '1' && (
                                 <p data-testId="playerP" className={"playerTurnInfo " + quiz[currentQuestion][5].player}>
                                     Player {quiz[currentQuestion][5].player}{' '}
                                     it's your turn

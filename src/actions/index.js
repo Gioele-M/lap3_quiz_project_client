@@ -57,6 +57,18 @@ export const fetchRankingQuestions = () => {
             );
             let results = data.results;
             console.log(results);
+            for (let i = 0; i < results.length; i++) {
+                let instance = results[i];
+                let newQuestion = decode(instance.question);
+                instance.question = newQuestion;
+                let newCorrectAnswer = decode(instance.correct_answer);
+                instance.correct_answer = newCorrectAnswer;
+                for (let j = 0; j < results[i].incorrect_answers.length; j++) {
+                    let wronganswer = results[i].incorrect_answers[j];
+                    let newWrongAnswer = decode(wronganswer);
+                    results[i].incorrect_answers[j] = newWrongAnswer;
+                }
+            }
             dispatch({
                 type: 'LOAD RANKING QUESTIONS',
                 payload: results,

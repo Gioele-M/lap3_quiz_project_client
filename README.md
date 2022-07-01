@@ -33,9 +33,18 @@
 
 -   The backend for this repo is deployed in [Heroku](https://red-devils-quiz.herokuapp.com/) and GitHub repository you can find from here: [https://github.com/Gioele-M/lap3_quiz_project_server](https://github.com/Gioele-M/lap3_quiz_project_server)
 
+## Contact
+
+-   [Gioele Montis](https://github.com/Gioele-M)
+-   [Layla Southcombe](https://github.com/LaylaSouthcombe)
+-   [Igor Mirowski](https://github.com/Igormirowski)
+-   [Nadir Ahmed Khan](https://github.com/Nadirkhan98)
+-   [Alice Kreslins](https://github.com/alicekres)
+
 ## Technologies
 
 -   React framework
+-   Redux
 -   JavaScript
 -   CSS
 -   axios
@@ -81,6 +90,9 @@ This project was created during project week with Futureproof.
 ## Challenges
 
 -   To get the socket.io working for online game
+-   Testing
+-   Deploying
+-   Redux
 -   To manage to get everything done on time
 -   To replace "&code;" for example('&quot';) with the actual meaning behind it
 
@@ -94,6 +106,8 @@ Look for a file named CONTRIBUTING on a file root level.
 
 ## Future features
 
+-   Countdown timer for questions
+-   QR code generartor to enter the room
 -   Wider variety of topics and option to include more players at once.
 
 ## Licence

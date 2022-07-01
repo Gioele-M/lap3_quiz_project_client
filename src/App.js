@@ -13,6 +13,7 @@ import {
     Register,
     FinishOnline,
     PageNotFound,
+    OnlineWaitingRoom
 } from './pages';
 
 import { Background } from './layout'
@@ -32,6 +33,8 @@ import './components/LoginComponent/style.css';
 import './components/SignUp/style.css';
 import './components/QuizForm/style.css';
 import './index.css'
+import './pages/OnlineWaitingRoom/style.css';
+
 
 function App() {
     const user = useSelector((state) => state.user);
@@ -49,6 +52,7 @@ function App() {
                 <Route path="finish" element={<Finish />} />
                 <Route path="finishonline" element={<FinishOnline />} />
                 <Route path="register" element={<Register />} />
+                <Route path="waitingroom" element={<OnlineWaitingRoom />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
                 <Background />
