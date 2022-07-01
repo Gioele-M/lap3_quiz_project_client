@@ -23,6 +23,8 @@ const FinishOnline = () => {
 
 
     const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
+    const [hsModalVisibilityInverse, setHsModalVisibilityInverse] = useState('visible')
+
     const [hsUsernames, setHsUsernames] = useState([
         // {username: "bob123", total: 1, percentage: 12},
         // {username: "tina123", quizzes: 9, points: 9},
@@ -109,19 +111,21 @@ const FinishOnline = () => {
             
         }
 
-
+        
+        
+        
         console.log('Completed check... has to be pushed? ' + hasToBePushed)
-
+        
         if(hasToBePushed){
             playersWhoCompletedGame.push(toAppend)
-
+            
+            setNOfPlayersDone(playersWhoCompletedGame.length)
             
             console.log('I have pushed this object in the array!!')
             console.log(toAppend)
             console.log('Now the array is:')
             console.log(playersWhoCompletedGame)}
             
-            setNOfPlayersDone(playersWhoCompletedGame.length)
 
 
 
@@ -186,6 +190,7 @@ const FinishOnline = () => {
 
 
             setHsModalVisibility('visible')
+            setHsModalVisibilityInverse('hidden')
 
 
 
@@ -213,7 +218,7 @@ const FinishOnline = () => {
         <>
             <h1 className='selectionH1'>Game finished online</h1>
 
-            <p className='playerPara'>Players who completed the game so far: {nOfPlayersDone}</p>
+            <p className='playerPara' style={{visibility: hsModalVisibilityInverse}}>Wait for other players to complete the game!</p>
 
 
             <div className='scores' style={{visibility: hsModalVisibility}}>
