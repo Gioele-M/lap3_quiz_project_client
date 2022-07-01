@@ -6,9 +6,9 @@
     margin-top: 80px;
     height: 240px;
     grid-area: intro;
-    background-color: rgb(143, 54, 226);
+    background-color:#9898f4;
     border: 3px solid black;
-    outline: 5px solid rgb(124, 22, 219);
+    outline: 5px solid #594eec;
     padding: 20px;
     border-radius: 15px;
 }
