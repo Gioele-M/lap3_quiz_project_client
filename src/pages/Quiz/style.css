@@ -1,5 +1,7 @@
 .finishGameDiv{
-    background-color: #8B9EB7;
+    background-color: #518df4;
+    border: 3px solid black;
+    outline: 5px solid #3D518C;
     position: absolute;
     width: 600px;
     top: 300px;
@@ -12,8 +14,6 @@
     padding: 15px;
     font-size: 32px;
     text-align: center;
-    border: 10px solid #745296;
-    outline: 3px solid black;
 }
 
 .seeScoresButton {

@@ -95,6 +95,9 @@ const NumPlayers = () => {
         </div>
         
       </div>
+      <div className="buttonsNSelections">
+
+      
       <div className="backButtonDiv">
        <button className="backButton" onClick={() => navigate("/home")}>Go back</button> 
       </div>
@@ -109,6 +112,7 @@ const NumPlayers = () => {
           <li></li>
           <li></li>
         </ul>
+      </div>
       </div>
       <div className="selectionBrainDiv">
                 <img src={brain} className="selectionBrain" />

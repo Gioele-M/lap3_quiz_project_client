@@ -1,0 +1,7 @@
+.register{
+    display: grid;
+    grid-template-areas:
+    "logo intro"
+    "logo form";
+    height: 100vh;
+}

@@ -55,8 +55,8 @@ const LoginComponent = () => {
     return (
         <>
             <div className="introText">
-                <h2>Fun quiz game</h2>
-                <h2>Test your knowledge</h2>
+                <h2 className="introLine1">Fun quiz game</h2>
+                <h2>Will you be dumbfounded?</h2>
             </div>
             <div>{error}</div>
             <form
