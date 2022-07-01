@@ -1,5 +1,7 @@
 .NCAModal {
-    background-color: rgb(253, 197, 197);
+    background-color: #f28f8f;
+    border: 3px solid black;
+    outline: 5px solid #f14949;
     width: 600px;
     height: 225px;
     padding: 5px;

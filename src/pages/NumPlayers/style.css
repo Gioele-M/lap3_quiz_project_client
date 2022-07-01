@@ -5,7 +5,9 @@
     margin: 0 auto;
     margin-top: 60px;
     text-align: center;
-    background-color:blueviolet;
+    background-color:#BBB3EB;
+    border: 3px solid black;
+    outline: 5px solid #725EED;
 }
 
 .slider {
@@ -22,9 +24,10 @@
     height: 125px;
     width: 100px;
     margin-top: 220px;
-    background-color: blue;
+    background-color: rgb(121, 121, 212);
     border-radius: 50px;
-    border: none;
+    border: 3px solid black;
+    outline: 5px solid #574ba5;
     background-image: url(../../Images/arrow.png);
     background-size: 75px;
     background-repeat: no-repeat;
@@ -81,6 +84,9 @@
     font-size: 24px;
     width: 175px;
     margin-left: 30px;
+    border-radius: 15px;
+    height: 40px;
+    background-color: rgb(183, 171, 252);
 }
  
 .numSlide {

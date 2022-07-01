@@ -1,5 +1,7 @@
 .quizSection {
     background-color: rgb(0, 153, 255);
+    border: 3px solid black;
+    outline: 5px solid rgb(0, 129, 214);
     width: 800px;
     margin: 0 auto;
     margin-top: 50px;
@@ -18,11 +20,15 @@
     font-size: 28px;
 }
 .questionCount{
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 .questionNumber{
     font-size: 24px;
     margin-top: 20px;
+}
+.questionText {
+    text-align: center;
+
 }
 
 .answerSection{
@@ -41,7 +47,9 @@
     margin-top: 20px;
     min-height: 80px;
     border-radius: 25px;
-    background-color: rgb(70, 185, 160);
+    background-color: rgb(184, 233, 239);
+    border: 3px solid black;
+    /* outline: 5px solid rgb(0, 129, 214); */
     outline: none;
     border: 2px solid black;
 }

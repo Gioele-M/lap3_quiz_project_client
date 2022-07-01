@@ -28,7 +28,9 @@
     line-height: 125px;
     font-size: 52px;
     text-align: center;
-    background-color: rgb(133, 93, 170);
+    background-color:#BBB3EB;
+    border: 3px solid black;
+    outline: 5px solid #725EED;
     border-radius: 25px;
     grid-area: logo;
 }

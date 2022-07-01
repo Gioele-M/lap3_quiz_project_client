@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const Quiz = () => {
     let navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const [finishGameVisibility, setFinishGameVisibility] = useState("hidden")
 
     
@@ -16,7 +16,6 @@ const Quiz = () => {
     const playerOneScore = useSelector((state) => state.playerOneScore);
     const amount = useSelector((state) => state.amount);
     const gameMode = useSelector((state) => state.mode);
-    
     // const username = "Adam10"
     // const playOneScore = "10"
     // const amount = "10"
@@ -51,6 +50,10 @@ const Quiz = () => {
         if(gameMode === "rank"){
             sendScores(username, playerOneScore, amount)
         }
+        dispatch({
+            type: 'LOAD_RESULTS',
+            payload: [],
+        });
     //send results to server
     //navigate to score page
     //check game mode
