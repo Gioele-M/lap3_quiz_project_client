@@ -120,7 +120,7 @@ const Difficulty = () => {
                 <ul>
                   <li>Players: {statePlayers}</li>
                   <li>Category: {stateCategoryDesc}</li>
-                  <li>{difficultyLi}</li>
+                  <li className="difficultyLi">{difficultyLi}</li>
                 </ul>
               </div>
 

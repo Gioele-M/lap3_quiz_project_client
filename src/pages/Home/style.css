@@ -1,3 +1,13 @@
+.logoutButton{
+    width: 175px;
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 40px;
+    border-radius: 15px;
+    font-size: 22px;
+    background-color: rgb(183, 171, 252);
+}
+
 .hsArea{
     width: 375px;
     margin-left: auto;
@@ -5,14 +15,16 @@
 }
 
 .highScores {
-    background-color: rgb(122, 165, 175);
+    background-color: rgb(143, 199, 211);
+    border: 3px solid black;
+    outline: 5px solid rgb(101, 156, 168);
     width: 375px;
     margin-left: auto;
     margin-right: 30px;
-    margin-top: 45px;
+    /* margin-top: 15px; */
     text-align: center;
     border-radius: 15px;
-    height: 50px;
+    height: 55px;
     line-height: 50px;
     font-size: 24px;
 }
@@ -36,11 +48,13 @@
 .dumbfounded{
     width: 600px;
     margin: 0 auto;
-    margin-top: 325px;
+    margin-top: 300px;
     padding: 20px;
     font-size: 52px;
     text-align: center;
-    background-color: rgb(133, 93, 170);
+    background-color:#BBB3EB;
+    border: 3px solid black;
+    outline: 5px solid #725EED;
     border-radius: 25px;
 }
 
@@ -58,32 +72,38 @@
 
 
 .localGame {
-    background-color: rgb(120, 92, 221);
+    background-color: rgb(141, 120, 218);
+    border: 3px solid black;
+    outline: 5px solid #4532be;
     width: 200px;
     grid-area: area1;
     margin: 10px;
     border-radius: 15px;
     height: 65px;
-    line-height: 65px;
+    line-height: 60px;
 }
 
 .onlineGame {
     background-color: rgb(62, 121, 229);
+    border: 3px solid black;
+    outline: 5px solid rgb(50, 100, 195);
     width: 200px;
     grid-area: area2;
     margin: 10px;
     border-radius: 15px;
     height: 65px;
-    line-height: 65px;
+    line-height: 60px;
 }
 
 .rankingGame{
     background-color: rgb(191, 121, 223);
+    border: 3px solid black;
+    outline: 5px solid rgb(196, 99, 209);
     width: 225px;
     grid-area: area3;
     margin: 10px auto;
     border-radius: 15px;
     height: 65px;
-    line-height: 65px;
+    line-height: 60px;
 }
 

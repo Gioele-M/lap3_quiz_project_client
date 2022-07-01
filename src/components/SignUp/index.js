@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const SignUp = () => {
-    // const [hasAccount, setHasAccount] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -37,7 +36,6 @@ const SignUp = () => {
                     JSON.stringify({ username, email, password }),
                     {
                         headers: { 'Content-Type': 'application/json' },
-                        // withCredentials: true,
                     }
                 );
 
@@ -61,28 +59,31 @@ const SignUp = () => {
         }
     };
 
-  const onUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
+    const onUsernameChange = (e) => {
+        setUsername(e.target.value);
+    };
 
-  const onPasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+    const onPasswordChange = (e) => {
+        setPassword(e.target.value);
+    };
 
-  const onEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  
+    const onEmailChange = (e) => {
+        setEmail(e.target.value);
+    };
+
     const onConfirmPasswordChange = (e) => {
         setConfirmPassword(e.target.value);
     };
     return (
         <>
-            <h1>Fun quiz game - test you knowledge</h1>
+            <div className="introText">
+                <h2 className="introLine1">Fun quiz game</h2>
+                <h2>Will you be dumbfounded?</h2>
+            </div>
             <div>{error && error}</div>
-            <form aria-label="login" onSubmit={handleSignUp}>
-                <h2>Create Account</h2>
-                <label htmlFor="username">Username</label>
+            <form aria-label="login" className="registerForm"onSubmit={handleSignUp}>
+                <h2 className="registerHeader">Create Account</h2>
+                <label htmlFor="username" className="signUsernameLabel">Username</label>
                 <input
                     type="text"
                     name="username"
@@ -92,8 +93,9 @@ const SignUp = () => {
                     value={username}
                     onChange={onUsernameChange}
                     data-testid="usernameInput"
+                    className="signUsername"
                 />
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email" className="signEmailLabel">Email</label>
                 <input
                     type="email"
                     name="email"
@@ -103,8 +105,9 @@ const SignUp = () => {
                     value={email}
                     onChange={onEmailChange}
                     data-testid="emailInput"
+                    className="signEmail"
                 />
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password" className="signPasswordLabel">Password</label>
                 <input
                     type="password"
                     name="password"
@@ -114,8 +117,9 @@ const SignUp = () => {
                     value={password}
                     onChange={onPasswordChange}
                     data-testid="passwordInput"
+                    className="signPassword"
                 />
-                <label htmlFor="confirmPassword">Confirm password</label>
+                <label htmlFor="confirmPassword" className="confirmPasswordLabel">Confirm password</label>
                 <input
                     type="password"
                     name="confirmPassword"
@@ -125,10 +129,11 @@ const SignUp = () => {
                     value={confirmPassword}
                     onChange={onConfirmPasswordChange}
                     data-testid="confirmPasswordInput"
+                    className="confirmPasswordInput"
                 />
-                <button>Sign up</button>
-                <button data-testid="button1" onClick={() => navigate('/')}>
-                    Already have an account? Login
+                <button className="signUp">Sign up</button>
+                <button className="haveAccount" data-testid="button1" onClick={() => navigate('/')}>
+                    Have an account?
                 </button>
             </form>
         </>

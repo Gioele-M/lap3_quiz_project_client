@@ -22,7 +22,6 @@ export const fetchResults = (amount, category, difficulty) => {
                 `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
             );
             const results = data.results;
-            console.log('BEFORE', results);
             for (let i = 0; i < results.length; i++) {
                 let instance = results[i];
                 let newQuestion = decode(instance.question);

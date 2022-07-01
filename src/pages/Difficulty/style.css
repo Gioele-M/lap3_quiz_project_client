@@ -12,14 +12,17 @@ background-color: rgb(255, 170, 0);
 
 .buttonsNSelections{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 1000px;
+    margin: 0 auto;
+    margin-left: 190px;
 }
 
 .confirmSelections{
     font-size: 24px;
     width: 175px;
     margin: 0 auto;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     background-color: rgb(62, 210, 148);
     border-radius: 15px;
     padding: 5px;
@@ -30,12 +33,16 @@ background-color: rgb(255, 170, 0);
     padding: 10px;
     border-radius: 15px;
     background-color: rgb(133, 209, 209);
-    height: 125px;
+    height: 135px;
+    border: 3px solid black;
 }
 
 .selections > p {
     font-weight: bold;
     padding-bottom: 5px;
+}
+.difficultyLi{
+    margin-top: 3px;
 }
 #difficultySlide1 {
     z-index: 0;

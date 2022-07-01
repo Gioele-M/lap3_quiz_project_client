@@ -1,31 +1,19 @@
-.introText {
-    width: 80%;
-    margin: 0 auto;
-    font-size: 32px;
-    text-align: center;
-    margin-top: 80px;
-    height: 240px;
-    grid-area: intro;
-    background-color:#9898f4;
-    border: 3px solid black;
-    outline: 5px solid #594eec;
-    padding: 20px;
-    border-radius: 15px;
-}
-.introLine1{
-    margin-bottom: 10px;
-}
-.loginForm {
+.registerForm {
     display: grid;
     grid-template-areas: 
     "header header"
     "userLabel username"
+    "emailLabel email"
     "passLabel password"
-    "signIn signIn"
-    "createAccount createAccount";
+    "confirmLabel passwordConfirm"
+    "signUp signUp"
+    "haveAccount haveAccount";
+    grid-template-rows: 50px 50px 50px 50px 70px ;
+    align-items: center;
     width: 85%;
     margin: 0 auto;
     grid-area: form;
+    height: 400px;
     background-color: rgb(143, 54, 226);
     border: 3px solid black;
     outline: 5px solid rgb(124, 22, 219);
@@ -33,18 +21,18 @@
     border-radius: 15px;
 }
 
-.loginText {
+.registerHeader{
     grid-area: header;
     text-align: center;
-    margin: 15px;
+    margin: 10px;
     font-size: 32px;
 }
-.userLabel {
+.signUsernameLabel {
     grid-area: userLabel;
     font-size: 24px;
     width: 70px;
 }
-.usernameInput {
+.signUsername {
     grid-area: username;
     font-size: 20px;
     height: 34px;
@@ -52,11 +40,23 @@
     padding: 10px;
     outline: none;
 }
-.passLabel {
+.signEmailLabel {
+    grid-area: emailLabel;
+    font-size: 24px;
+}
+.signEmail {
+    grid-area: email;
+    font-size: 20px;
+    height: 34px;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+}
+.signPasswordLabel {
     grid-area: passLabel;
     font-size: 24px;
 }
-.passwordInput {
+.signPassword {
     grid-area: password;
     font-size: 20px;
     height: 34px;
@@ -64,16 +64,29 @@
     padding: 10px;
     outline: none;
 }
-.signIn {
-    grid-area: signIn;
+.confirmPasswordLabel {
+    grid-area: confirmLabel;
+    font-size: 24px;
+}
+.confirmPasswordInput {
+    grid-area: passwordConfirm;
+    font-size: 20px;
+    height: 34px;
+    border-radius: 15px;
+    padding: 10px;
+    outline: none;
+}
+.signUp {
+    grid-area: signUp;
     font-size: 24px;
     width: 200px;
     height: 40px;
     margin: 0 auto;
     border-radius: 15px;
+    margin-bottom: 10px;
 }
-.createAccount {
-    grid-area: createAccount;
+.haveAccount{
+    grid-area: haveAccount;
     font-size: 24px;
     width: 300px;
     height: 40px;

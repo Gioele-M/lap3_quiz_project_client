@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -8,14 +8,17 @@ import axios from 'axios';
 
 const Quiz = () => {
     let navigate = useNavigate();
+    const dispatch = useDispatch();
+    const [finishGameVisibility, setFinishGameVisibility] = useState("hidden")
 
+    
     const username = useSelector((state) => state.user);
-    const playOneScore = useSelector((state) => state.playOneScore);
+    const playerOneScore = useSelector((state) => state.playerOneScore);
     const amount = useSelector((state) => state.amount);
     const gameMode = useSelector((state) => state.mode);
     // const username = "Adam10"
-    // const playOneScore = 10
-    // const amount = 10
+    // const playOneScore = "10"
+    // const amount = "10"
     const finishGame = () => {
 
         // Check game mode
@@ -24,6 +27,7 @@ const Quiz = () => {
 
         console.log(gameMode)
         const sendScores = async (username, correct, total) => {
+            console.log(JSON.stringify({ username, correct, total }))
             const response  = await axios.patch(
                 "https://red-devils-quiz.herokuapp.com/leaderboard",
                 JSON.stringify({ username, correct, total }),
@@ -34,6 +38,9 @@ const Quiz = () => {
             );
             console.log(response)
         }
+        console.log("amount", amount)
+    console.log("score", playerOneScore)
+    console.log("name", username)
         if(gameMode === 'online'){
             //Navigate to score page for online
             navigate('/finishonline')
@@ -41,8 +48,12 @@ const Quiz = () => {
             navigate('/finish')
         }
         if(gameMode === "rank"){
-            sendScores(username, playOneScore, amount)
+            sendScores(username, playerOneScore, amount)
         }
+        dispatch({
+            type: 'LOAD_RESULTS',
+            payload: [],
+        });
     //send results to server
     //navigate to score page
     //check game mode
@@ -58,9 +69,13 @@ const Quiz = () => {
 
     return (
         <>
-            <h1>Quiz</h1>
-            <QuizForm />
-            <button onClick={finishGame}>Finish quiz</button>
+            <h1 className="quizH1">Quiz</h1>
+            <QuizForm setFinishGameVisibility={setFinishGameVisibility}/>
+            <div className="finishGameDiv" style={{visibility: finishGameVisibility}}>
+                <h2>You have answered all the questions!</h2>
+                <button onClick={finishGame} className="seeScoresButton">See scores</button>
+            </div>
+            
         </>
     );
 };
