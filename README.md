@@ -90,6 +90,9 @@ This project was created during project week with Futureproof.
 ## Challenges
 
 -   To get the socket.io working for online game
+-   Testing
+-   Deploying
+-   Redux
 -   To manage to get everything done on time
 -   To replace "&code;" for example('&quot';) with the actual meaning behind it
 
@@ -103,6 +106,8 @@ Look for a file named CONTRIBUTING on a file root level.
 
 ## Future features
 
+-   Countdown timer for questions
+-   QR code generartor to enter the room
 -   Wider variety of topics and option to include more players at once.
 
 ## Licence
