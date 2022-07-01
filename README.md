@@ -44,6 +44,7 @@
 ## Technologies
 
 -   React framework
+-   Redux
 -   JavaScript
 -   CSS
 -   axios
