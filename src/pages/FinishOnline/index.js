@@ -167,7 +167,7 @@ const FinishOnline = () => {
                 let formattedData = {
                     username: name,
                     total: questions,
-                    percentage: parseInt(result) / parseInt(questions)
+                    percentage: parseInt(result)
                 }
 
                 arrayToSend.push(formattedData)
@@ -194,6 +194,15 @@ const FinishOnline = () => {
 
  
 
+    const renderedScores = hsUsernames.map((score, i) => {
+        return (
+          <tr key={i}>
+            <td>{score.username}</td>
+            <td>{score.percentage}</td>
+
+          </tr>
+        );
+      });
 
     
 
@@ -202,17 +211,29 @@ const FinishOnline = () => {
 
     return (
         <>
-            <h1>Game finished online</h1>
+            <h1 className='selectionH1'>Game finished online</h1>
 
-            <p>Players who completed the game so far: {nOfPlayersDone}</p>
+            <p className='playerPara'>Players who completed the game so far: {nOfPlayersDone}</p>
 
-            <button onClick={()=>navigate("/home")}>Home</button>
 
-            <HighScoreModal
-                hsModalVisibility={hsModalVisibility}
-                hsUsernames={hsUsernames}
-                setHsModalVisibility={setHsModalVisibility}
-            />
+            <div className='scores' style={{visibility: hsModalVisibility}}>
+
+            <table className="scoresTable" >
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Score</th>  
+                    </tr>
+                </thead>
+                <tbody>
+                    {renderedScores}  
+                </tbody>
+            </table>
+            
+            </div>
+
+            <button className='homeButton' onClick={()=>navigate("/home")}>Home</button>
+
         </>
     )
 }

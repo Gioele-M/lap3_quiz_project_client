@@ -172,7 +172,7 @@ const OnlineWaitingRoom = () => {
         <>
             
             <div className="socketGame">
-                <h2 className="socketHeader">Socket game</h2>
+                <h2 className="socketHeader">Socket Game</h2>
                 <div className="createRoom">
                     <div className="createButton" onClick={onCreateRoom}>
                         Create Room
@@ -180,7 +180,7 @@ const OnlineWaitingRoom = () => {
                         
                     </div>
                     <p>
-                        Room code: {roomCode}
+                        Room Code: {roomCode}
                     </p>
                 </div>
 
@@ -189,7 +189,7 @@ const OnlineWaitingRoom = () => {
                 <div className="joinRoom">
 
                     <div>
-                        Join room
+                        Join Room
                         {/* Form + submit */}
                         <form className="roomForm" onSubmit={onFormSumbit}>
                             <input type='text'></input>
@@ -199,7 +199,7 @@ const OnlineWaitingRoom = () => {
                 </div>
 
                 <div className="startGame">
-                    <button onClick={onStartGame}>Start game</button>
+                    <button onClick={onStartGame}>Start Game</button>
                 </div>
 
 
