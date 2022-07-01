@@ -71,12 +71,6 @@ const OnlineWaitingRoom = () => {
     }
 
 
-    function onJoinRoom(){
-
-        
-
-
-    }
     
 
     
@@ -178,34 +172,38 @@ const OnlineWaitingRoom = () => {
         <>
             
             <div className="socketGame">
-                <h2>Socket game</h2>
-                <div onClick={onCreateRoom}>
-                    Create Room
-                    {/* Click + p tag where to append  */}
-
+                <h2 className="socketHeader">Socket game</h2>
+                <div className="createRoom">
+                    <div className="createButton" onClick={onCreateRoom}>
+                        Create Room
+                        {/* Click + p tag where to append  */}
+                        
+                    </div>
                     <p>
                         Room code: {roomCode}
                     </p>
                 </div>
 
-
                 <br/>
 
-                <div onClick={onJoinRoom}>
-                    Join room
-                    {/* Form + submit */}
-                    <form onSubmit={onFormSumbit}>
-                        <input type='text'></input>
-                        <button type='submit'>Enter</button>
-                    </form>
+                <div className="joinRoom">
+
+                    <div>
+                        Join room
+                        {/* Form + submit */}
+                        <form className="roomForm" onSubmit={onFormSumbit}>
+                            <input type='text'></input>
+                            <button type='submit'>Enter</button>
+                        </form>
+                    </div>
                 </div>
 
-                <div>
+                <div className="startGame">
                     <button onClick={onStartGame}>Start game</button>
                 </div>
 
 
-                <div>
+                <div className="peopleRoom">
                     People in the room {playersConnected}
                 </div>
 
