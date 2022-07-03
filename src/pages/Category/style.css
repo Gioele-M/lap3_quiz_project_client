@@ -1,12 +1,12 @@
 .categorySlide {
-    background-size: 100px;
+    background-size: 45px;
     background-repeat: no-repeat;
     background-position: 50% 20%;
-    font-size: 16px;
+    font-size: 8px;
 }
 
 .categorySlide > h2 {
-    margin-top: 50px;
+    margin-top: 5px;
     height: 40px;
 }
 .genKno{
@@ -30,33 +30,28 @@
     background-color: rgb(255, 170, 60);
 }
 #categorySlide1 {
-    /* background-color: red; */
     z-index: 0;
-    top: 100px;
+    top: 65px;
 }
 #categorySlide2 {
-    /* background-color: rgb(255, 170, 0); */
-    z-index: 0;
-    top: 160px;
-    left: 220px;
-}
-#categorySlide3 {
-    /* background-color: rgb(242, 255, 0); */
     z-index: 0;
     top: 100px;
+    left: 85px;
+}
+#categorySlide3 {
+    z-index: 0;
+    top: 65px;
     right: 0;
 }
 #categorySlide4 {
-    /* background-color: rgb(255, 0, 251); */
     z-index: -1;
-    left: 330px;
-    top: 40px;
+    left: 135px;
+    top: 30px;
 }
 #categorySlide5 {
-    /* background-color: rgb(123, 0, 255); */
     z-index: -1;
-    left: 110px;
-    top: 40px;
+    left: 35px;
+    top: 30px;
 }
 
 #categorySlide1.right {
@@ -75,27 +70,27 @@ animation: categorySlide1right 0.5s linear;
     animation: categorySlide5right 0.5s linear;
 }
 @keyframes categorySlide1right {
-    0%   {transform: translate(110px, -60px); z-index: -1}
+    0%   {transform: translate(35px, -35px); z-index: -1}
     75%  {z-index: -1}
     100% {transform: translate(0%, 0)}
 }
 
 @keyframes categorySlide2right {
-    0%   {transform: translate(-220px, -60px)}
+    0%   {transform: translate(-85px, -35px)}
     100% {transform: translate(0%, 0%)}
 }
 
 @keyframes categorySlide3right {
-    0%   {transform: translate(-220px, 60px)}
+    0%   {transform: translate(-85px, 35px)}
     100% {transform: translate(0, 0)}
 }
 
 @keyframes categorySlide4right {
-    0%   {transform: translate(110px, 60px)}
+    0%   {transform: translate(35px, 35px)}
     100% {transform: translate(0, 0)}
 }
 @keyframes categorySlide5right {
-    0%   {transform: translate(220px, 0px)}
+    0%   {transform: translate(85px, 0px)}
     100% {transform: translate(0, 0)}
 }
 
@@ -118,42 +113,322 @@ animation: categorySlide1right 0.5s linear;
 
 
 @keyframes categorySlide1left {
-    0%   {transform: translate(220px, 60px)}
+    0%   {transform: translate(85px, 35px)}
     100% {transform: translate(0%, 0)}
 }
 
 @keyframes categorySlide2left {
-    0%   {transform: translate(220px, -60px)}
+    0%   {transform: translate(85px, -35px)}
     100% {transform: translate(0%, 0%)}
 }
 
 @keyframes categorySlide3left {
-    0%   {transform: translate(-110px, -60px); z-index: -1}
+    0%   {transform: translate(-35px, -35px); z-index: -1}
     75%  {z-index: -1}
     100% {transform: translate(0, 0)}
 }
 
 @keyframes categorySlide4left {
-    0%   {transform: translate(-220px, 0px)}
+    0%   {transform: translate(-85px, 0px)}
     100% {transform: translate(0, 0)}
 }
 @keyframes categorySlide5left {
-    0%   {transform: translate(-110px, 60px)}
+    0%   {transform: translate(-35px, 35px)}
     100% {transform: translate(0, 0)}
 }
 
 @media (min-width: 480px) {
+    .categorySlide {
+        background-size: 55px;
+        font-size: 10px;
+    }
     
+    .categorySlide > h2 {
+        margin-top: 20px;
+    }
+    
+    #categorySlide1 {
+        top: 85px;
+    }
+    #categorySlide2 {
+        top: 130px;
+        left: 115px;
+    }
+    #categorySlide3 {
+        top: 85px;
+        right: 0;
+    }
+    #categorySlide4 {
+        left: 185px;
+        top: 40px;
+    }
+    #categorySlide5 {
+        left: 45px;
+        top: 40px;
+    }
+    
+    
+    @keyframes categorySlide1right {
+        0%   {transform: translate(45px, -45px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide2right {
+        0%   {transform: translate(-115px, -45px)}
+    }
+    
+    @keyframes categorySlide3right {
+        0%   {transform: translate(-115px, 45px)}
+    }
+    
+    @keyframes categorySlide4right {
+        0%   {transform: translate(45px, 45px)}
+    }
+    @keyframes categorySlide5right {
+        0%   {transform: translate(115px, 0px)}
+    }   
+    
+    @keyframes categorySlide1left {
+        0%   {transform: translate(115px, 45px)}
+    }
+    
+    @keyframes categorySlide2left {
+        0%   {transform: translate(115px, -45px)}
+    }
+    
+    @keyframes categorySlide3left {
+        0%   {transform: translate(-45px, -45px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide4left {
+        0%   {transform: translate(-115px, 0px)}
+    }
+    @keyframes categorySlide5left {
+        0%   {transform: translate(-45px, 45px)}
+    }
 }
 
 @media (min-width: 768px) {
-
+    .categorySlide {
+        background-size: 75px;
+        font-size: 14px;
+    }
+    
+    .categorySlide > h2 {
+        margin-top: 45px;
+    }
+    
+    #categorySlide1 {
+        top: 90px;
+    }
+    #categorySlide2 {
+        top: 150px;
+        left: 170px;
+    }
+    #categorySlide3 {
+        top: 90px;
+        right: 0;
+    }
+    #categorySlide4 {
+        left: 260px;
+        top: 30px;
+    }
+    #categorySlide5 {
+        left: 80px;
+        top: 30px;
+    }
+    
+    
+    @keyframes categorySlide1right {
+        0%   {transform: translate(80px, -60px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide2right {
+        0%   {transform: translate(-170px, -60px)}
+    }
+    
+    @keyframes categorySlide3right {
+        0%   {transform: translate(-170px, 60px)}
+    }
+    
+    @keyframes categorySlide4right {
+        0%   {transform: translate(80px, 60px)}
+    }
+    @keyframes categorySlide5right {
+        0%   {transform: translate(170px, 0px)}
+    }   
+    
+    @keyframes categorySlide1left {
+        0%   {transform: translate(170px, 60px)}
+    }
+    
+    @keyframes categorySlide2left {
+        0%   {transform: translate(170px, -60px)}
+    }
+    
+    @keyframes categorySlide3left {
+        0%   {transform: translate(-80px, -60px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide4left {
+        0%   {transform: translate(-170px, 0px)}
+    }
+    @keyframes categorySlide5left {
+        0%   {transform: translate(-80px, 60px)}
+    }
 }
 
 @media (min-width: 1024px) {
-
+    .categorySlide {
+        background-size: 95px;
+        font-size: 18px;
+    }
+    
+    .categorySlide > h2 {
+        margin-top: 60px;
+    }
+    
+    #categorySlide1 {
+        top: 130px;
+    }
+    #categorySlide2 {
+        top: 200px;
+        left: 190px;
+    }
+    #categorySlide3 {
+        top: 130px;
+        right: 0;
+    }
+    #categorySlide4 {
+        left: 285px;
+        top: 60px;
+    }
+    #categorySlide5 {
+        left: 95px;
+        top: 60px;
+    }
+    
+    
+    @keyframes categorySlide1right {
+        0%   {transform: translate(95px, -70px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide2right {
+        0%   {transform: translate(-190px, -70px)}
+    }
+    
+    @keyframes categorySlide3right {
+        0%   {transform: translate(-190px, 70px)}
+    }
+    
+    @keyframes categorySlide4right {
+        0%   {transform: translate(95px, 70px)}
+    }
+    @keyframes categorySlide5right {
+        0%   {transform: translate(190px, 0px)}
+    }   
+    
+    @keyframes categorySlide1left {
+        0%   {transform: translate(190px, 70px)}
+    }
+    
+    @keyframes categorySlide2left {
+        0%   {transform: translate(190px, -70px)}
+    }
+    
+    @keyframes categorySlide3left {
+        0%   {transform: translate(-95px, -70px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide4left {
+        0%   {transform: translate(-190px, 0px)}
+    }
+    @keyframes categorySlide5left {
+        0%   {transform: translate(-95px, 70px)}
+    }
 }
 
 @media (min-width: 1200px) {
-
+    .categorySlide {
+        background-size: 100px;
+        font-size: 16px;
+    }
+    
+    .categorySlide > h2 {
+        margin-top: 50px;
+        height: 40px;
+    }
+    #categorySlide1 {
+        top: 100px;
+    }
+    #categorySlide2 {
+        top: 160px;
+        left: 220px;
+    }
+    #categorySlide3 {
+        top: 100px;
+        right: 0;
+    }
+    #categorySlide4 {
+        left: 330px;
+        top: 40px;
+    }
+    #categorySlide5 {
+        left: 110px;
+        top: 40px;
+    }
+    
+    @keyframes categorySlide1right {
+        0%   {transform: translate(110px, -60px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide2right {
+        0%   {transform: translate(-220px, -60px)}
+    }
+    
+    @keyframes categorySlide3right {
+        0%   {transform: translate(-220px, 60px)}
+    }
+    
+    @keyframes categorySlide4right {
+        0%   {transform: translate(110px, 60px)}
+    }
+    @keyframes categorySlide5right {
+        0%   {transform: translate(220px, 0px)}
+    }   
+    
+    
+    @keyframes categorySlide1left {
+        0%   {transform: translate(220px, 60px)}
+    }
+    
+    @keyframes categorySlide2left {
+        0%   {transform: translate(220px, -60px)}
+    }
+    
+    @keyframes categorySlide3left {
+        0%   {transform: translate(-110px, -60px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes categorySlide4left {
+        0%   {transform: translate(-220px, 0px)}
+    }
+    @keyframes categorySlide5left {
+        0%   {transform: translate(-110px, 60px)}
+    }
 }
