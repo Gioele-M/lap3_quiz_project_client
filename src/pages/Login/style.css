@@ -1,36 +1,196 @@
-.login{
+.login {
     display: grid;
     grid-template-areas:
-    "logo intro"
-    "logo form";
+    "logo"
+    "intro"
+    "form";
     height: 100vh;
+    width: 360px;
+    margin: 0 auto;
 }
 
-.loginBrainDiv{
-    width: 500px;
+.loginLogo {
+    grid-area: logo;
+    position: relative;
+    width: 260px;
+    margin: 0 auto;
+}
+
+.loginBrainDiv {
+    width: 200px;
     object-fit: contain;
     z-index: -1;
     position: absolute;
-    left: 150px;
-    right: auto;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
     top: 20%;
 }
 
 .loginBrain{
     width: 100%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
 }
 
 .loginDumbfounded{
-    width: 600px;
-    margin-left: 100px;
-    margin-top: 375px;
-    height: 125px;
-    line-height: 125px;
-    font-size: 52px;
-    text-align: center;
     background-color:#BBB3EB;
     border: 3px solid black;
     outline: 5px solid #725EED;
-    border-radius: 25px;
+    width: 220px;
+    margin: 0 auto;
+    margin-top: 180px;
+    height: 40px;
+    font-size: 22px;
+    text-align: center;
+    border-radius: 15px;
     grid-area: logo;
+    padding: 2px 0px;
+}
+@media (min-width: 480px) {
+    .login{
+        display: grid;
+        grid-template-areas:
+        "logo"
+        "intro"
+        "form";
+        height: 100vh;
+        width: 480px;
+        margin: 0 auto;
+    }
+    .loginLogo {
+        grid-area: logo;
+        position: relative;
+        width: 300px;
+        margin: 0 auto;
+        margin-bottom: 25px;
+    }
+    .loginBrainDiv {
+        width: 250px;
+        object-fit: contain;
+        z-index: -1;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 20%;
+    }
+    
+    .loginBrain{
+        width: 100%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+    
+    .loginDumbfounded{
+        width: 300px;
+        margin: 0 auto;
+        margin-top: 200px;
+        height: 60px;
+        font-size: 30px;
+        text-align: center;
+        border-radius: 15px;
+        grid-area: logo;
+        padding: 7px 0px;
+    }
+}
+
+@media (min-width: 768px) {
+    .login{
+        width: 768px;
+    }
+    .loginLogo {
+        width: 350px;
+    }
+    .loginBrainDiv {
+        width: 300px;
+    }
+    .loginDumbfounded{
+        width: 350px;
+        height: 80px;
+        font-size: 36px;
+        border-radius: 25px;
+        padding: 15px 0px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .login{
+        display: grid;
+        grid-template-areas:
+        "logo intro"
+        "logo form";
+        height: 100vh;
+        width: 1024px;
+        margin: 0 auto;
+    }
+    .loginLogo {
+        grid-area: logo;
+        position: relative;
+        width: 475px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+    .loginBrainDiv {
+        width: 450px;
+        object-fit: contain;
+        z-index: -1;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 20%;
+    }
+    
+    .loginBrain{
+        width: 100%;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+    }
+    
+    .loginDumbfounded{
+        width: 475px;
+        margin: 0 auto;
+        margin-top: 375px;
+        height: 100px;
+        /* line-height: 100px; */
+        font-size: 42px;
+        text-align: center;
+        border-radius: 25px;
+        grid-area: logo;
+        padding: 20px 0px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .login {
+        width: 1150px;
+    }
+    
+    .loginLogo {
+        width: 550px;
+    }
+    .loginBrainDiv {
+        width: 500px;
+    }
+    .loginDumbfounded{
+        width: 550px;
+        height: 125px;
+        /* line-height: 125px; */
+        font-size: 52px;
+        padding: 22px 0px;
+    }
 }

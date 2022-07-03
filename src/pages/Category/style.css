@@ -141,3 +141,19 @@ animation: categorySlide1right 0.5s linear;
     0%   {transform: translate(-110px, 60px)}
     100% {transform: translate(0, 0)}
 }
+
+@media (min-width: 480px) {
+    
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1200px) {
+
+}

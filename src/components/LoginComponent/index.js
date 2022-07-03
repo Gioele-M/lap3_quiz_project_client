@@ -58,7 +58,7 @@ const LoginComponent = () => {
                 <h2 className="introLine1">Fun quiz game</h2>
                 <h2>Will you be dumbfounded?</h2>
             </div>
-            <div>{error}</div>
+            <div className="loginError">{error}</div>
             <form
                 data-testid="form"
                 aria-label="login"

@@ -106,4 +106,108 @@
     height: 65px;
     line-height: 60px;
 }
+@media (min-width: 480px) {
+    
+}
 
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
+@media (min-width: 1200px) {
+    .logoutButton{
+        width: 175px;
+        margin-left: 30px;
+        margin-top: 30px;
+        height: 40px;
+        border-radius: 15px;
+        font-size: 22px;
+    }
+    
+    .hsArea{
+        width: 375px;
+        margin-left: auto;
+        margin-right: 30px;
+    }
+    
+    .highScores {
+        width: 375px;
+        margin-left: auto;
+        margin-right: 30px;
+        /* margin-top: 15px; */
+        text-align: center;
+        border-radius: 15px;
+        height: 55px;
+        line-height: 50px;
+        font-size: 24px;
+    }
+    
+    .homeBrainDiv{
+        width: 500px;
+        object-fit: contain;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 20%;
+    }
+    
+    .homeBrain{
+        width: 100%;
+    }
+    
+    .dumbfounded{
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 300px;
+        padding: 20px;
+        font-size: 52px;
+        text-align: center;
+        border-radius: 25px;
+    }
+    
+    .gameTypes {
+        display: grid;
+        grid-template-areas: 
+        'area1 area2'
+        'area3 area3';
+        width: 500px;
+        margin: 0 auto;
+        justify-content: space-around;
+        text-align: center;
+        padding-top: 50px;
+    }
+    
+    
+    .localGame {
+        width: 200px;
+        grid-area: area1;
+        margin: 10px;
+        border-radius: 15px;
+        height: 65px;
+        line-height: 60px;
+    }
+    
+    .onlineGame {
+        width: 200px;
+        grid-area: area2;
+        margin: 10px;
+        border-radius: 15px;
+        height: 65px;
+        line-height: 60px;
+    }
+    
+    .rankingGame{
+        width: 225px;
+        grid-area: area3;
+        margin: 10px auto;
+        border-radius: 15px;
+        height: 65px;
+        line-height: 60px;
+    }
+}
