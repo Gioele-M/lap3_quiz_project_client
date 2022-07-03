@@ -63,6 +63,7 @@ const Home = () => {
     };
     return (
         <>
+        <div className="header">
             <LogoutButton />
             <div className="hsArea">
                 <div className="highScores" onClick={openHsModal}>
@@ -74,6 +75,8 @@ const Home = () => {
                     setHsModalVisibility={setHsModalVisibility}
                 />
             </div>
+        </div>
+            
 
             <div className="homeBrainDiv">
                 <img src={brain} className="homeBrain" />
