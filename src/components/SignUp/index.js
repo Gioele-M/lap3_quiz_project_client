@@ -80,7 +80,7 @@ const SignUp = () => {
                 <h2 className="introLine1">Fun quiz game</h2>
                 <h2>Will you be dumbfounded?</h2>
             </div>
-            <div>{error && error}</div>
+            <div className="loginError">{error && error}</div>
             <form aria-label="login" className="registerForm"onSubmit={handleSignUp}>
                 <h2 className="registerHeader">Create Account</h2>
                 <label htmlFor="username" className="signUsernameLabel">Username</label>

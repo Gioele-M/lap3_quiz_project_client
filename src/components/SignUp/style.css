@@ -8,97 +8,206 @@
     "confirmLabel passwordConfirm"
     "signUp signUp"
     "haveAccount haveAccount";
-    grid-template-rows: 50px 50px 50px 50px 70px ;
+    grid-template-rows: 40px 40px 40px 40px 60px;
     align-items: center;
-    width: 85%;
+    width: 280px;
     margin: 0 auto;
     grid-area: form;
-    height: 400px;
+    height: 330px;
     background-color: rgb(143, 54, 226);
     border: 3px solid black;
     outline: 5px solid rgb(124, 22, 219);
-    padding: 20px;
+    padding: 0px 10px;
     border-radius: 15px;
 }
 
 .registerHeader{
     grid-area: header;
     text-align: center;
-    margin: 10px;
-    font-size: 32px;
+    margin: 15px;
+    font-size: 22px;
 }
+
 .signUsernameLabel {
     grid-area: userLabel;
-    font-size: 24px;
-    width: 70px;
+    font-size: 16px;
+    width: 80px;
 }
 .signUsername {
     grid-area: username;
-    font-size: 20px;
-    height: 34px;
+    font-size: 18px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
+
+
 .signEmailLabel {
     grid-area: emailLabel;
-    font-size: 24px;
+    font-size: 16px;
+    width: 80px;
 }
 .signEmail {
     grid-area: email;
     font-size: 20px;
-    height: 34px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
+
+
 .signPasswordLabel {
     grid-area: passLabel;
-    font-size: 24px;
+    font-size: 16px;
+    width: 80px;
 }
 .signPassword {
     grid-area: password;
     font-size: 20px;
-    height: 34px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
 .confirmPasswordLabel {
     grid-area: confirmLabel;
-    font-size: 24px;
+    font-size: 16px;
+    width: 80px;
 }
 .confirmPasswordInput {
     grid-area: passwordConfirm;
     font-size: 20px;
-    height: 34px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
 .signUp {
     grid-area: signUp;
-    font-size: 24px;
-    width: 200px;
-    height: 40px;
+    font-size: 18px;
+    width: 140px;
+    height: 30px;
     margin: 0 auto;
     border-radius: 15px;
-    margin-bottom: 10px;
 }
 .haveAccount{
     grid-area: haveAccount;
-    font-size: 24px;
-    width: 300px;
-    height: 40px;
+    font-size: 18px;
+    width: 220px;
+    height: 30px;
     margin: 0 auto;
     border-radius: 15px;
 }
+
+
 @media (min-width: 480px) {
-    
+    .registerForm {
+        width: 320px;
+        padding: 10px;
+        height: 300px;
+        grid-template-rows: 42px;
+    }
+    .registerHeader {
+        font-size: 28px;
+    }
+    .signUsernameLabel {
+        font-size: 18px;
+        width: 100px;
+    }
+    .signUsername {
+        font-size: 20px;
+        height: 30px;
+        width: 170px;
+    }
+    .signEmailLabel {
+        font-size: 18px;
+        width: 100px;
+    }
+    .signEmail {
+        font-size: 20px;
+        height: 30px;
+        width: 170px;
+    }
+    .signPasswordLabel {
+        font-size: 18px;
+        width: 100px;
+    }
+    .signPassword {
+        font-size: 20px;
+        height: 30px;
+        width: 170px;
+    }
+    .confirmPasswordLabel {
+        font-size: 18px;
+        width: 100px;
+    }
+    .confirmPasswordInput {
+        height: 30px;
+        width: 170px;
+    }
+    .signUp {
+        font-size: 20px;
+        width: 160px;
+    }
+    .haveAccount {
+        font-size: 20px;
+        width: 260px;
+    }
 }
 
 @media (min-width: 768px) {
-
+    .registerForm {
+        width: 400px;
+        padding: 20px;
+        height: 340px;
+    }
+    .registerHeader {
+        font-size: 32px;
+    }
+    .signUsernameLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .signUsername {
+        width: 220px;
+    }
+    .signEmailLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .signEmail {
+        width: 220px;
+    }
+    .signPasswordLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .signPassword {
+        width: 220px;
+    }
+    .confirmPasswordLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .confirmPasswordInput {
+        width: 220px;
+    }
+    .signUp {
+        font-size: 22px;
+        width: 180px;
+        height: 40px;
+    }
+    .haveAccount {
+        font-size: 22px;
+        width: 280px;
+        height: 40px;
+    }
 }
 
 @media (min-width: 1024px) {
@@ -106,5 +215,99 @@
 }
 
 @media (min-width: 1200px) {
-
+    .registerForm {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "userLabel username"
+        "emailLabel email"
+        "passLabel password"
+        "confirmLabel passwordConfirm"
+        "signUp signUp"
+        "haveAccount haveAccount";
+        grid-template-rows: 50px 50px 50px 50px 70px ;
+        align-items: center;
+        width: 85%;
+        margin: 0 auto;
+        grid-area: form;
+        height: 400px;
+        background-color: rgb(143, 54, 226);
+        border: 3px solid black;
+        outline: 5px solid rgb(124, 22, 219);
+        padding: 20px;
+        border-radius: 15px;
+    }
+    
+    .registerHeader{
+        grid-area: header;
+        text-align: center;
+        margin: 10px;
+        font-size: 32px;
+    }
+    .signUsernameLabel {
+        grid-area: userLabel;
+        font-size: 24px;
+        width: 70px;
+    }
+    .signUsername {
+        grid-area: username;
+        font-size: 20px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 10px;
+        outline: none;
+    }
+    .signEmailLabel {
+        grid-area: emailLabel;
+        font-size: 24px;
+    }
+    .signEmail {
+        grid-area: email;
+        font-size: 20px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 10px;
+        outline: none;
+    }
+    .signPasswordLabel {
+        grid-area: passLabel;
+        font-size: 24px;
+    }
+    .signPassword {
+        grid-area: password;
+        font-size: 20px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 10px;
+        outline: none;
+    }
+    .confirmPasswordLabel {
+        grid-area: confirmLabel;
+        font-size: 24px;
+    }
+    .confirmPasswordInput {
+        grid-area: passwordConfirm;
+        font-size: 20px;
+        height: 34px;
+        border-radius: 15px;
+        padding: 10px;
+        outline: none;
+    }
+    .signUp {
+        grid-area: signUp;
+        font-size: 24px;
+        width: 200px;
+        height: 40px;
+        margin: 0 auto;
+        border-radius: 15px;
+        margin-bottom: 10px;
+    }
+    .haveAccount{
+        grid-area: haveAccount;
+        font-size: 24px;
+        width: 300px;
+        height: 40px;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
 }

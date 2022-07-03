@@ -4,9 +4,14 @@
     "logo"
     "intro"
     "form";
+    grid-template-rows: 260px 150px auto;
     height: 100vh;
     width: 360px;
     margin: 0 auto;
+    align-items: center;
+    gap: 0px;
+    padding: 0px;
+    /* grid-template-rows: auto; */
 }
 
 .loginLogo {
@@ -14,6 +19,7 @@
     position: relative;
     width: 260px;
     margin: 0 auto;
+    height: 260px;
 }
 
 .loginBrainDiv {
@@ -58,6 +64,7 @@
         "logo"
         "intro"
         "form";
+        grid-template-rows: 300px 160px auto;
         height: 100vh;
         width: 480px;
         margin: 0 auto;
@@ -68,6 +75,7 @@
         width: 300px;
         margin: 0 auto;
         margin-bottom: 25px;
+        height: 300px;
     }
     .loginBrainDiv {
         width: 250px;
@@ -106,9 +114,11 @@
 @media (min-width: 768px) {
     .login{
         width: 768px;
+        grid-template-rows: 350px 200px auto;
     }
     .loginLogo {
         width: 350px;
+        height: 350px;
     }
     .loginBrainDiv {
         width: 300px;
@@ -132,13 +142,16 @@
         height: 100vh;
         width: 1024px;
         margin: 0 auto;
+        grid-template-rows: auto;
+        
     }
     .loginLogo {
         grid-area: logo;
         position: relative;
         width: 475px;
         margin: 0 auto;
-        margin-bottom: 50px;
+        margin-bottom: 150px;
+        height: 475px;
     }
     .loginBrainDiv {
         width: 450px;

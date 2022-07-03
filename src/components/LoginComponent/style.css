@@ -10,11 +10,11 @@
     border-radius: 15px;
     width: 300px;
     font-size: 12px;
-    margin-top: 35px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     height: 100px;
     grid-area: intro;
     padding: 20px 10px;
-    
 }
 
 .introLine1{
@@ -101,71 +101,43 @@
 @media (min-width: 480px) {
     .introText {
         width: 360px;
-        margin: 0 auto;
         font-size: 16px;
         margin-top: 25px;
         height: 120px;
-        grid-area: intro;
         padding: 10px;
     }
-    .introLine1{
-        margin-bottom: 5px;
-    }
     .loginForm {
-        grid-template-areas: 
-        "header header"
-        "userLabel username"
-        "passLabel password"
-        "signIn signIn"
-        "createAccount createAccount";
         width: 320px;
-        margin: 0 auto;
-        grid-area: form;
         padding: 10px;
         height: 280px;
     }
     .loginText {
-        margin: 15px;
         font-size: 28px;
     }
     .userLabel {
-        grid-area: userLabel;
         font-size: 20px;
         width: 100px;
     }
     .usernameInput {
-        grid-area: username;
         font-size: 20px;
         height: 34px;
-        padding: 10px;
         width: 170px;
     }
     .passLabel {
-        grid-area: passLabel;
         font-size: 20px;
         width: 100px;
     }
     .passwordInput {
-        grid-area: password;
-        font-size: 20px;
         height: 34px;
-        padding: 10px;
         width: 170px;
     }
     .signIn {
-        grid-area: signIn;
         font-size: 20px;
         width: 160px;
-        height: 30px;
-        margin: 0 auto;
-        margin-top: 10px;
     }
     .createAccount {
-        grid-area: createAccount;
         font-size: 20px;
         width: 260px;
-        height: 30px;
-        margin: 0 auto;
     }
 }
 @media (min-width: 768px) {
