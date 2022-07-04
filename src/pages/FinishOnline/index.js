@@ -8,26 +8,12 @@ import socket from '../../actions/socket';
 const FinishOnline = () => {
     let navigate = useNavigate();
     let playersWhoCompletedGame = []
-    const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
     let showLeaderBoard = false
     const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
-<<<<<<< HEAD
+
     const [hsUsernames, setHsUsernames] = useState([])
-=======
     const [hsModalVisibilityInverse, setHsModalVisibilityInverse] = useState('visible')
 
-    const [hsUsernames, setHsUsernames] = useState([
-        {username: "bob123", total: 1, percentage: 12},
-        {username: "tina123", quizzes: 9, percentage: 9},
-        {username: "louise123", quizzes: 8, percentage: 9},
-        {username: "gene123", quizzes: 7, percentage: 6}
-        // {username: "linda123", quizzes: 6, points: 5},
-        // {username: "teddy456", quizzes: 5, points: 5},
-        // {username: "mort456", quizzes: 4, points: 4},
-        // {username: "jimmy666", quizzes: 1, points: 1}
-
-    ])
->>>>>>> e02f3049ef19b14f4b62ef967288df27245cbab0
 
     const playerName = useSelector((state) => state.user)
     let playerScore = 0
@@ -56,27 +42,12 @@ const FinishOnline = () => {
             }
         }
 
-<<<<<<< HEAD
+
         if(hasToBePushed){
             playersWhoCompletedGame.push(toAppend)
         }
             setNOfPlayersDone(playersWhoCompletedGame.length)
             if(playersWhoCompletedGame.length === roomSize){
-=======
-
-        console.log('Completed check... has to be pushed? ' + hasToBePushed)
-        if(hasToBePushed){
-            playersWhoCompletedGame.push(toAppend)
-
-            setNOfPlayersDone(playersWhoCompletedGame.length)
-            console.log('I have pushed this object in the array!!')
-            console.log(toAppend)
-            console.log('Now the array is:')
-            console.log(playersWhoCompletedGame)}
-
-            if(playersWhoCompletedGame.length == roomSize){
-                console.log('Emitting that everyone is done!!')
->>>>>>> e02f3049ef19b14f4b62ef967288df27245cbab0
                 socket.emit('everyoneIsDone', playersWhoCompletedGame)
             }
         })
@@ -115,13 +86,9 @@ const FinishOnline = () => {
 
     return (
         <>
-<<<<<<< HEAD
-            <h1 className='selectionH1'>Game finished online</h1>
-            <p className='playerPara'>Players who completed the game so far: {nOfPlayersDone}</p>
-=======
+
             <h1 className='selectionH1'>Game finished</h1>
             <p className='playerPara' style={{visibility: hsModalVisibilityInverse}}>Wait for other players to complete the game!</p>
->>>>>>> e02f3049ef19b14f4b62ef967288df27245cbab0
             <div className='scores' style={{visibility: hsModalVisibility}}>
                 <table className="scoresTable" >
                     <thead>

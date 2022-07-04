@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
-
 import { useSelector, useDispatch } from 'react-redux';
-// import { fetchResults } from '../../actions';
-// import styles from './index.module.css';
+
 import { CorrectAnswerModal } from '../index';
 import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
@@ -24,9 +21,6 @@ const QuizForm = ({setFinishGameVisibility}) => {
 
     const results = useSelector((state) => state.results);
     const loading = useSelector((state) => state.loading);
-
-    const statePlayerOneScore = useSelector((state) => state.playerOneScore);
-    console.log(statePlayerOneScore);
     
     const players = useSelector((state) => state.players);
     const addOnePlayer = () => {
@@ -138,17 +132,12 @@ const QuizForm = ({setFinishGameVisibility}) => {
             if(currentQuestion + 1 === results.length){
                 setTimeout(() => {
                     setFinishGameVisibility("visible")
-                }, '2000');
+                }, '1500');
             }
             setCAVisibility('visible');
             setTimeout(() => {
                 setCAVisibility('hidden');
-<<<<<<< HEAD
-            }, '2000');
-=======
             }, '1500');
-            console.log(CAVisibility);
->>>>>>> e02f3049ef19b14f4b62ef967288df27245cbab0
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
