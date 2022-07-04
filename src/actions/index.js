@@ -6,7 +6,6 @@ const loading = ({ amount, category, difficulty }) => ({
     payload: { category: category, amount: amount, difficulty: difficulty },
 });
 
-console.log('loading', loading);
 
 export const fetchResults = (amount, category, difficulty) => {
     return async (dispatch) => {
@@ -44,7 +43,6 @@ export const fetchResults = (amount, category, difficulty) => {
                 type: 'SET_ERROR',
                 payload: err,
             });
-            console.warn(err.message);
         }
     };
 };
@@ -56,7 +54,6 @@ export const fetchRankingQuestions = () => {
                 'https://opentdb.com/api.php?amount=10&difficulty=hard&type=multiple'
             );
             let results = data.results;
-            console.log(results);
             for (let i = 0; i < results.length; i++) {
                 let instance = results[i];
                 let newQuestion = decode(instance.question);
@@ -78,7 +75,6 @@ export const fetchRankingQuestions = () => {
                 type: 'SET_ERROR',
                 payload: err,
             });
-            console.warn(err.message);
         }
     };
 };
