@@ -22,16 +22,13 @@ const quizReducer = (state = initialState, action) => {
         case 'SET RANK LOADING':
             return { ...state, loading: true };
         case 'LOAD_RESULTS':
-            console.log('state', state);
             return {
                 ...state,
                 results: action.payload,
                 loading: false,
                 error: false,
             };
-
         case 'LOAD RANKING QUESTIONS':
-            console.log('state', state);
             return {
                 ...state,
                 results: action.payload,

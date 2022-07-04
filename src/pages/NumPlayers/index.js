@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import brain from "../../Images/brain.png";
 
 const NumPlayers = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
-
-  // const players = useSelector(state => {
-  //     // console.log({ state })
-  //     return state.players
-  // })
 
   const handleAmount = (e) => {
     let newPlayers = e.target.textContent;
@@ -24,7 +19,6 @@ const NumPlayers = () => {
   const [playersDirection, setPlayersDirection] = useState("");
 
   const playerLeftButton = () => {
-    // console.log('go left')
     setPlayersDirection("left");
     let newOrder = [];
     for (let i = playersIdNumbers.length - 1; i >= 0; i--) {
@@ -37,7 +31,6 @@ const NumPlayers = () => {
     setPlayersIdNumbers(newOrder);
   };
   const playerRightButton = () => {
-    // console.log('go right')
     setPlayersDirection("right");
     let newOrder = [];
     for (let i = playersIdNumbers.length - 1; i >= 0; i--) {
@@ -54,10 +47,8 @@ const NumPlayers = () => {
       <h1 className="selectionH1" >Select number of players</h1>
       <div className="sliderContainer">
       <div className="btnNextDiv">
-        <button className="btn btn-next" onClick={playerLeftButton}>
-
-        </button>
-        </div>
+        <button className="btn btn-next" onClick={playerLeftButton}></button>
+      </div>
         <div className="slider">
           <div
             data-testid="number"
@@ -90,32 +81,24 @@ const NumPlayers = () => {
           </div>
         </div>
         <div className="btnPrevDiv">
-         <button className="btn btn-prev" onClick={playerRightButton}>
-        </button> 
+         <button className="btn btn-prev" onClick={playerRightButton}></button> 
         </div>
-        
       </div>
       <div className="buttonsNSelections">
-
-      
-      <div className="backButtonDiv">
-       <button className="backButton" onClick={() => navigate("/home")}>Go back</button> 
-      </div>
-      
-      {/* <button onClick={() => navigate("/category")}>
-        Go to category selection
-      </button> */}
-      <div className="selections" style={{ visibility: "hidden" }}>
-        <p>Selections</p>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+        <div className="backButtonDiv">
+        <button className="backButton" onClick={() => navigate("/home")}>Go back</button> 
+        </div>
+        <div className="selections" style={{ visibility: "hidden" }}>
+          <p>Selections</p>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       </div>
       <div className="selectionBrainDiv">
-                <img src={brain} className="selectionBrain" />
+        <img src={brain} className="selectionBrain" alt="Brain logo"/>
       </div>
     </>
   );

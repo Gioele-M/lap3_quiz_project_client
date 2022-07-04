@@ -20,7 +20,7 @@ const LoginComponent = () => {
             if (username === '' || password === '') {
                 setError('Missing username or password!');
             } else {
-                const response = await axios.post(
+                await axios.post(
                     `${backendUrl}${route}`,
                     JSON.stringify({ username, password }),
                     {
@@ -50,8 +50,6 @@ const LoginComponent = () => {
                     setTimeout(() => {
                         setErrorVisibility("hidden")
                     }, '2000');
-                    
-                
             }
         }
     };

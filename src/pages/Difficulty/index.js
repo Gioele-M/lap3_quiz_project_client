@@ -8,13 +8,8 @@ const Difficulty = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const [difficultyLi, setDifficultyLi] = useState("");
-  const [confirmationVisibility, setConfirmationVisibility] =
-    useState("hidden");
-  //redux functions
-  // const difficulty = useSelector(state => {
-  //     // console.log({ state })
-  //     return state.difficulty
-  // })
+  const [confirmationVisibility, setConfirmationVisibility] = useState("hidden");
+
 
   const handleDifficulty = (e) => {
     let selectedDifficulty = e.target.textContent;
@@ -24,13 +19,10 @@ const Difficulty = () => {
     setConfirmationVisibility("visible");
   };
 
-  //animation functions
-  ////sets initial states
   const [difficultyIdNumbers, setDifficultyIdNumbers] = useState([1, 2, 3]);
   const [difficultyDirection, setDifficultyDirection] = useState("");
-  ////when clicked, id numbers of divs change so they move to position assigned in css and perform an animation (repeated for right button)
+
   const difficultyLeftButton = () => {
-    // console.log('go left')
     setDifficultyDirection("left");
     let newOrder = [];
     for (let i = difficultyIdNumbers.length - 1; i >= 0; i--) {
@@ -43,7 +35,6 @@ const Difficulty = () => {
     setDifficultyIdNumbers(newOrder);
   };
   const difficultyRightButton = () => {
-    // console.log('go right')
     setDifficultyDirection("right");
     let newOrder = [];
     for (let i = difficultyIdNumbers.length - 1; i >= 0; i--) {
@@ -123,11 +114,9 @@ const Difficulty = () => {
                   <li className="difficultyLi">{difficultyLi}</li>
                 </ul>
               </div>
-
       </div>
-      
       <div className="selectionBrainDiv">
-                <img src={brain} className="selectionBrain" />
+                <img src={brain} className="selectionBrain" alt="Brain logo"/>
       </div>
     </>
   );

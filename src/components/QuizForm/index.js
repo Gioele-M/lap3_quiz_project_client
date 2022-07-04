@@ -9,11 +9,8 @@ import { InCorrectAnswerModal } from '../index';
 import style from './index.module.css';
 
 const QuizForm = ({setFinishGameVisibility}) => {
-    //need to add conditional rendering for finish quiz button
-
     const dispatch = useDispatch();
     const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
     const [CAVisibility, setCAVisibility] = useState('hidden');
     const [NCAVisibility, setNCAVisibility] = useState('hidden');
     const [quiz, setQuiz] = useState([]);
@@ -25,7 +22,6 @@ const QuizForm = ({setFinishGameVisibility}) => {
 
     const gameMode = useSelector((state) => state.mode);
 
-    // const error = useSelector((state) => state.error);
     const results = useSelector((state) => state.results);
     const loading = useSelector((state) => state.loading);
 
@@ -90,7 +86,6 @@ const QuizForm = ({setFinishGameVisibility}) => {
 
     useEffect(() => {
         if (results.length) {
-            console.log('results', results);
             const correctAnswers = results.map((result) => {
                 return { name: result.correct_answer, isCorrect: true };
             });
@@ -112,12 +107,9 @@ const QuizForm = ({setFinishGameVisibility}) => {
         }
     }, [results]);
 
-    console.log(quiz);
-
     const handleRightAnswer = (correct_answer, playerNum) => {
         if (correct_answer) {
             if (playerNum === '1') {
-                console.log(playerOneScore);
                 dispatch({
                     type: 'SET PLAYER ONE SCORE',
                     payload: playerOneScore + 1,
@@ -152,16 +144,13 @@ const QuizForm = ({setFinishGameVisibility}) => {
             setTimeout(() => {
                 setCAVisibility('hidden');
             }, '2000');
-            console.log(CAVisibility);
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
         }
-        console.log(playerOneScore);
     };
 
-    // console.log(playerOneScore)
     const handleWrongAnswer = (incorrect_answer) => {
         if (incorrect_answer) {
             setNCAVisibility('visible');
@@ -174,7 +163,6 @@ const QuizForm = ({setFinishGameVisibility}) => {
                 setFinishGameVisibility("visible")
             }, '2000');
         }
-        console.log(currentQuestion)
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
             setCurrentQuestion(nextQuestion);
@@ -205,7 +193,6 @@ const QuizForm = ({setFinishGameVisibility}) => {
                             {quiz[currentQuestion][0].question}
                         </div>
                     </div>
-
                     <div className={style.answerSection}>
                         {quiz.length &&
                             quiz[currentQuestion].map((answer) => {
@@ -242,18 +229,14 @@ const QuizForm = ({setFinishGameVisibility}) => {
                                 }
                             })}
                     </div>
-
-                    {/* <div className={style.modalSection}> */}
                         <InCorrectAnswerModal
                             NCAVisibility={NCAVisibility}
                             setNCAVisibility={setNCAVisibility}
                         />
-
                         <CorrectAnswerModal
                             CAVisibility={CAVisibility}
                             setCAVisibility={setCAVisibility}
                         />
-                    {/* </div> */}
                 </div>
             )}
         </>

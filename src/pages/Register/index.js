@@ -6,17 +6,16 @@ import brain from "../../Images/brain.png";
 const Register = () => {
     return (
         <>
-        <div className="register">
-        <div className="loginLogo">
-            <div className="loginBrainDiv">
-                <img src={brain} className="loginBrain" />
-            </div>
-            <h1 className="loginDumbfounded">Dumbfounded?</h1>    
-            </div>
-            <SignUp />
-        </div> 
+            <div className="register">
+                <div className="loginLogo">
+                    <div className="loginBrainDiv">
+                        <img src={brain} className="loginBrain" alt="Brain logo"/>
+                    </div>
+                    <h1 className="loginDumbfounded">Dumbfounded?</h1>    
+                </div>
+                <SignUp />
+            </div> 
         </>
-          
     )
 };
 

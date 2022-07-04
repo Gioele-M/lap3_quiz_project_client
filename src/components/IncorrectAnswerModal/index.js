@@ -10,7 +10,6 @@ const IncorrectAnswerModal = ({ NCAVisibility }) => {
       style={{ visibility: NCAVisibility }}
     >
       <h2>Oops, that was a wrong answer!</h2>
-      
     </div>
   );
 };
