@@ -7,6 +7,7 @@ const LoginComponent = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [errorVisibility, setErrorVisibility] = useState("hidden")
 
     let navigate = useNavigate();
     const dispatch = useDispatch();
@@ -35,11 +36,22 @@ const LoginComponent = () => {
             if (!err?.response) {
                 setError('No server response!');
             } else if (err.response?.status === 401) {
-                setError(
-                    'Unauthorized! Create an account or check your username and password!'
-                );
+                    setError(
+                        'Unauthorized! Create an account or check your username and password!'
+                    );
+                    setErrorVisibility("visible")
+                    setTimeout(() => {
+                        setErrorVisibility("hidden")
+                    }, '2000');
             } else {
-                setError('Login failed!');
+
+                    setError('Login failed!');
+                    setErrorVisibility("visible")
+                    setTimeout(() => {
+                        setErrorVisibility("hidden")
+                    }, '2000');
+                    
+                
             }
         }
     };
@@ -58,7 +70,7 @@ const LoginComponent = () => {
                 <h2 className="introLine1">Fun quiz game</h2>
                 <h2>Will you be dumbfounded?</h2>
             </div>
-            <div className="loginError">{error}</div>
+            <div className="loginError" style={{visibility: errorVisibility}}>{error}</div>
             <form
                 data-testid="form"
                 aria-label="login"
