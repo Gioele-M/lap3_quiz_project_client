@@ -34,7 +34,7 @@ const SignUp = () => {
             } else if (password !== confirmPassword) {
                 setError('Make sure password and confirm password match!');
             } else {
-                const response = await axios.post(
+                await axios.post(
                     `${backendUrl}${route}`,
                     JSON.stringify({ username, email, password }),
                     {
@@ -43,8 +43,6 @@ const SignUp = () => {
                 );
                 // console.log(username)
                 dispatch({ type: 'SET USER', payload: username });
-
-                console.log(JSON.stringify(response?.data));
                 navigate('/home');
             }
             setUsername('');
@@ -62,13 +60,11 @@ const SignUp = () => {
                     setTimeout(() => {
                         setErrorVisibility("hidden")
                     }, '2000');
-                
             } else {
                 setErrorVisibility("visible")
-                    setTimeout(() => {
-                        setErrorVisibility("hidden")
-                    }, '2000');
-                
+                setTimeout(() => {
+                    setErrorVisibility("hidden")
+                }, '2000');
             }
         }
     };

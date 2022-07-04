@@ -12,18 +12,12 @@ const Finish = () => {
     const statePlayerFourScore = useSelector((state) => state.playerFourScore);
     const gameMode = useSelector((state) => state.mode);
     let scores = []
-    const user = useSelector((state) => state.user);
-
-console.log(user)
-    
+    const user = useSelector((state) => state.user); 
 
     const getScoresArray = () => {
         if(gameMode === "rank"){
             scores.push([user, statePlayerOneScore])
-            console.log(scores)
         } else {
-
-        
         if(players === "1"){
             scores.push(["Player One", statePlayerOneScore])
         }else if(players === "2"){
@@ -39,13 +33,10 @@ console.log(user)
             scores.push(["Player Three", statePlayerThreeScore])
             scores.push(["Player Four", statePlayerFourScore])
         }
-        console.log(scores)
-
         scores.sort(function(a, b) {
             return a[1] - b[1];
         });
         scores.reverse()
-        console.log(scores)
         }
     }
     getScoresArray()
@@ -76,7 +67,6 @@ console.log(user)
             winningSentence = `${scores[0][0]}, ${scores[1][0]}, ${scores[2][0]}, and ${scores[3][0]} all win!`
             return winningSentence
         }
-        
         return scores[0][1]
     }
     return (
@@ -98,9 +88,7 @@ console.log(user)
                             </tbody>
                         </table>
                     </>
-                    
                 )}
-                
             </div>
             <button className="homeButton" onClick={()=>navigate("/home")}>Home</button>
         </>

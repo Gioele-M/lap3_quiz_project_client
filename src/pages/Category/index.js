@@ -8,11 +8,6 @@ const Category = () => {
   const dispatch = useDispatch();
   const statePlayers = useSelector((state) => state.players);
 
-  // const category = useSelector(state => {
-  //     // console.log({ state })
-  //     return state.category
-  // })
-
   const handleCategory = (e) => {
     let newCategory = 0;
     const selectedCategory = e.target.textContent;
@@ -49,7 +44,6 @@ const Category = () => {
     setCategoryIdNumbers(newOrder);
   };
   const categoryRightButton = () => {
-    // console.log('go right')
     setCategoryDirection("right");
     let newOrder = [];
     for (let i = categoryIdNumbers.length - 1; i >= 0; i--) {
@@ -116,10 +110,6 @@ const Category = () => {
         <div className="backButtonDiv">
           <button className="backButton" onClick={() => navigate("/numplayers")}>Go back</button>
       </div>
-      
-      {/* <button onClick={() => navigate("/difficulty")}>
-        Go to difficulty selection
-      </button> */}
       <div className="selections">
         <p>Selections</p>
         <ul>
@@ -130,7 +120,7 @@ const Category = () => {
       </div>
       </div>
       <div className="selectionBrainDiv">
-                <img src={brain} className="selectionBrain" />
+                <img src={brain} className="selectionBrain" alt="Brain logo"/>
       </div>
     </>
   );

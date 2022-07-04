@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import {
     Login,
     Home,
@@ -17,7 +15,6 @@ import {
 } from './pages';
 
 import { Background } from './layout'
-// import { fetchResults } from '../src/actions';
 
 import './pages/Home/style.css';
 import './pages/NumPlayers/style.css';
@@ -35,13 +32,9 @@ import './components/QuizForm/style.css';
 import './index.css'
 import './pages/OnlineWaitingRoom/style.css';
 
-
 function App() {
-    const user = useSelector((state) => state.user);
-
     return (
         <>
-            {/* {user && ( */}
             <Routes>
                 <Route index element={<Login />} />
                 <Route path="home" element={<Home />} />
@@ -55,15 +48,7 @@ function App() {
                 <Route path="waitingroom" element={<OnlineWaitingRoom />} />
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
-                <Background />
-            {/* // )} */}
-            {/* {!user && (
-                <Routes>
-                    <Route index element={<Login />} />
-                    <Route path="register" element={<Register />} />
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                </Routes>
-            )} */}
+            <Background />
         </>
     );
 }
