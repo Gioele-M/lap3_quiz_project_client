@@ -8,6 +8,7 @@ import socket from '../../actions/socket';
 const FinishOnline = () => {
     let navigate = useNavigate();
     let playersWhoCompletedGame = []
+    const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
     let showLeaderBoard = false
     const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
 
