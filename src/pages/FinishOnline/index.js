@@ -15,6 +15,8 @@ const FinishOnline = () => {
     const [nOfPlayersDone, setNOfPlayersDone] = useState(0)
     let showLeaderBoard = false
     const [hsModalVisibility, setHsModalVisibility] = useState('hidden');
+    const [hsModalVisibilityInverse, setHsModalVisibilityInverse] = useState('visible')
+
     const [hsUsernames, setHsUsernames] = useState([
         {username: "bob123", total: 1, percentage: 12},
         {username: "tina123", quizzes: 9, percentage: 9},
@@ -62,14 +64,17 @@ const FinishOnline = () => {
             }
         }
 
+
         console.log('Completed check... has to be pushed? ' + hasToBePushed)
         if(hasToBePushed){
             playersWhoCompletedGame.push(toAppend)
+
+            setNOfPlayersDone(playersWhoCompletedGame.length)
             console.log('I have pushed this object in the array!!')
             console.log(toAppend)
             console.log('Now the array is:')
             console.log(playersWhoCompletedGame)}
-            setNOfPlayersDone(playersWhoCompletedGame.length)
+
             if(playersWhoCompletedGame.length == roomSize){
                 console.log('Emitting that everyone is done!!')
                 socket.emit('everyoneIsDone', playersWhoCompletedGame)
@@ -96,6 +101,9 @@ const FinishOnline = () => {
                 setHsUsernames(arrayToSend)
             }
             setHsModalVisibility('visible')
+            setHsModalVisibilityInverse('hidden')
+
+
     })
 
     const renderedScores = hsUsernames.map((score, i) => {
@@ -110,10 +118,8 @@ const FinishOnline = () => {
     return (
         <>
             <h1 className='selectionH1'>Game finished</h1>
-            <p className='playerPara'>Players who completed the game so far: {nOfPlayersDone}</p>
-            <div className='scores' 
-            // style={{visibility: hsModalVisibility}}
-            >
+            <p className='playerPara' style={{visibility: hsModalVisibilityInverse}}>Wait for other players to complete the game!</p>
+            <div className='scores' style={{visibility: hsModalVisibility}}>
                 <table className="scoresTable" >
                     <thead>
                         <tr>
@@ -125,6 +131,7 @@ const FinishOnline = () => {
                         {renderedScores}  
                     </tbody>
                 </table>
+
             </div>
             <button className='homeButton' onClick={()=>navigate("/home")}>Home</button>
         </>

@@ -151,7 +151,7 @@ const QuizForm = ({setFinishGameVisibility}) => {
             setCAVisibility('visible');
             setTimeout(() => {
                 setCAVisibility('hidden');
-            }, '2000');
+            }, '1500');
             console.log(CAVisibility);
         }
         const nextQuestion = currentQuestion + 1;
@@ -168,11 +168,11 @@ const QuizForm = ({setFinishGameVisibility}) => {
         }
         setTimeout(() => {
             setNCAVisibility('hidden');
-        }, '2000');
+        }, '1500');
         if(currentQuestion + 1 === results.length){
             setTimeout(() => {
                 setFinishGameVisibility("visible")
-            }, '2000');
+            }, '1500');
         }
         console.log(currentQuestion)
         const nextQuestion = currentQuestion + 1;
