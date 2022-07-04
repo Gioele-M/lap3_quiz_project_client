@@ -143,7 +143,12 @@ const QuizForm = ({setFinishGameVisibility}) => {
             setCAVisibility('visible');
             setTimeout(() => {
                 setCAVisibility('hidden');
+<<<<<<< HEAD
             }, '2000');
+=======
+            }, '1500');
+            console.log(CAVisibility);
+>>>>>>> e02f3049ef19b14f4b62ef967288df27245cbab0
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
@@ -157,11 +162,11 @@ const QuizForm = ({setFinishGameVisibility}) => {
         }
         setTimeout(() => {
             setNCAVisibility('hidden');
-        }, '2000');
+        }, '1500');
         if(currentQuestion + 1 === results.length){
             setTimeout(() => {
                 setFinishGameVisibility("visible")
-            }, '2000');
+            }, '1500');
         }
         const nextQuestion = currentQuestion + 1;
         if (nextQuestion < results.length) {
