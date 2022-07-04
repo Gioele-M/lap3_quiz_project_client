@@ -31,9 +31,8 @@ const QuizForm = ({setFinishGameVisibility}) => {
 
     const statePlayerOneScore = useSelector((state) => state.playerOneScore);
     console.log(statePlayerOneScore);
-
+    
     const players = useSelector((state) => state.players);
-
     const addOnePlayer = () => {
         if(gameMode === "rank" || gameMode === "online"){
             for (let i = 0; i < 10; i++){    

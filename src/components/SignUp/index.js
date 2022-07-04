@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -9,11 +10,13 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState('');
 
+    const [errorVisibility, setErrorVisibility] = useState("hidden")
+
     const backendUrl = 'https://red-devils-quiz.herokuapp.com/';
     const route = 'auth/register';
 
     let navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
@@ -38,6 +41,8 @@ const SignUp = () => {
                         headers: { 'Content-Type': 'application/json' },
                     }
                 );
+                // console.log(username)
+                dispatch({ type: 'SET USER', payload: username });
 
                 console.log(JSON.stringify(response?.data));
                 navigate('/home');
@@ -51,10 +56,19 @@ const SignUp = () => {
                 setError('No server response!');
             } else if (err.response?.status === 500) {
                 setError(
-                    'Request to create a user was not successful! Make sure your passwords match!'
-                );
+                        'Request to create a user was not successful! Make sure your passwords match!'
+                    );
+                    setErrorVisibility("visible")
+                    setTimeout(() => {
+                        setErrorVisibility("hidden")
+                    }, '2000');
+                
             } else {
-                setError('Signing up failed!');
+                setErrorVisibility("visible")
+                    setTimeout(() => {
+                        setErrorVisibility("hidden")
+                    }, '2000');
+                
             }
         }
     };
@@ -80,7 +94,7 @@ const SignUp = () => {
                 <h2 className="introLine1">Fun quiz game</h2>
                 <h2>Will you be dumbfounded?</h2>
             </div>
-            <div>{error && error}</div>
+            <div className="loginError" style={{visibility: errorVisibility}}>{error && error}</div>
             <form aria-label="login" className="registerForm"onSubmit={handleSignUp}>
                 <h2 className="registerHeader">Create Account</h2>
                 <label htmlFor="username" className="signUsernameLabel">Username</label>
@@ -89,7 +103,7 @@ const SignUp = () => {
                     name="username"
                     id="username"
                     autoFocus
-                    placeholder="Enter your username"
+                    placeholder="Username"
                     value={username}
                     onChange={onUsernameChange}
                     data-testid="usernameInput"
@@ -101,7 +115,7 @@ const SignUp = () => {
                     name="email"
                     id="email"
                     autoFocus
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     value={email}
                     onChange={onEmailChange}
                     data-testid="emailInput"
@@ -113,7 +127,7 @@ const SignUp = () => {
                     name="password"
                     id="password"
                     autoFocus
-                    placeholder="Enter your password"
+                    placeholder="Password"
                     value={password}
                     onChange={onPasswordChange}
                     data-testid="passwordInput"

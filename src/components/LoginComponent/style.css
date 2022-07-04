@@ -1,20 +1,26 @@
+.loginError{
+    position: absolute;
+}
 .introText {
-    width: 80%;
     margin: 0 auto;
-    font-size: 32px;
     text-align: center;
-    margin-top: 80px;
-    height: 240px;
-    grid-area: intro;
     background-color:#9898f4;
     border: 3px solid black;
     outline: 5px solid #594eec;
-    padding: 20px;
     border-radius: 15px;
+    width: 300px;
+    font-size: 12px;
+    margin-top: 10vh;
+    margin-bottom: 15px;
+    height: 100px;
+    grid-area: intro;
+    padding: 20px 10px;
 }
+
 .introLine1{
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
 .loginForm {
     display: grid;
     grid-template-areas: 
@@ -23,60 +29,227 @@
     "passLabel password"
     "signIn signIn"
     "createAccount createAccount";
-    width: 85%;
     margin: 0 auto;
     grid-area: form;
     background-color: rgb(143, 54, 226);
     border: 3px solid black;
     outline: 5px solid rgb(124, 22, 219);
-    padding: 20px;
     border-radius: 15px;
+    width: 280px;
+    padding: 0px 10px;
+    height: 220px;
 }
+
 
 .loginText {
     grid-area: header;
     text-align: center;
     margin: 15px;
-    font-size: 32px;
+    font-size: 22px;
 }
+
 .userLabel {
     grid-area: userLabel;
-    font-size: 24px;
-    width: 70px;
+    font-size: 16px;
+    width: 80px;
 }
+
 .usernameInput {
     grid-area: username;
-    font-size: 20px;
-    height: 34px;
+    font-size: 14px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
+
 .passLabel {
     grid-area: passLabel;
-    font-size: 24px;
+    font-size: 16px;
+    width: 80px;
 }
+
 .passwordInput {
     grid-area: password;
-    font-size: 20px;
-    height: 34px;
+    font-size: 14px;
+    height: 26px;
     border-radius: 15px;
     padding: 10px;
     outline: none;
+    width: 160px;
 }
+
 .signIn {
     grid-area: signIn;
-    font-size: 24px;
-    width: 200px;
-    height: 40px;
-    margin: 0 auto;
     border-radius: 15px;
+    font-size: 18px;
+    width: 140px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 10px;
 }
+
 .createAccount {
     grid-area: createAccount;
-    font-size: 24px;
-    width: 300px;
-    height: 40px;
-    margin: 0 auto;
     border-radius: 15px;
+    font-size: 18px;
+    width: 220px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.loginError{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    font-size: 1.25em;
+    background-color: #f28f8f;
+    border: 3px solid black;
+    outline: 5px solid #f14949;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .introText {
+        width: 360px;
+        font-size: 16px;
+        margin-top: 25px;
+        height: 120px;
+        padding: 10px;
+    }
+    .loginForm {
+        width: 320px;
+        padding: 10px;
+        height: 280px;
+    }
+    .loginText {
+        font-size: 28px;
+    }
+    .userLabel {
+        font-size: 20px;
+        width: 100px;
+    }
+    .usernameInput {
+        font-size: 18px;
+        height: 34px;
+        width: 170px;
+    }
+    .passLabel {
+        font-size: 20px;
+        width: 100px;
+    }
+    .passwordInput {
+        height: 34px;
+        width: 170px;
+    }
+    .signIn {
+        font-size: 18px;
+        width: 160px;
+    }
+    .createAccount {
+        font-size: 20px;
+        width: 260px;
+    }
+}
+@media (min-width: 768px) {
+    .introText {
+        width: 460px;
+        font-size: 22px;
+        margin-top: 60px;
+        height: 170px;
+        padding: 15px;
+    }
+    .introLine1{
+        margin-bottom: 10px;
+    }
+    .loginForm {
+        width: 400px;
+        padding: 20px;
+        height: 340px;
+    }
+    .loginText {
+        font-size: 32px;
+    }
+    .userLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .usernameInput {
+        width: 220px;
+    }
+    .passLabel {
+        font-size: 22px;
+        width: 120px;
+    }
+    .passwordInput {
+        width: 220px;
+    }
+    .signIn {
+        font-size: 22px;
+        width: 180px;
+        height: 40px;
+    }
+    .createAccount {
+        font-size: 22px;
+        width: 280px;
+        height: 40px;
+    }
+    .loginError{
+        width: 80%;
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .introText {
+        width: 420px;
+        font-size: 24px;
+        height: 190px;
+        padding: 20px;
+    }
+    .loginText {
+        font-size: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .introText {
+        width: 480px;
+        font-size: 28px;
+        height: 210px;
+    }
+    .loginForm {
+        width: 440px;
+        height: 380px;
+    }
+    .loginText {
+        font-size: 32px;
+    }
+    .userLabel {
+        font-size: 24px;
+    }
+    .usernameInput {
+        font-size: 20px;
+        width: 240px;
+    }
+    .passLabel {
+        font-size: 24px;
+    }
+    .passwordInput {
+        width: 240px;
+    }
+    .signIn {
+        font-size: 24px;
+        width: 200px;
+    }
+    .createAccount {
+        font-size: 24px;
+        width: 300px;
+    }
 }

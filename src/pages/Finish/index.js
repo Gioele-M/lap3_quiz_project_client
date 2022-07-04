@@ -18,6 +18,12 @@ console.log(user)
     
 
     const getScoresArray = () => {
+        if(gameMode === "rank"){
+            scores.push([user, statePlayerOneScore])
+            console.log(scores)
+        } else {
+
+        
         if(players === "1"){
             scores.push(["Player One", statePlayerOneScore])
         }else if(players === "2"){
@@ -40,6 +46,7 @@ console.log(user)
         });
         scores.reverse()
         console.log(scores)
+        }
     }
     getScoresArray()
     const renderedScores = scores.map((score, i) => {

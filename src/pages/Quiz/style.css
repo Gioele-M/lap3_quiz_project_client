@@ -3,8 +3,8 @@
     border: 3px solid black;
     outline: 5px solid #3D518C;
     position: absolute;
-    width: 600px;
-    top: 300px;
+    width: 300px;
+    top: 360px;
     left: 0;
     right: 0;
     margin-left: auto;
@@ -12,18 +12,58 @@
     height: 300px;
     border-radius: 25px;
     padding: 15px;
-    font-size: 32px;
+    font-size: 22px;
     text-align: center;
 }
 
 .seeScoresButton {
-    font-size: 32px;
-    margin-top: 45px;
-    height: 75px;
-    width: 250px;
-    border-radius: 25px;
+    font-size: 22px;
+    margin-top: 35px;
+    height: 50px;
+    width: 200px;
+    border-radius: 15px;
     background-color: rgb(78, 78, 205);
     color: antiquewhite;
     font-weight: bold;
     border: 3px solid black;
+}
+@media (min-width: 480px) {
+    .finishGameDiv{
+        width: 340px;
+        height: 280px;
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .finishGameDiv{
+        width: 540px;
+        top: 35vh;
+        height: 300px;
+        padding: 15px;
+        font-size: 32px;
+    }
+    
+    .seeScoresButton {
+        font-size: 32px;
+        margin-top: 15px;
+        height: 75px;
+        width: 250px;
+        border-radius: 25px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .finishGameDiv{
+        width: 600px;
+        top: 300px;
+    }
+    
+    .seeScoresButton {
+        margin-top: 45px;
+    }
+}
+
+@media (min-width: 1200px) {
+
 }

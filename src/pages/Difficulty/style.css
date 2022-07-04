@@ -1,5 +1,5 @@
 .easy {
-background-color: rgb(128, 255, 0);
+background-color: rgb(120, 241, 0);
 }
 
 .medium {
@@ -11,30 +11,43 @@ background-color: rgb(255, 170, 0);
 }
 
 .buttonsNSelections{
-    display: flex;
-    justify-content: space-between;
-    width: 1000px;
+    display: grid;
+    grid-template-areas: 
+    "goBack"
+    "selections";
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
+    width: 300px;
     margin: 0 auto;
-    padding-left: 90px;
+    /* padding-left: 60px; */
+    /* padding-right: 60px; */
 }
-
+.confirmSelectionsDiv{
+    margin: 0 auto;
+}
 .confirmSelections{
     font-size: 24px;
-    width: 175px;
-    margin: 0 auto;
+    width: 240px;
+    margin-top: 10px;
+    grid-area: confirm;
     /* margin-left: 100px; */
     background-color: rgb(62, 210, 148);
     border-radius: 15px;
     padding: 5px;
+    
 }
 
 .selections {
-    font-size: 20px;
+    font-size: 18px;
+    margin: 0 auto;
+    width: 240px;
     padding: 10px;
     border-radius: 15px;
+    grid-area: selections;
     background-color: rgb(133, 209, 209);
-    height: 135px;
+    height: 125px;
     border: 3px solid black;
+    margin-top: 10px;
 }
 
 .selections > p {
@@ -46,19 +59,27 @@ background-color: rgb(255, 170, 0);
 }
 #difficultySlide1 {
     z-index: 0;
-    top: 100px;
+    top: 65px;
+    font-size: 10px;
+    /* margin-bottom: 30px; */
 }
 #difficultySlide2 {
-    
-    z-index: 0;
-    top: 160px;
-    left: 220px;
-}
-#difficultySlide3 {
-    
     z-index: 0;
     top: 100px;
+    left: 85px;
+    font-size: 10px;
+}
+#difficultySlide3 {
+    z-index: 0;
+    top: 65px;
     right: 0;
+    font-size: 10px;
+}
+#difficultySlide1 > h2,
+#difficultySlide2 > h2,
+#difficultySlide3 > h2 {
+   padding-top: 18px;
+   line-height: 30px;
 }
 
 #difficultySlide1.right {
@@ -72,18 +93,18 @@ animation: difficultySlide1right 0.5s linear;
 }
 
 @keyframes difficultySlide1right {
-    0%   {transform: translate(500px, 0px); z-index: -1}
+    0%   {transform: translate(170px, 0px); z-index: -1}
     75%  {z-index: -1}
     100% {transform: translate(0%, 0)}
 }
 
 @keyframes difficultySlide2right {
-    0%   {transform: translate(-220px, -60px)}
+    0%   {transform: translate(-85px, -35px)}
     100% {transform: translate(0%, 0%)}
 }
 
 @keyframes difficultySlide3right {
-    0%   {transform: translate(-220px, 60px)}
+    0%   {transform: translate(-85px, 35px)}
     100% {transform: translate(0, 0)}
 }
 
@@ -98,17 +119,298 @@ animation: difficultySlide1right 0.5s linear;
 }
 
 @keyframes difficultySlide1left {
-    0%   {transform: translate(220px, 60px)}
+    0%   {transform: translate(85px, 35px)}
     100% {transform: translate(0%, 0)}
 }
 
 @keyframes difficultySlide2left {
-    0%   {transform: translate(220px, -60px)}
+    0%   {transform: translate(85px, -35px)}
     100% {transform: translate(0%, 0%)}
 }
 
 @keyframes difficultySlide3left {
-    0%   {transform: translate(-500px, 0px); z-index: -1}
+    0%   {transform: translate(-170px, 0px); z-index: -1}
     75%  {z-index: -1}
     100% {transform: translate(0, 0)}
+}
+@media (min-width: 480px) {
+    .buttonsNSelections{
+        width: 360px;
+        margin-top: -40px;
+    }
+    .confirmSelections{
+        width: 240px;
+    }
+    
+    .selections {
+        width: 280px;
+    }
+    #difficultySlide1 {
+        top: 85px;
+        font-size: 12px;
+    }
+    #difficultySlide2 {
+        top: 130px;
+        left: 115px;
+        font-size: 12px;
+    }
+    #difficultySlide3 {
+        top: 85px;
+        right: 0;
+        font-size: 12px;
+    }
+    #difficultySlide1 > h2,
+    #difficultySlide2 > h2,
+    #difficultySlide3 > h2 {
+       padding-top: 30px;
+       line-height: 30px;
+    }
+        
+    @keyframes difficultySlide1right {
+        0%   {transform: translate(230px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes difficultySlide2right {
+        0%   {transform: translate(-115px, -45px)}
+    }
+    
+    @keyframes difficultySlide3right {
+        0%   {transform: translate(-115px, 45px)}
+    }
+       
+    @keyframes difficultySlide1left {
+        0%   {transform: translate(115px, 45px)}
+    }
+    
+    @keyframes difficultySlide2left {
+        0%   {transform: translate(115px, -45px)}
+    }
+    
+    @keyframes difficultySlide3left {
+        0%   {transform: translate(-230px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+}
+
+@media (min-width: 768px) {
+    .buttonsNSelections{
+        width: 400px;
+        margin-top: 0px;
+    }
+    .confirmSelections{
+        width: 240px;
+        margin-top: 20px;
+    }
+    
+    .selections {
+        width: 300px;
+        font-size: 22px;
+        height: 150px;
+        margin-top: 20px;
+    }
+    #difficultySlide1 {
+        top: 90px;
+        font-size: 18px;
+    }
+    #difficultySlide2 {
+        top: 150px;
+        left: 170px;
+        font-size: 18px;
+    }
+    #difficultySlide3 {
+        top: 90px;
+        right: 0;
+        font-size: 18px;
+    }
+    #difficultySlide1 > h2,
+    #difficultySlide2 > h2,
+    #difficultySlide3 > h2 {
+       padding-top: 40px;
+    }
+        
+    @keyframes difficultySlide1right {
+        0%   {transform: translate(340px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes difficultySlide2right {
+        0%   {transform: translate(-170px, -60px)}
+    }
+    
+    @keyframes difficultySlide3right {
+        0%   {transform: translate(-170px, 60px)}
+    }
+       
+    @keyframes difficultySlide1left {
+        0%   {transform: translate(170px, 60px)}
+    }
+    
+    @keyframes difficultySlide2left {
+        0%   {transform: translate(170px, -60px)}
+    }
+    
+    @keyframes difficultySlide3left {
+        0%   {transform: translate(-340px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+}
+
+@media (min-width: 1024px) {
+    .buttonsNSelections{
+        grid-template-areas: 
+        "goBack confirm selections";
+        justify-content: space-between;
+        width: 800px;
+        margin: 0 auto;
+        margin-left: 170px;
+        margin-top: -20px;
+    }
+    .selections {
+        /* background-color: aliceblue; */
+        width: 300px;
+        margin-top: 0px;
+    }
+
+
+    #difficultySlide1 {
+        top: 130px;
+        font-size: 18px;
+    }
+    #difficultySlide2 {
+        top: 200px;
+        left: 190px;
+        font-size: 18px;
+    }
+    #difficultySlide3 {
+        top: 130px;
+        right: 0;
+        font-size: 18px;
+    }
+    #difficultySlide1 > h2,
+    #difficultySlide2 > h2,
+    #difficultySlide3 > h2 {
+       padding-top: 50px;
+    }
+        
+    @keyframes difficultySlide1right {
+        0%   {transform: translate(380px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+    
+    @keyframes difficultySlide2right {
+        0%   {transform: translate(-190px, -70px)}
+    }
+    
+    @keyframes difficultySlide3right {
+        0%   {transform: translate(-190px, 70px)}
+    }
+       
+    @keyframes difficultySlide1left {
+        0%   {transform: translate(190px, 70px)}
+    }
+    
+    @keyframes difficultySlide2left {
+        0%   {transform: translate(190px, -70px)}
+    }
+    
+    @keyframes difficultySlide3left {
+        0%   {transform: translate(-380px, 0px); z-index: -1}
+        75%  {z-index: -1}
+        100% {transform: translate(0%, 0)}
+    }
+}
+
+@media (min-width: 1200px) {
+
+        
+        .buttonsNSelections{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: -10px;
+            margin-left: 145px;
+        }
+
+        .confirmSelections{
+            font-size: 24px;
+        }
+        
+        .selections {
+            font-size: 20px;
+            width: 300px;
+            margin-top: 0px;
+            padding: 10px;
+            border-radius: 15px;
+            height: 135px;
+            border: 3px solid black;
+        }
+        
+        .selections > p {
+            font-weight: bold;
+            padding-bottom: 5px;
+        }
+        .difficultyLi{
+            margin-top: 3px;
+        }
+        #difficultySlide1 {
+            font-size: 22px;
+            z-index: 0;
+            top: 100px;
+        }
+        #difficultySlide2 {
+            font-size: 22px;
+            z-index: 0;
+            top: 160px;
+            left: 220px;
+        }
+        #difficultySlide3 {
+            font-size: 22px;
+            z-index: 0;
+            top: 100px;
+            right: 0;
+        }
+        
+        #difficultySlide1 > h2,
+        #difficultySlide2 > h2,
+        #difficultySlide3 > h2 {
+           padding-top: 65px;
+        }
+        @keyframes difficultySlide1right {
+            0%   {transform: translate(440px, 0px); z-index: -1}
+            75%  {z-index: -1}
+            100% {transform: translate(0%, 0)}
+        }
+        
+        @keyframes difficultySlide2right {
+            0%   {transform: translate(-220px, -60px)}
+            100% {transform: translate(0%, 0%)}
+        }
+        
+        @keyframes difficultySlide3right {
+            0%   {transform: translate(-220px, 60px)}
+            100% {transform: translate(0, 0)}
+        }
+        
+       
+        @keyframes difficultySlide1left {
+            0%   {transform: translate(220px, 60px)}
+            100% {transform: translate(0%, 0)}
+        }
+        
+        @keyframes difficultySlide2left {
+            0%   {transform: translate(220px, -60px)}
+            100% {transform: translate(0%, 0%)}
+        }
+        
+        @keyframes difficultySlide3left {
+            0%   {transform: translate(-440px, 0px); z-index: -1}
+            75%  {z-index: -1}
+            100% {transform: translate(0, 0)}
+        }
 }

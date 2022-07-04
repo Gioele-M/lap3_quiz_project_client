@@ -8,10 +8,12 @@ const Login = () => {
     return (
         <>
         <div className="login">
+            <div className="loginLogo">
             <div className="loginBrainDiv">
                 <img src={brain} className="loginBrain" />
             </div>
-            <h1 className="loginDumbfounded">Dumbfounded?</h1>
+            <h1 className="loginDumbfounded">Dumbfounded?</h1>    
+            </div>
             <LoginComponent />
         </div>      
             

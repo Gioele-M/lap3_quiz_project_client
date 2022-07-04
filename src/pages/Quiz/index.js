@@ -19,6 +19,9 @@ const Quiz = () => {
     // const username = "Adam10"
     // const playOneScore = "10"
     // const amount = "10"
+    console.log(username)
+    console.log(playerOneScore)
+    console.log(amount)
     const finishGame = () => {
 
         // Check game mode
@@ -41,19 +44,21 @@ const Quiz = () => {
         console.log("amount", amount)
     console.log("score", playerOneScore)
     console.log("name", username)
+    if(gameMode === "rank"){
+        sendScores(username, playerOneScore, amount)
+    }
+    dispatch({
+        type: 'LOAD_RESULTS',
+        payload: [],
+    });
         if(gameMode === 'online'){
             //Navigate to score page for online
             navigate('/finishonline')
         }else{
             navigate('/finish')
         }
-        if(gameMode === "rank"){
-            sendScores(username, playerOneScore, amount)
-        }
-        dispatch({
-            type: 'LOAD_RESULTS',
-            payload: [],
-        });
+        
+        
     //send results to server
     //navigate to score page
     //check game mode
