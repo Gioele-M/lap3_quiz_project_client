@@ -25,28 +25,17 @@
 }
 
 @media (min-width: 768px) {
-
+    .NCAModal {
+        top: 225px;
+    }
 }
 
 @media (min-width: 1024px) {
     .NCAModal {
-        background-color: #f28f8f;
-        border: 3px solid black;
-        outline: 5px solid #f14949;
         width: 600px;
         height: 225px;
-        padding: 5px;
-        position: absolute;
-        top: 175px;
-        margin-left: auto;
-        margin-right: auto;
-        left: 0; 
-        right: 0; 
-        visibility: visible;
+        top: 225px;
         font-size: 38px;
-        border-radius: 25px;
-        text-align: center;
-        border: 3px solid black;
     }
     .NCAModal > h2 {
         margin-top: 35px;

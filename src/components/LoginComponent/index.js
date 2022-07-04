@@ -26,7 +26,7 @@ const LoginComponent = () => {
                         headers: { 'Content-Type': 'application/json' },
                     }
                 );
-                dispatch({ type: 'SET USER', payload: response.data.user });
+                dispatch({ type: 'SET USER', payload: username });
                 navigate('/home');
             }
             setUsername('');
@@ -75,7 +75,7 @@ const LoginComponent = () => {
                     id="username"
                     className="usernameInput"
                     autoFocus
-                    placeholder="Enter your username"
+                    placeholder="Username"
                     value={username}
                     onChange={onUsernameChange}
                     data-testid="usernameInput"
@@ -89,7 +89,7 @@ const LoginComponent = () => {
                     id="password"
                     className="passwordInput"
                     autoFocus
-                    placeholder="Enter your password"
+                    placeholder="Password"
                     value={password}
                     onChange={onPasswordChange}
                     data-testid="passwordInput"

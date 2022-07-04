@@ -38,14 +38,14 @@ background-color: rgb(255, 170, 0);
 }
 
 .selections {
-    font-size: 20px;
+    font-size: 18px;
     margin: 0 auto;
     width: 240px;
     padding: 10px;
     border-radius: 15px;
     grid-area: selections;
     background-color: rgb(133, 209, 209);
-    height: 135px;
+    height: 125px;
     border: 3px solid black;
     margin-top: 10px;
 }

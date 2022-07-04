@@ -1,108 +1,92 @@
 .socketGame{
-
-    font-size: 22px;
-
-    width: 400px;
+    font-size: 18px;
+    width: 300px;
     margin: 0 auto;
-
-    margin-top: 300px;
-
+    margin-top: 150px;
     border-radius: 25px;
-
-    padding: 20px;
-
+    padding: 10px;
     display: grid;
-    
     grid-template-areas:
     "header"
     "createroom"
     "joinroom"
     "startgame"
     "people"; 
-
     background-color: rgb(141, 120, 218);
     border: 3px solid black;
     outline: 5px solid #4532BE;
-
-
 }
 
 .socketHeader{
     grid-area: header;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .createRoom{
-
     grid-area: createroom;
-    margin-left: 50px;
-
+    margin: 0 auto;
     padding: 10px;
-
-    
-    
-    
-    
 }
 
 .createButton{
     width: 225px;
     text-align: center;
     height: 40px;
-    line-height: 40px;
+    line-height: 35px;
     border-radius: 15px;
-    margin-bottom: 10px;
-
-
+    margin-bottom: 15px;
     background-color: rgb(191, 121, 223);
     border: 3px solid black;
     outline: 5px solid rgb(196, 99, 209);
-    
-
 }
 
 .joinRoom{
-
     grid-area: joinroom;
     margin: 0 auto;
     text-align: center;
-
     background-color: rgb(62, 121, 229);
     border: 3px solid black;
     outline: 5px solid rgb(50, 100, 195);
-
     border-radius: 25px;
-    padding: 10px;
+    /* padding: 10px; */
+    margin-top: 10px;
+    width: 90%;
 }
 
 .roomForm {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-areas: 
+    "input"
+    "enter";
+    /* justify-content: center; */
     margin-top: 10px;
+    width: 100%;
 }
 
 .roomForm > input {
     border-radius: 25px;
-    margin-right: 10px;
-
+    grid-area: input;
+    width: 80%;
+    height: 35px;
+    margin: 0 auto;
+    margin-bottom: 10px;
 }
 
 .roomForm > button {
     border-radius: 15px;
-    margin-right: 10px;
-    width: 70px;
-    height: 30px;
-    background-color: rgb(143, 199, 211);    
-
-    
+    margin: 0 auto;
+    width: 90px;
+    height: 35px;
+    background-color: rgb(143, 199, 211); 
+    grid-area: enter;  
+    margin-bottom: 10px;
 }
-
 
 .startGame{
     grid-area: startgame;
     margin: 0 auto;
     margin-top: 10px;
-
 }
 
 .startGame > button {
@@ -111,28 +95,104 @@
     border-radius: 15px;
     padding: 10px;
     background-color: #4CE0B3;
-
 }
 
 .peopleRoom{
-    margin-top: 10px;
-
     grid-area: people;
-    margin-left: 50px;
-
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
+
 @media (min-width: 480px) {
     
 }
 
 @media (min-width: 768px) {
+    .socketGame{
+        font-size: 26px;
+        width: 400px;
+        margin-top: 200px;
+    }
+    
+    .socketHeader{
+        margin-bottom: 20px;
+    }
+    
+    .createButton{
+        width: 300px;
+        height: 50px;
+        line-height: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .joinRoom{
+        margin-top: 20px;
+        line-height: 40px;
+    }
+    
+    .roomForm > input {
+        height: 40px;
+        margin-bottom: 20px;
+    }
+    
+    .roomForm > button {
+        width: 110px;
+        height: 40px;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .startGame{
+        margin-top: 20px;
+    }
+    
+    .startGame > button {
+        font-size: 22px;
+        width: 170px;
+    }
 
 }
 
 @media (min-width: 1024px) {
-
+    .socketGame{
+        font-size: 24px;
+        width: 440px;
+        margin-top: 100px;
+        padding: 20px;
+    }
+    
+    .createRoom{
+        grid-area: createroom;
+    }
+    
+    .createButton{
+        width: 275px;
+        height: 50px;
+        line-height: 45px;
+    }
+    
+    .joinRoom{
+        padding: 10px;
+    }
+        
+    .roomForm > button {
+        width: 170px;
+        height: 40px; 
+    }
+        
+    .startGame > button {
+        font-size: 24px;
+        width: 180px;
+    }
+    
+    .peopleRoom{
+        font-size: 24px;
+    }
 }
 
 @media (min-width: 1200px) {
-
+.socketGame{
+        margin-top: 80px;
+}
 }

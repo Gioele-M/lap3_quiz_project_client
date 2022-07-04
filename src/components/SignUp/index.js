@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ const SignUp = () => {
     const route = 'auth/register';
 
     let navigate = useNavigate();
-
+    const dispatch = useDispatch();
     const handleSignUp = async (e) => {
         e.preventDefault();
         try {
@@ -38,6 +39,8 @@ const SignUp = () => {
                         headers: { 'Content-Type': 'application/json' },
                     }
                 );
+                // console.log(username)
+                dispatch({ type: 'SET USER', payload: username });
 
                 console.log(JSON.stringify(response?.data));
                 navigate('/home');
@@ -89,7 +92,7 @@ const SignUp = () => {
                     name="username"
                     id="username"
                     autoFocus
-                    placeholder="Enter your username"
+                    placeholder="Username"
                     value={username}
                     onChange={onUsernameChange}
                     data-testid="usernameInput"
@@ -101,7 +104,7 @@ const SignUp = () => {
                     name="email"
                     id="email"
                     autoFocus
-                    placeholder="Enter your email"
+                    placeholder="Email"
                     value={email}
                     onChange={onEmailChange}
                     data-testid="emailInput"
@@ -113,7 +116,7 @@ const SignUp = () => {
                     name="password"
                     id="password"
                     autoFocus
-                    placeholder="Enter your password"
+                    placeholder="Password"
                     value={password}
                     onChange={onPasswordChange}
                     data-testid="passwordInput"
