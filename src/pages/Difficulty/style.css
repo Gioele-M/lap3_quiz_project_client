@@ -333,8 +333,8 @@ animation: difficultySlide1right 0.5s linear;
         .buttonsNSelections{
             width: 1000px;
             margin: 0 auto;
-            margin-top: -10px;
-            margin-left: 145px;
+            margin-top: 10px;
+            margin-left: 20%;
         }
 
         .confirmSelections{
