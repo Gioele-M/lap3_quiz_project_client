@@ -227,14 +227,14 @@
     
     
     .localGame {
-        width: 240px;
+        width: 280px;
         height: 70px;
         line-height: 30px;
         padding: 15px 0px;
     }
     
     .onlineGame {
-        width: 240px;
+        width: 280px;
         height: 70px;
         line-height: 30px;
         padding: 15px 0px;
@@ -242,7 +242,7 @@
     }
     
     .rankingGame{
-        width: 260px;
+        width: 280px;
         height: 70px;
         line-height: 30px;
         padding: 15px 0px;
@@ -279,7 +279,7 @@
     .gameTypes {
         width: 600px;
         /* padding-top: 50px; */
-        padding-top: 18vh;
+        padding-top: 12vh;
         height: 220px;
     }
     
